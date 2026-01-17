@@ -1,0 +1,33 @@
+{
+  "ingredients_colors": {
+    "Bright Grain": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22EF" },
+    "Snow Powder": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2308" },
+    "Rainbow Mint": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22ED" },
+    "Star Pineapple": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F5" },
+    "Iron Cannon Fish": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F2" },
+    "Lava King Crab": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2301" },
+    "Millennium Peach": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F0" },
+    "Large Belly Shlfish": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22FF" },
+    "Ancient Algae": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F7" },
+    "Miracle Herb": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22EC" },
+    "Snow Kiwi": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F9" },
+    "Bicolour Skimmer": { "color": ":blue_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22FD" },
+
+    "Goemon Frog": { "color": ":red_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22FB" },
+    "Monochrome Shroom": { "color": ":red_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22F1" },
+    "Acid Pepper": { "color": ":red_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2307" },
+    "Wabisabi Wasabi": { "color": ":red_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2309" },
+    "Demon Pepper": { "color": ":red_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?230D" },
+
+    "Whole Vanilla": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2312" },
+    "Arctic Salmon": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2302" },
+    "Deep Sea Chub": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?2300" },
+    "Mimic Vines": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?230C" },
+    "Onion Sticks": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22EE" },
+    "Dangerous Melon": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?230A" },
+    "Magma Mango": { "color": ":green_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?22FC" },
+
+    "Taiko Olive": { "color": ":purple_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?357C" },
+    "Gutsy Meat": { "color": ":purple_circle:", "url": "https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?357D" }
+  }
+}
