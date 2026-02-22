@@ -27,6 +27,15 @@ def load_ferias_items(file_path):
 
 FERIAS_DATA = load_ferias_items('itemlist.js')
 
+def load_skills_data():
+    try:
+        with open('skills.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print("Attention : skills.json non trouvé.")
+        return {"baseskills": {}}
+
+SKILLS_DATA = load_skills_data()
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -200,6 +209,108 @@ class FeriasLinkView(discord.ui.View):
         # On ajoute un bouton de type "Lien" (style gris par défaut sur Discord)
         self.add_item(discord.ui.Button(label=label, url=url, style=discord.ButtonStyle.link))
         
+# SKILLS
+class SkillCallView(discord.ui.View):
+    def __init__(self, calls, baseskills):
+        super().__init__(timeout=None)
+        for call_name in calls:
+            # On crée un bouton pour chaque talent dans 'calls'
+            self.add_item(SkillCallButton(call_name, baseskills))
+
+class SkillCallButton(discord.ui.Button):
+    def __init__(self, skill_name, baseskills):
+        super().__init__(label=skill_name, style=discord.ButtonStyle.grey)
+        self.skill_name = skill_name
+        self.baseskills = baseskills
+
+    async def callback(self, interaction: discord.Interaction):
+        # On récupère les infos du talent appelé
+        skill_info = self.baseskills.get(self.skill_name)
+        if not skill_info:
+            await interaction.response.send_message(f"❌ Données pour {self.skill_name} introuvables.", ephemeral=True)
+            return
+
+        embed = discord.Embed(
+            title=f":link: **{self.skill_name}**",
+            color=discord.Color.green()
+        )
+        
+        img_url = skill_info.get("img")
+        if img_url:
+            embed.set_image(url=img_url)
+
+        lines = []
+        skill_keys = [k for k in skill_info.keys() if "skill" in k]
+        for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
+            lines.append(f"・{skill_info[key]}")
+
+        embed.description = "\n\n".join(lines)
+        
+        # On envoie la réponse en éphémère pour ne pas encombrer le chat
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+async def skill_autocomplete(
+    interaction: discord.Interaction,
+    current: str,
+) -> list[app_commands.Choice[str]]:
+    choices = []
+    baseskills = SKILLS_DATA.get("baseskills", {})
+    search_text = current.lower()
+    
+    for skill_name, data in baseskills.items():
+        show_val = data.get("show", "").replace("*", "") # On nettoie les étoiles
+        
+        # On vérifie si la recherche match le NOM du talent OU le champ SHOW
+        if search_text in skill_name.lower() or search_text in show_val.lower():
+            
+            # Label affiché dans la liste : "Herbal Science (Medical Sage)"
+            display_name = f"{skill_name} ({show_val})" if show_val else skill_name
+            
+            # La VALUE reste toujours skill_name pour que la commande /skill le trouve dans le JSON
+            choices.append(app_commands.Choice(name=display_name[:100], value=skill_name))
+            
+    return choices[:25]
+
+@bot.tree.command(name="skill", description="Afficher les paliers d'un talent")
+@app_commands.autocomplete(name=skill_autocomplete)
+@app_commands.describe(name="Nom du talent")
+async def skill(interaction: discord.Interaction, name: str):
+    baseskills = SKILLS_DATA.get("baseskills", {})
+    
+    if name in baseskills:
+        skill_info = baseskills[name]
+        
+        embed = discord.Embed(
+            title=f":book: **{name}**",
+            color=discord.Color.blue()
+        )
+        
+        img_url = skill_info.get("img")
+        if img_url:
+            embed.set_image(url=img_url)
+        
+        description_lines = []
+        skill_keys = [k for k in skill_info.keys() if "skill" in k]
+        for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
+            description_lines.append(f"・{skill_info[key]}")
+        
+        embed.description = "\n\n".join(description_lines)
+
+        # --- Gestion des Calls ---
+        call_keys = [k for k in skill_info.keys() if k.startswith("call")]
+        calls_found = [skill_info[ck] for ck in call_keys if skill_info[ck] in baseskills]
+
+        if calls_found:
+            # On ajoute les boutons si des calls existent
+            view = SkillCallView(calls_found, baseskills)
+            await interaction.response.send_message(embed=embed, view=view)
+        else:
+            # Sinon, on envoie juste l'embed simple
+            await interaction.response.send_message(embed=embed)
+                
+    else:
+        await interaction.response.send_message(f"❌ Le talent '{name}' est introuvable.", ephemeral=True)
+
 # 3. Commandes
 @bot.event
 async def on_ready():
