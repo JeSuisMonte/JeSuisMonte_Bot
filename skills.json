@@ -1176,6 +1176,158 @@
       "show":"",
       "skill1":"Donne une Aura de Glace lorsque vous attaquez un monstre. Celle-ci inflige des dégâts par secondes à tous les monstres dans sa zone.\nL'Aura de Glace fonctionne sur 3 niveaux différent, un certain nombre d'attaque est requis afin de passer au niveau suivant.\n\nL'Aura de Glace donne Stamina Recovery Up et Razor Sharp à tous les joueurs affectés par celle-ci. De plus, le joueur possédant l'Aura de Glace obtient Winter General.",
       "img":"https://media.discordapp.net/attachments/1463413285444653077/1475140089200906351/image.png?ex=699c66c4&is=699b1544&hm=7e0f085d3597cd5216567e7a5e8ff4be95b62b1bdda86b89f703bf891391ab17&=&format=webp&quality=lossless&width=719&height=189"
+    },
+    "Skill Slots Up":{
+      "show":"",
+      "skill1":"**Skill Slots Up +7**\nAjoute 7 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill2":"**Skill Slots Up +6**\nAjoute 6 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill3":"**Skill Slots Up +5**\nAjoute 5 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill4":"**Skill Slots Up +4**\nAjoute 4 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill5":"**Skill Slots Up +3**\nAjoute 3 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill6":"**Skill Slots Up +2**\nAjoute 2 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill7":"**Skill Slots Up +1**\nAjoute 1 emplacement de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith."
+    },
+    "Hearing Protection Up":{
+      "show":"",
+      "skill1":"**Hearing Protection Up +3**\nAjoute 3 niveaux supplémentaires à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith (Extreme roars).",
+      "skill2":"**Hearing Protection Up +2**\nAjoute 2 niveaux supplémentaires à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith.",
+      "skill3":"**Hearing Protection Up +1**\nAjoute 1 niveau supplémentaire à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith.",
+      "call1":"Hearing Res"
+    },
+    "Wind Res Up":{
+      "show":"",
+      "skill1":"**Wind Res Up +4**\nAjoute 4 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith (Extreme Wind Pressure).",
+      "skill2":"**Wind Res Up +3**\nAjoute 3 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "skill3":"**Wind Res Up +2**\nAjoute 2 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "skill4":"*Wind Res Up +1***\nAjoute 1 niveau supplémentaire à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "call1":"Wind Pressure"
+    },
+    "Quake Res Up":{
+      "show":"",
+      "skill1":"**Quake Res Up +2**\nAjoute 2 niveaux supplémentaires à Quake Res.\nDépasser Quake Res +2 vous protégera des secousses Zénith (Extreme Tremor).",
+      "skill2":"**Quake Res Up +1**\nAjoute 1 niveau supplémentaire à Quake Res.\nDépasser Quake Res +2 vous protégera des secousses Zénith.",
+      "call1":"Quake Res"
+    },
+    "Assistance Up":{
+      "show":"",
+      "skill1":"**Assistance Up**\nDonne Status Immunity (Myriad) aux joueurs dans la portée du talent.\n※ Cela n'affecte pas **l'utilisateur du talent.**",
+      "call1":"Status Res"
+    },
+    "Poison Res Up":{
+      "show":"",
+      "skill1":"**Poison Res Up +2**\nAjoute 2 niveaux supplémentaires à Poison Res.\nDépasser Negate Poison divise par deux les dégâts infligés par le poison Zénith.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Poison Res Up +1**\nAjoute 1 niveau supplémentaire à Poison Res.\nDépasser Negate Poison divise par deux les dégâts infligés par le poison Zénith.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Poison"
+    },
+    "Paralysis Res Up":{
+      "show":"",
+      "skill1":"**Paralysis Res Up +2**\nAjoute 2 niveaux supplémentaires à Para Res.\nDépasser Negate Para divise par deux la durée de la paralysie Zénith (Extreme Paralysis).\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Paralysis Res Up +1**\nAjoute 1 niveau supplémentaire à Para Res.\nDépasser Negate Para divise par deux la durée de la paralysie Zénith (Extreme Paralysis).\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Para"
+    },
+    "Sleep Res Up":{
+      "show":"",
+      "skill1":"**Sleep Res Up +2**\nAjoute 2 niveaux supplémentaires à Sleep Res.\nDépasser Negate Sleep transformera le sommeil Zénith (Extreme Sleep) en sommeil normal.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Sleep Res Up +1**\nAjoute 1 niveau supplémentaire à Sleep Res.\nDépasser Negate Sleep transformera le sommeil Zénith (Extreme Sleep) en sommeil normal.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Sleep"
+    },
+    "Bullet Saver Up":{
+      "show":"",
+      "skill1":"**Bullet Saver Up +2**\nAjoute 2 niveaux supplémentaires à Bullet Saver.\nDépasser Saving Expert donne 46.4% de chance de ne pas consommer de munition / enduit.",
+      "skill2":"**Bullet Saver Up +1**\nAjoute 1 niveau supplémentaire à Bullet Saver.\nDépasser Saving Expert donne 46.4% de chance de ne pas consommer de munition / enduit.",
+      "call1":"Bullet Saver"
+    },
+    "Vampirism Up":{
+      "show":"",
+      "skill1":"Ajoute 1 niveau supplémentaire à Vampirism.\nDépasser Vampirism +2 augmente la cadence de vol de vie à 100%."
+    },
+    "Guard Up":{
+      "show":"",
+      "skill1":"**Guard Up +2**\nAjoute 2 niveaux supplémentaires à Guard.\nDépasser Guard +2 réduit le recul encaissé, la perte d'Endurance et de Points de Vie durant une garde.\nAugmente la fenêtre de garde à partir de Guard +1.\n\n※ Lance & Gunlance : La garde fonctionne à 360°, un coup encaissé par l'arrière vous fera tout de même valser.\nHeavy Guard et Wide Guard peuvent bloquer des coups normalement non parable.\n\n※ La jauge de garde de la Lance se remplit plus rapidement (3 coups par phial -> 2 coups).\n※Réduit le temps de récupération du Feu de Wyverne à la Gunlance (-10sec, -5sec avec Hiden).",
+      "skill2":"**Guard Up +1**\nAjoute 1 niveau supplémentaire à Guard.\nDépasser Guard +2 réduit le recul encaissé, la perte d'Endurance et de Points de Vie durant une garde.\nAugmente la fenêtre de garde à partir de Guard +1.\n\n※ Lance & Gunlance : La garde fonctionne à 360°, un coup encaissé par l'arrière vous fera tout de même valser.\nHeavy Guard et Wide Guard peuvent bloquer des coups normalement non parable.\n\n※ La jauge de garde de la Lance se remplit plus rapidement (3 coups par phial -> 2 coups).\n※Réduit le temps de récupération du Feu de Wyverne à la Gunlance (-10sec, -5sec avec Hiden).",
+      "call1":"Guard"
+    },
+    "Encourage Up":{
+      "show":"",
+      "skill1":"**Encourage Up +2**\nAjoute 2 niveaux supplémentaires à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
+      "skill2":"**Encourage Up +2**\nAjoute 1 niveau supplémentaire à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
+      "call1":"Stamina",
+      "call2":"Stamina Recovery"
+    },
+    "Critical Conversion Up":{
+      "show":"",
+      "skill1":"**Critical Conversion Up +2**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(10 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion.",
+      "skill2":"**Critical Conversion Up +1**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(5 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion."
+    },
+    "Stylish Assault Up":{
+      "show":"",
+      "skill1":"**Stylish Assault Up +2**\n+40 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint.",
+      "skill2":"**Stylish Assault Up +1**\n+20 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint."
+    },
+    "Dissolver Up":{
+      "show":"",
+      "skill1":"Réduit la valeur de Hitzone élémentaire requise pour Elemental Exploit (*20 -> 15*).",
+      "call1":"Dissolver"
+    },
+    "Thunder Clad Up":{
+      "show":"",
+      "skill1":"**Thunder Clad Up +2**\nAugmente la durée de Thunder Clad de 60 secondes (*60sec -> 120sec*).",
+      "skill2":"**Thunder Clad Up +1**\nAugmente la durée de Thunder Clad de 20 secondes (*60sec -> 80sec*).",
+      "call1":"Thunder Clad"
+    },
+    "Ice Age Up":{
+      "show":"",
+      "skill1":"Augmente de 3 secondes la durée du dernier stade de Ice Age (*9sec -> 12sec*).",
+      "call1":"Ice Age"
+    },
+    "Drug Knowledge Up":{
+      "show":"",
+      "skill1":"Augmente la valeur des afflictions de l'arme à 0,42% (*0,38% -> 0,42%*).",
+      "call1":"Drug Knowledge"
+    },
+    "Adaptation Up":{
+      "show":"",
+      "skill1":"**Adaptation Up +2**\nAjoute 2 niveaux supplémentaires à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
+      "skill2":"**Adaptation Up +1**\nAjoute 1 niveau supplémentaire à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
+      "call1":"Adaptation"
+    },
+    "Reflect Up":{
+      "show":"",
+      "skill1":"**Reflect Up +3**\nAjoute 3 niveaux supplémentaires à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "skill2":"**Reflect Up +2**\nAjoute 2 niveaux supplémentaires à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "skill3":"**Reflect Up +1**\nAjoute 1 niveau supplémentaire à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "call1":"Reflect"
+    },
+    "Stylish Up":{
+      "show":"",
+      "skill1":"Réussir une esquive stop la perte de Tranchant en plus d'infliger des attaques à 30 de Motion Value pour un nombre fixe de coups.\n\n※ Dure jusqu'à ce que la perte de tranchant reprenne (affecté par Consumption Slayer).",
+      "img":"https://media.discordapp.net/attachments/1463413285444653077/1476618260148654161/image.png?ex=69a1c76b&is=69a075eb&hm=c1a780b80bb0c4ee559070808e9c4b93771042382ad2303cc89e903900cbe83c&=&format=webp&quality=lossless&width=647&height=228"
+    },
+    "Vigorous Up":{
+      "show":"",
+      "skill1":"+100 d'Attaque pour les Blademaster.\n+50 d'Attaque pour les Gunner.\nNe s'additionne à Vigorous que lorsque la barre de vie est pleine.",
+      "call1":"Vigorous"
+    },
+    "Obscurity Up":{
+      "show":"",
+      "skill1":"Réduit le nombre de gardes requises pour atteindre le buff maximal (10 -> 6).\nBloquer permet de récupérer du Tranchant lorsque le buff est maxé.\nExécuter une garde parfaite compte pour 3 gardes (ex : 2 garde parfaite = buff max), permet aussi de récupérer plus de Tranchant une fois le buff maxé.\n\n※ Le buff d'Attaque ne change pas.\n※ Exécuter une garde à la Gunlance en mode Heatblade, **avec le buff maxé**, réduit la perte de tranchant **jusqu'à la fin du mode Heatblade.**",
+      "call1":"Obscurity"
+    },
+    "Soul Up":{
+      "show":"",
+      "skill1":"**Red Soul**\n+100 d'Attaque pour l'utilisateur du talent ainsi que les joueurs frappés par celui-ci.\nEmpêche la consommation d'Endurance lorsque vous courez arme dégainée (concerne les joueurs frappés par l'utilisateur du talent).",
+      "skill2":"**Blue Soul**\n+200 de Défense pour l'utilisateur du talent ainsi que les joueurs frappés par celui-ci.\nOffre de la régénération de Points de Vie aux joueurs touchés par l'utilisateur, en plus de soigner des statuts anormaux (**ne concerne pas les statuts Zénith**).\n\n※ Fonctionne avec Blazing Grace.\n※ Les attaques ne feront plus trébucher les autres joueurs.",
+      "call1":"Reinforcement"
+    },
+    "Rush Up":{
+      "show":"",
+      "skill1":"Débloque un 3ème niveau de Rush.\nDonne 70 d'Attaque Raw (200 au total) et empêche la perte d'Endurance durant cet effet.\n※ Le 3ème niveau dure 30 secondes, celui-ci devra être réactivé après expiration.",
+      "call1":"Rush"
+    },
+    "Ceaseless Up":{
+      "show":"",
+      "skill1":"Débloque un 3ème niveau de Ceaseless, réduit le nombre de coups nécessaires à chaque niveau de Ceaseless.\nNiveau 1 : +35% d'Affinité, +10% de coups Critiques.\nNiveau 2 : +50% d'Affinité, +10% de coups Critiques.\nNiveau 3 : +60 d'Affinité, +20% de coups Critiques.\n\n※ Dorénavant, ne plus suffisamment attaquer **vous rétrogradera au niveau inférieur** (*au lieu de faire disparaitre l'effet du talent*).\n※ Reflect et Stylish Up comptent dans les coups requis.\n※ Fencing +2 ne compte pas dans les coups requis.",
+      "call1":"Ceaseless"
     }
   }
 }
