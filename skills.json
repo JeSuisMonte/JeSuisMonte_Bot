@@ -34,7 +34,8 @@
       "show":"",
       "skill1":"**Vampirism +2**\n80% de chance de récupérer des Points de Vie et d'augmenter l'attaque lorsque vous attaquez un monstre.\n\nLes Points de Vie restaurés sont 70% supérieurs à ceux de Vampirism+1 (ex : 6PV -> 10PV).\n\n*En dehors du soin, applique les mêmes effets que Vampirism+1.*",
       "skill2":"**Vampirism +1**\n60% de chance de récupérer des Points de Vie et d'augmenter l'attaque lorsque vous attaquez un monstre.\n\nAugmente l'attaque à chaque activation jusqu'à une limite de 80 d'attaque (nombre de coups requis varient en fonction de l'arme).\n\nLe bonus d'attaque se réinitialise dès qu'un coup d'un grand monstre vous touche.\n\nToutes les attaques comme la Gunlance Heat Blade ou les effets similaires à Fencing+2 activent Vampirism.\n\nLe soin se base sur les dégâts infligés, environ 2-4% pour un minimum de 1 Point de Vie rendu.\nCette valeur diminue proportionnellement en fonction des Motion Values, bien qu'elle augmente avec les dégâts infligés.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1464707380343341250/image.png?ex=6976728c&is=6975210c&hm=90883b044cbec70e4ede70eabc15aef375b5117af7228d4823184888e3a372df&=&format=webp&quality=lossless&width=359&height=182"
+      "img":"img/skills/vampirism.png",
+      "zcall1":"Vampirism Up"
     },
     "Herbal Science":{
       "show":"*Medical Sage*",
@@ -128,7 +129,8 @@
     },
     "Critical Conversion":{
       "show":"",
-      "skill1":"Affinité +30%.\nQuand l'Affinité dépasse 100%, l'Attaque augmente en fonction du résultat arrondi vers l'inférieur de la formule √(Affinité excédentaire) x 7."
+      "skill1":"Affinité +30%.\nQuand l'Affinité dépasse 100%, l'Attaque augmente en fonction du résultat arrondi vers l'inférieur de la formule √(Affinité excédentaire) x 7.",
+      "zcall1":"Critical Conversion Up"
     },
     "Exploit Weakness":{
       "show":"Exploit Weakness, Reduce Weakness",
@@ -137,23 +139,26 @@
     },
     "Stylish Assault":{
       "show":"",
-      "skill1":"**Esquiver à travers une attaque donne +100 de True Attack pendant une période de temps dépendant du type d'arme et de la classe.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1464707326077309131/image.png?ex=6976727f&is=697520ff&hm=f7157791b1c185ba58af051005aa66391d690a3b714bfd8a28927aa1722902e4&=&format=webp&quality=lossless&width=358&height=124"
+      "skill1":"Esquiver à travers une attaque donne +100 de True Attack pendant une période de temps dépendant du type d'arme et de la classe.",
+      "img":"img/skills/stylish_assault.png",
+      "zcall1":"Stylish Assault Up"
     },
     "Dissolver":{
       "show":"Elemental Exploit, Elemental Diffusion",
       "skill1":"**Elemental Exploit**\n Augmente l'efficacité élémentaire sur les hitzones des monstres, cette valeur dépend du type d'arme et de la classe.",
       "skill2":"**Elemental Diffusion**\n Réduit de -5 l'efficacité élémentaire sur les hitzones des monstres quand celle-ci est égale ou supérieure à 20.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1464707710296522762/image.png?ex=697672db&is=6975215b&hm=1caa0fe58d4329914a3a9cc9ea033a33388e877d1c99c8f40c774b9380777326&=&format=webp&quality=lossless&width=360&height=125"
+      "zcall1":"Dissolver Up",
+      "img":"img/skills/dissolver.png"
     },
     "Status Assault":{
       "show":"Status Pursuit",
       "skill1":"Dégâts flat additionnels si l'on inflige des dégâts d'affliction à un monstre souffrant de cette même affliction. Le sommeil obtient +10 de hitzone value à la place des dégâts.\n\nLes dégâts flat dépendent du type d'arme et de la valeur de leurs afflictions.\n\nCouplé à Drug Knowledge garantis ces dégâts flat pour chaque coup (dégâts d'affliction garantis à chaque coup).\n\n※ Fencing+2 ne s'ajoute pas aux dégâts supplémentaire (seulement 20% de sa valeur).\n\n※ Status Assault n'a aucun effet sur le Raviente même s'il est atteint par la bonne affliction.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1464707259392069776/image.png?ex=6976726f&is=697520ef&hm=a87e8ccafc47dce9f44fa4258bfdd6619db02fb4f9c5ff11fc5e718c39590860&=&format=webp&quality=lossless&width=1159&height=162"
+      "img":"img/skills/status_pursuit.png"
     },
     "Drug Knowledge":{
       "show":"",
-      "skill1":"Dégâts des armes à afflictions +25% de la valeur de leur affliction.\nDésormais toutes les attaques infligent des dégâts d'affliction.\n※ Par défaut, la valeur des afflictions d'arme est de x0.38, additionné à 25% de leur vrai statut de base."
+      "skill1":"Dégâts des armes à afflictions +25% de la valeur de leur affliction.\nDésormais toutes les attaques infligent des dégâts d'affliction.\n※ Par défaut, la valeur des afflictions d'arme est de x0.38, additionné à 25% de leur vrai statut de base.",
+      "zcall1":"Drug Knowledge Up"
     },
     "Status Attack":{
       "show":"Status Attack Up",
@@ -227,7 +232,7 @@
       "show":"",
       "skill1":"**Charge Attack Up +2**\nAugmente grandement les Motion Values en fonction des mouvements d'arme indiqués sur le tableau ci-dessous.\n※ Cet effet n'augmente pas les Motion Values par pourcentage ou multiplicateur fixe, celles-ci varient en fonction des dégâts de chaque attaque.\n(*Ex : Shining Sword (GS) passe de 27MV à 47MV, ayant une augmentation de 74%*)",
       "skill2":"**Charge Attack Up +1**\nAugmente les Motion Values en fonction des mouvements d'arme indiqués sur le tableau ci-dessous.\n※ Cet effet n'augmente pas les Motion Values par pourcentage ou multiplicateur fixe, celles-ci varient en fonction des dégâts de chaque attaque.\n(*Ex : Shining Sword (GS) passe de 27MV à 47MV, ayant une augmentation de 74%*).",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1464707428435104047/image.png?ex=69767297&is=69752117&hm=2f60b20de3a97cf2b703e620a36e046d3e5ccf0cbf02dbd1ef0eed8d7fd8b0de&=&format=webp&quality=lossless&width=364&height=292"
+      "img":"img/skills/charge_attack_up.png"
     },
     "Weapon Handling":{
       "show":"",
@@ -240,7 +245,8 @@
     "Adaptation":{
       "show":"",
       "skill1":"**Adaptation +2**\nLorsque vos Points de Vie sont supérieurs à 100, chaque attaque analyse les dégâts potentiels selon tous les types d'arme (*tranchant, contondant, artilleur*) en leur appliquant un multiplicateur statique : x0,81 pour les armes de mêlée, x0.72 pour les armes à distance.\n\nSi l'une de ces valeurs calculées dépasse les dégâts de l'arme équipée, l'attaque adopte automatiquement la valeur et le type de dégât les plus élevés.\n\nExemple : Avec une arme tranchante, si le calcul des dégâts contondants (multiplié par 0,81) est supérieur à la valeur en tranchant, l'attaque infligera des dégâts contondants à la place.\n\nLorsque cet effet est activé, un effet violet similaire aux effets des coups critiques sera affiché.\nIl est aussi possible de couper des queues avec une arme contondante si les critères requis sont respectés.",
-      "skill2":"**Adaptation +1**\nLorsque vos Points de Vie sont supérieurs à 100, chaque attaque analyse les dégâts potentiels selon tous les types d'arme (*tranchant, contondant, artilleur*) en leur appliquant un multiplicateur statique : x0,72 pour les armes de mêlée, x0.64 pour les armes à distance.\n\nSi l'une de ces valeurs calculées dépasse les dégâts de l'arme équipée, l'attaque adopte automatiquement la valeur et le type de dégât les plus élevés.\n\nExemple : Avec une arme tranchante, si le calcul des dégâts contondants (multiplié par 0,81) est supérieur à la valeur en tranchant, l'attaque infligera des dégâts contondants à la place.\n\nLorsque cet effet est activé, un effet violet similaire aux effets des coups critiques sera affiché.\nIl est aussi possible de couper des queues avec une arme contondante si les critères requis sont respectés."
+      "skill2":"**Adaptation +1**\nLorsque vos Points de Vie sont supérieurs à 100, chaque attaque analyse les dégâts potentiels selon tous les types d'arme (*tranchant, contondant, artilleur*) en leur appliquant un multiplicateur statique : x0,72 pour les armes de mêlée, x0.64 pour les armes à distance.\n\nSi l'une de ces valeurs calculées dépasse les dégâts de l'arme équipée, l'attaque adopte automatiquement la valeur et le type de dégât les plus élevés.\n\nExemple : Avec une arme tranchante, si le calcul des dégâts contondants (multiplié par 0,81) est supérieur à la valeur en tranchant, l'attaque infligera des dégâts contondants à la place.\n\nLorsque cet effet est activé, un effet violet similaire aux effets des coups critiques sera affiché.\nIl est aussi possible de couper des queues avec une arme contondante si les critères requis sont respectés.",
+      "zcall1":"Adaptation Up"
     },
     "Combat Supremacy":{
       "show":"",
@@ -248,7 +254,8 @@
     },
     "Vigorous":{
       "show":"",
-      "skill1":"Attaque +15% lorsque les Points de Vie sont supérieurs ou égal à 100."
+      "skill1":"Attaque +15% lorsque les Points de Vie sont supérieurs ou égal à 100.",
+      "zcall1":"Vigorous Up"
     },
     "Lavish Attack":{
       "show":"Consumption Slayer",
@@ -257,16 +264,19 @@
     "Obscurity":{
       "show":"",
       "skill1":"Effectuer une garde augmente l'Attaque d'une valeur fixe, peut s'additionner 10 fois.\nLes valeurs varient en fonction de l'arme.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1465991190980726846/image.png?ex=697b1e30&is=6979ccb0&hm=be17a6276dad0ecd7a7ec52eb54acebc5db93fe59477a1ad1691f99576a71fdb&=&format=webp&quality=lossless&width=567&height=139"
+      "img":"img/skills/obscurity.png",
+      "zcall1":"Obscurity Up"
     },
     "Rush":{
       "show":"",
-      "skill1":"Effectuer une Attaque et/ou une Garde augmente graduellement une jauge invisible de deux niveaux.\nNiveau 1 : +50 d'Attaque, un effet violet apparait sur le joueur.\nNiveau 2 : +130 d'Attaque, courir avec l'arme dégainée ne coûte plus d'endurance.\nRengainer l'arme ou utiliser un objet réinitialise l'effet."
+      "skill1":"Effectuer une Attaque et/ou une Garde augmente graduellement une jauge invisible de deux niveaux.\nNiveau 1 : +50 d'Attaque, un effet violet apparait sur le joueur.\nNiveau 2 : +130 d'Attaque, courir avec l'arme dégainée ne coûte plus d'endurance.\nRengainer l'arme ou utiliser un objet réinitialise l'effet.",
+      "zcall1":"Rush Up"
     },
     "Ceaseless":{
       "show":"",
       "skill1":"Attaquer augmente l'Affinité et le multiplicateur de dégâts Critiques.\nL'effet disparaît si vous arrêtez d'attaquer pendant quelques secondes.\nReflect et Stylish Up comptent dans les coups requis pour activer Ceaseless.\n\nNiveau 1 : +35% d'Affinité, +10% de coups Critiques.\nNiveau 2 : +50% Affinité, +15% de coups Critiques.\n\nChaque arme demande un nombre différent d'attaque pour activer le niveau 1 et 2 de Ceaseless.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1465995492105257066/image.png?ex=697b2232&is=6979d0b2&hm=18550ba3ec6ad45fa0048541caab141ecbbdc3db9e7b47e9c87d4a9997fc4139&=&format=webp&quality=lossless&width=308&height=326"
+      "img":"img/skills/ceaseless.png",
+      "zcall1":"Ceaseless Up"
     },
     "Point Breakthrough":{
       "show":"",
@@ -275,11 +285,12 @@
     "Furious":{
       "show":"",
       "skill1":"Effectuer une attaque, une esquive ou une garde augmente l'Attaque, l'Affinité, l'Élément et les Afflictions sur 3 niveaux.\n\nNiveau 1 : +70 d'Attaque, +5% d'Élément et Affliction, +10% d'Affinité.\n\nNiveau 2 : +100 d'Attaque, +10% d'Élément et Affliction, +25% d'Affinité.\n\nNiveau 3 : +180 d'Attaque, +20% d'Élément et Affliction, +40% d'Affinité.\n\nSubir une grosse attaque fait chuter Furious d'un niveau. Il est nécessaire d'effectuer des attaques et esquives/gardes pour monter augmenter le niveau de Furious.\n\n※ Vous pouvez augmenter Furious plus rapidement via des gardes parfaites.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1466050309808718082/image.png?ex=697b553f&is=697a03bf&hm=5f62f211a27d996b57258795015d88c67f40922222907d8bcf1bbf23fb8d7cb1&=&format=webp&quality=lossless&width=618&height=328"
+      "img":"img/skills/furious.png"
     },
     "Thunder Clad":{
       "show":"",
-      "skill1":"Une jauge apparait en dessous du nom du joueur, elle se charge en fonction des esquives, des attaques et des déplacements.\nQuand cette jauge est pleine : +5 de dégâts physique sur toutes les hitzones, Movement Speed+2, Evade Distance Up, Weapon Handling et Status Immunity.\n\n※ S'additionne avec Determination, Exploit Weakness et Critical Shot.\n\n※ La vitesse de mouvement donnée par Thunder Clad fonctionne même quand l'arme est dégainée.\n\n※ Esquiver des cris avec Earplug remplit autant la jauge qu'une esquive complète.\n\n※ Subir une attaque vous projetant en arrière videra immédiatement la jauge. Cela inclut les coups venant des autres joueurs comme le Ryuuki des Tonfa.\n\n※ Toutes les actions rempliront la jauge, même arme rengainée."
+      "skill1":"Une jauge apparait en dessous du nom du joueur, elle se charge en fonction des esquives, des attaques et des déplacements.\nQuand cette jauge est pleine : +5 de dégâts physique sur toutes les hitzones, Movement Speed+2, Evade Distance Up, Weapon Handling et Status Immunity.\n\n※ S'additionne avec Determination, Exploit Weakness et Critical Shot.\n\n※ La vitesse de mouvement donnée par Thunder Clad fonctionne même quand l'arme est dégainée.\n\n※ Esquiver des cris avec Earplug remplit autant la jauge qu'une esquive complète.\n\n※ Subir une attaque vous projetant en arrière videra immédiatement la jauge. Cela inclut les coups venant des autres joueurs comme le Ryuuki des Tonfa.\n\n※ Toutes les actions rempliront la jauge, même arme rengainée.",
+      "zcall1":"Thunder Clad Up"
     },
     "Determination":{
       "show":"Solid Determination",
@@ -302,7 +313,8 @@
       "show":"",
       "skill1":"**Reflect +3**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 48 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
       "skill2":"**Reflect +2**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 36 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
-      "skill3":"**Reflect +1**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 24 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant."
+      "skill3":"**Reflect +1**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 24 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
+      "zcall1":"Reflect Up"
     },
     "Defense":{
       "show":"",
@@ -321,7 +333,8 @@
       "skill2":"**Guard +1**\nAugmente la réduction des dégâts.\nLa garde consomme moins d'Endurance, le recul est réduit.\nAugmente la limite de l'aura du bouclier de la Lance à 4.",
       "skill3":"**Guard -1**\nAugmente les dégâts subits lors d'une garde, le recul ainsi que la consommation d'Endurance.",
       "skill4":"**Guard -2**\nAugmente grandement les dégâts subits lors d'une garde, le recul et la consommation d'Endurance.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1466735735682891963/image.png?ex=697dd39a&is=697c821a&hm=2142dd195f12e0fade23dacf6e015efb1f7a53876ddcaf359d4f1edebe4434d7&=&format=webp&quality=lossless&width=548&height=112"
+      "zcall1":"Guard Up",
+      "img":"img/skills/guard.png"
     },
     "Auto-Guard":{
       "show":"",
@@ -351,7 +364,8 @@
     "Stylish":{
       "show":"",
       "skill1":"Récupère du tranchant lors d'une esquive à travers une attaque.\nLa quantité de tranchant varie en fonction de l'arme.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1466835461610672301/image.png?ex=697e307a&is=697cdefa&hm=57e34dd7381ff577eaeb156a4e84a51a4bf31ef6753d8a458fb8aca580a023b9&=&format=webp&quality=lossless&width=351&height=342"
+      "zcall1":"Stylish Up",
+      "img":"img/skills/stylish.png"
     },
     "Edgemaster":{
       "show":"Honed Blade",
@@ -427,6 +441,7 @@
       "skill6":"**SnS Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Épée Bouclier.",
       "call1":"Fencing",
       "call2":"Hearing Res"
+      
     },
     "DS Tech":{
       "show":"DS Tech, Dual Dragon",
@@ -637,7 +652,8 @@
     "Bullet Saver":{
       "show":"Saving Expert, Saving Master",
       "skill1":"**Saving Expert**\nUn tir a 11 chances sur 32 (34,3%) de ne pas consommer une munition / enduit.\nLe tir de compression utilise toutes les munitions de manière individuelle (pour le HBG, n'importe quel nombre de munition dans le chargeur peut être économisé). Cependant, cela ne fonctionne pas avec l'Ultra Rapid Fire du LBG et le Heat Beam du HBG.",
-      "skill2":"**Saving Master**\nUn tir a 7 chances sur 32 (21,8%) de ne pas consommer une munition / enduit.\nLe tir de compression utilise toutes les munitions de manière individuelle (pour le HBG, n'importe quel nombre de munition dans le chargeur peut être économisé). Cependant, cela ne fonctionne pas avec l'Ultra Rapid Fire du LBG et le Heat Beam du HBG."
+      "skill2":"**Saving Master**\nUn tir a 7 chances sur 32 (21,8%) de ne pas consommer une munition / enduit.\nLe tir de compression utilise toutes les munitions de manière individuelle (pour le HBG, n'importe quel nombre de munition dans le chargeur peut être économisé). Cependant, cela ne fonctionne pas avec l'Ultra Rapid Fire du LBG et le Heat Beam du HBG.",
+      "zcall1":"Bullet Saver Up"
     },
     "Precision":{
       "show":"Precision, Deviation Down / Up",
@@ -753,22 +769,25 @@
       "skill6":"**Dragon Res -30**\nRéduit la résistance au dragon de 30."
     },
     "Poison":{
-      "show":"",
+      "show":"Poison Res",
       "skill1":"**Negate Poison**\nImmunise contre le poison.",
       "skill2":"**Poison Halved**\nLa durée du poison est divisée par deux.",
-      "skill3":"**Double Poison・10**\nLa durée du poison est doublée."
+      "skill3":"**Double Poison・10**\nLa durée du poison est doublée.",
+      "zcall1":"Poison Res Up"
     },
     "Para":{
-      "show":"",
+      "show":"Paralysis Res",
       "skill1":"**Negate Para**\nImmunise contre la paralysie.",
       "skill2":"**Para Halved**\nLa durée de la paralysie est divisée par deux.",
-      "skill3":"**Para Doubled・10**\nLa durée de la paralysie est doublée."
+      "skill3":"**Para Doubled・10**\nLa durée de la paralysie est doublée.",
+      "zcall1":"Paralysis Res Up"
     },
     "Sleep":{
-      "show":"",
+      "show":"Sleep Res",
       "skill1":"**Negate Sleep**\nImmunise contre le sommeil.",
       "skill2":"**Sleep Halved**\nLa durée du sommeil est divisée par deux.",
-      "skill3":"**Sleep Doubled・10**\nLa durée du sommeil est doublée."
+      "skill3":"**Sleep Doubled・10**\nLa durée du sommeil est doublée.",
+      "zcall1":"Sleep Res Up"
     },
     "Status Res":{
       "show":"",
@@ -836,19 +855,23 @@
       "show":"Earplugs",
       "skill1":"**Super High-Grade Earplugs**\nImmunise contre tous les cris de tier 3.",
       "skill2":"**High-Grade Earplugs**\nImmunise contre tous les cris de tier 2.",
-      "skill3":"**Earplugs**\nImmunise contre tous les cris de tier 1.\nRéduit la durée d'immobilisation due aux cris de tier 2."
+      "skill3":"**Earplugs**\nImmunise contre tous les cris de tier 1.\nRéduit la durée d'immobilisation due aux cris de tier 2.",
+      "zcall1":"Hearing Protection Up"
+
     },
     "Wind Pressure":{
       "show":"Violent/Dragon Winder Breaker, Wind Res",
       "skill1":"**Violent Wind Breaker**\nProtège du vent violet.",
       "skill2":"**Dragon Wind Breaker**\nProtège du vent draconique.",
       "skill3":"**Wind Res (Large)**\nProtège du vent large.",
-      "skill4":"**Wind Res (Small)**\nProtège du vent normal."
+      "skill4":"**Wind Res (Small)**\nProtège du vent normal.",
+      "zcall1":"Wind Res Up"
     },
     "Quake Res":{
       "show":"",
       "skill1":"**Quake Res +2**\nProtège des grosses secousses.",
-      "skill2":"**Quake Res +1**\nProtège des petites secousses."
+      "skill2":"**Quake Res +1**\nProtège des petites secousses.",
+      "zcall1":"Quake Res Up"
     },
     "Evasion":{
       "show":"",
@@ -928,7 +951,7 @@
     },
     "Combo Expert":{
       "show":"",
-      "skill1":"**Combo Expert +3**\nAugmente de 30% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets, celui-ci peut être améliorer par des objets.",
+      "skill1":"**Combo Expert +3**\nAugmente de 30% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets et améliore les objets de soins.",
       "skill2":"**Combo Expert +2**\nAugmente de 20% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets.",
       "skill3":"**Combo Expert +1**\nAugmente de 30% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets.",
       "skill4":"**Combo Expert -1**\nRéduit de 5% le taux de réussite des combinaisons.",
@@ -953,7 +976,7 @@
       "skill2":"**Spirit's Whim**\nRéduit de 25% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
       "skill3":"**Spectre's Whim**\nAugmente de 50% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
       "skill4":"**Devil's Whim**\nAugmente de 25% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1475139148041158788/image.png?ex=699c65e3&is=699b1463&hm=ce44f68900cf4ff429cce7d717c11592279f462897f3a69395e08aed9c97af13&=&format=webp&quality=lossless&width=1056&height=163"
+      "img":"img/skills/whim.png"
     },
     "Hunter":{
       "show":"Hunter Valhalla, Hunter Life",
@@ -995,7 +1018,8 @@
       "skill1":"**Encourage +2**\nDonne les effets de Horn Maesto, Stun Negate ainsi que Evasion +2 pour tous les joueurs présent dans la quête.",
       "skill2":"**Encourage +1**\nDonne les effets de Horn Maesto, Stun Halved ainsi que Evasion +1 pour tous les joueurs présent dans la quête.",
       "call1":"Evasion",
-      "call2":"Stun"
+      "call2":"Stun",
+      "zcall1":"Encourage Up"
     },
     "Flute Expert":{
       "show":"",
@@ -1087,7 +1111,7 @@
     "Inspiration":{
       "show":"",
       "skill1":"**Certains effets s'activent aléatoirement au début d'une quête.**\n",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1475049218673479702/image.png?ex=699c1222&is=699ac0a2&hm=5967303a29dbd10581c5dcf68db8a6f6461044f23303f4b54c118025c9e01ff0&=&format=webp&quality=lossless&width=633&height=253"
+      "img":"img/skills/inspiration.png"
     },
     "Relief":{
       "show":"",
@@ -1107,13 +1131,15 @@
       "show":"Red Soul, Blue Soul",
       "skill1":"**Red Soul**\n+15 d'Attaque.\nAttaquer un autre joueur lui donnera +30 d'Attaque.\n※ Le joueur attaqué doit avoir Blue Soul.\n※Lorsqu'un joueur ayant Blue Soul vous attaque, vous obtenez +30 d'Attaque vous serez alors capable de stun un monstre en attaquant sa tête avec n'importe quelle arme.\n**Ces effets durent 2 minutes**\n\n※ Le bonus d'Attaque agit comme un bonus final, **celui-ci n'est pas affecté par les différents multiplicateurs d'autres talents.**",
       "skill2":"**Blue Soul**\n+50 de Défense.\nAttaquer un autre joueur lui donnera +100 de Défense.\n※ Attaquer un autre joueur ayant Blue Soul le soignera de toutes afflictions.\n※ Se faire attaquer par un autre joueur possédant Red Soul vous donnera +100 de Défense ainsi que l'effet de Goddess' Embrace.\n**Ces effets durent 2 minutes**.",
-      "call1":"Protection"
+      "call1":"Protection",
+      "zcall1":"Soul Up"
     },
     "Assistance":{
       "show":"",
       "skill1":"Le bras du joueur s'illumine en rouge, obtient +20 d'Attaque, +50 de Défense, donne l'effet de Damage Recovery Speed +2, Status Immunity et Peerless **aux autres joueurs.**\nLa zone d'effet correspond à la distance de 3 roulades (2 avec Evade Distance Up).\nLes bras des autres joueurs affectés par Assistance auront une lueur jaune.\n\n※Le joueur ayant ce talent équipé recevra +10 d'Attaque et +50 de Défense, les effets de Peerless, Status Immunity et Damage Recovery Speed+2 **sont réservés aux autres joueurs.**\n\n※Ce talent écrase les effets inférieurs à ceux donnés par celui-ci. Par exemple, si un joueur possède Status Halved, celui-ci sera remplacé par Status Immunity lorsqu'il sera dans la portée du joueur possédant Assistance.\n\n※ Le bonus d'Attaque agit comme un bonus final, **celui-ci n'est pas affecté par les différents multiplicateurs d'autres talents.**",
       "call1":"Status Res",
-      "call2":"Stamina"
+      "call2":"Stamina",
+      "zcall1":"Assistance Up"
     },
     "Grace":{
       "show":"",
@@ -1175,7 +1201,8 @@
     "Ice Age":{
       "show":"",
       "skill1":"Donne une Aura de Glace lorsque vous attaquez un monstre. Celle-ci inflige des dégâts par secondes à tous les monstres dans sa zone.\nL'Aura de Glace fonctionne sur 3 niveaux différent, un certain nombre d'attaque est requis afin de passer au niveau suivant.\n\nL'Aura de Glace donne Stamina Recovery Up et Razor Sharp à tous les joueurs affectés par celle-ci. De plus, le joueur possédant l'Aura de Glace obtient Winter General.",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1475140089200906351/image.png?ex=699c66c4&is=699b1544&hm=7e0f085d3597cd5216567e7a5e8ff4be95b62b1bdda86b89f703bf891391ab17&=&format=webp&quality=lossless&width=719&height=189"
+      "zcall1":"Ice Age Up",
+      "img":"img/skills/ice_age.png"
     },
     "Skill Slots Up":{
       "show":"",
@@ -1239,7 +1266,8 @@
     },
     "Vampirism Up":{
       "show":"",
-      "skill1":"Ajoute 1 niveau supplémentaire à Vampirism.\nDépasser Vampirism +2 augmente la cadence de vol de vie à 100%."
+      "skill1":"Ajoute 1 niveau supplémentaire à Vampirism.\nDépasser Vampirism +2 augmente la cadence de vol de vie à 100%.",
+      "call1":"Vampirism"
     },
     "Guard Up":{
       "show":"",
@@ -1252,17 +1280,20 @@
       "skill1":"**Encourage Up +2**\nAjoute 2 niveaux supplémentaires à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
       "skill2":"**Encourage Up +2**\nAjoute 1 niveau supplémentaire à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
       "call1":"Stamina",
-      "call2":"Stamina Recovery"
+      "call2":"Stamina Recovery",
+      "call3":"Encourage"
     },
     "Critical Conversion Up":{
       "show":"",
       "skill1":"**Critical Conversion Up +2**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(10 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion.",
-      "skill2":"**Critical Conversion Up +1**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(5 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion."
+      "skill2":"**Critical Conversion Up +1**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(5 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion.",
+      "call1":"Critical Conversion"
     },
     "Stylish Assault Up":{
       "show":"",
       "skill1":"**Stylish Assault Up +2**\n+40 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint.",
-      "skill2":"**Stylish Assault Up +1**\n+20 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint."
+      "skill2":"**Stylish Assault Up +1**\n+20 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint.",
+      "call1":"Stylish Assault"
     },
     "Dissolver Up":{
       "show":"",
@@ -1289,7 +1320,7 @@
       "show":"",
       "skill1":"**Adaptation Up +2**\nAjoute 2 niveaux supplémentaires à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
       "skill2":"**Adaptation Up +1**\nAjoute 1 niveau supplémentaire à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
-      "call1":"Adaptation"
+      "zall1":"Adaptation"
     },
     "Reflect Up":{
       "show":"",
@@ -1301,7 +1332,8 @@
     "Stylish Up":{
       "show":"",
       "skill1":"Réussir une esquive stop la perte de Tranchant en plus d'infliger des attaques à 30 de Motion Value pour un nombre fixe de coups.\n\n※ Dure jusqu'à ce que la perte de tranchant reprenne (affecté par Consumption Slayer).",
-      "img":"https://media.discordapp.net/attachments/1463413285444653077/1476618260148654161/image.png?ex=69a1c76b&is=69a075eb&hm=c1a780b80bb0c4ee559070808e9c4b93771042382ad2303cc89e903900cbe83c&=&format=webp&quality=lossless&width=647&height=228"
+      "call1":"Stylish",
+      "img":"img/skills/stylish_up.png"
     },
     "Vigorous Up":{
       "show":"",

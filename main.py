@@ -5,6 +5,30 @@ from dotenv import load_dotenv
 import os
 import json
 import re
+import time
+
+class JSMT_bot(commands.Bot):
+    def __init__(self):
+        # Correction : command_prefix (sans 's')
+        super().__init__(command_prefix="!", intents=discord.Intents.all())
+
+    # CETTE FONCTION DOIT ÊTRE INDENTÉE ICI (DANS LA CLASSE)
+    async def setup_hook(self):
+        # Vérifie que le dossier existe
+        if not os.path.exists('./cogs'):
+            os.makedirs('./cogs')
+
+        for filename in os.listdir('./cogs'):
+            if filename.endswith('.py'):
+                extension = f'cogs.{filename[:-3]}'
+                try:
+                    await self.load_extension(extension)
+                    print(f'✅ {extension} loaded.')
+                except Exception as e:
+                    print(f'❌ Erreur sur {extension}: {e}')
+
+bot = JSMT_bot()
+bot.remove_command('help')
 
 #SOUP
 # 1. Configuration et Chargement
@@ -36,9 +60,7 @@ def load_skills_data():
         return {"baseskills": {}}
 
 SKILLS_DATA = load_skills_data()
-intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix="!", intents=intents)
+
 
 def load_all_data():
     with open('recipes.json', 'r', encoding='utf-8') as f1:
@@ -201,7 +223,7 @@ async def ferias(interaction: discord.Interaction, item: str):
         
         await interaction.response.send_message(view=view)
     else:
-        await interaction.response.send_message(f"❌ L'objet '{item}' n'existe pas dans la base Ferias.", ephemeral=True)
+        await interaction.response.send_message(f"❌ L'objet '{item}' n'existe pas sur Ferias.", ephemeral=True)
     
 class FeriasLinkView(discord.ui.View):
     def __init__(self, url: str, label: str):
@@ -211,43 +233,61 @@ class FeriasLinkView(discord.ui.View):
         
 # SKILLS
 class SkillCallView(discord.ui.View):
-    def __init__(self, calls, baseskills):
+    def __init__(self, call_data_map, baseskills):
         super().__init__(timeout=None)
-        for call_name in calls:
-            # On crée un bouton pour chaque talent dans 'calls'
-            self.add_item(SkillCallButton(call_name, baseskills))
+        # call_data_map est un dictionnaire { "call1": "NomDuTalent", "zcall1": "NomDuTalent" }
+        for key, skill_name in call_data_map.items():
+            # Si la clé commence par 'z', on met en rouge (danger), sinon gris (secondary/grey)
+            color = discord.ButtonStyle.danger if key.startswith("z") else discord.ButtonStyle.grey
+            self.add_item(SkillCallButton(skill_name, baseskills, color))
+
+import discord
+import re  # Indispensable pour le tri des clés skill1, skill2...
+
+class SkillCallView(discord.ui.View):
+    def __init__(self, call_data_map, baseskills):
+        super().__init__(timeout=None)
+        for key, skill_name in call_data_map.items():
+            color = discord.ButtonStyle.danger if key.startswith("z") else discord.ButtonStyle.grey
+            self.add_item(SkillCallButton(skill_name, baseskills, color))
 
 class SkillCallButton(discord.ui.Button):
-    def __init__(self, skill_name, baseskills):
-        super().__init__(label=skill_name, style=discord.ButtonStyle.grey)
+    def __init__(self, skill_name, baseskills, style):
+        super().__init__(label=skill_name, style=style)
         self.skill_name = skill_name
         self.baseskills = baseskills
 
+    # CETTE FONCTION DOIT ÊTRE INDENTÉE ICI (DANS LA CLASSE)
     async def callback(self, interaction: discord.Interaction):
-        # On récupère les infos du talent appelé
-        skill_info = self.baseskills.get(self.skill_name)
-        if not skill_info:
-            await interaction.response.send_message(f"❌ Données pour {self.skill_name} introuvables.", ephemeral=True)
-            return
+            skill_info = self.baseskills.get(self.skill_name)
+            if not skill_info:
+                await interaction.response.send_message(f"❌ Données pour {self.skill_name} introuvables.", ephemeral=True)
+                return
 
-        embed = discord.Embed(
-            title=f":link: **{self.skill_name}**",
-            color=discord.Color.green()
-        )
-        
-        img_url = skill_info.get("img")
-        if img_url:
-            embed.set_image(url=img_url)
+            embed = discord.Embed(title=f":link: **{self.skill_name}**", color=discord.Color.green())
+            
+            # Gestion de l'image locale
+            img_path = skill_info.get("img")
+            file = None
+            if img_path and os.path.exists(img_path):
+                file = discord.File(img_path, filename="sub_skill.png")
+                embed.set_image(url="attachment://sub_skill.png")
 
-        lines = []
-        skill_keys = [k for k in skill_info.keys() if "skill" in k]
-        for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
-            lines.append(f"・{skill_info[key]}")
+            lines = []
+            # On récupère les clés contenant "skill"
+            skill_keys = [k for k in skill_info.keys() if "skill" in k]
+            
+            # Tri numérique pour éviter que skill10 passe avant skill2
+            for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
+                lines.append(f"・{skill_info[key]}")
 
-        embed.description = "\n\n".join(lines)
-        
-        # On envoie la réponse en éphémère pour ne pas encombrer le chat
-        await interaction.response.send_message(embed=embed, ephemeral=True)
+            embed.description = "\n\n".join(lines)
+            
+            # Envoi de la réponse
+            if file:
+                await interaction.response.send_message(embed=embed, file=file, ephemeral=True)
+            else:
+                await interaction.response.send_message(embed=embed, ephemeral=True)
 
 async def skill_autocomplete(
     interaction: discord.Interaction,
@@ -279,15 +319,15 @@ async def skill(interaction: discord.Interaction, name: str):
     
     if name in baseskills:
         skill_info = baseskills[name]
+        embed = discord.Embed(title=f":book: **{name}**", color=discord.Color.blue())
         
-        embed = discord.Embed(
-            title=f":book: **{name}**",
-            color=discord.Color.blue()
-        )
-        
-        img_url = skill_info.get("img")
-        if img_url:
-            embed.set_image(url=img_url)
+        # --- Gestion de l'image locale ---
+        img_path = skill_info.get("img")
+        file = None
+        if img_path:
+            # On prépare le fichier. "filename" doit correspondre à l'attachment de l'url
+            file = discord.File(img_path, filename="skill_icon.png")
+            embed.set_image(url="attachment://skill_icon.png")
         
         description_lines = []
         skill_keys = [k for k in skill_info.keys() if "skill" in k]
@@ -296,18 +336,21 @@ async def skill(interaction: discord.Interaction, name: str):
         
         embed.description = "\n\n".join(description_lines)
 
-        # --- Gestion des Calls ---
-        call_keys = [k for k in skill_info.keys() if k.startswith("call")]
-        calls_found = [skill_info[ck] for ck in call_keys if skill_info[ck] in baseskills]
+        calls_map = {
+            k: skill_info[k] 
+            for k in skill_info.keys() 
+            if (k.startswith("call") or k.startswith("zcall")) and skill_info[k] in baseskills
+        }
 
-        if calls_found:
-            # On ajoute les boutons si des calls existent
-            view = SkillCallView(calls_found, baseskills)
-            await interaction.response.send_message(embed=embed, view=view)
-        else:
-            # Sinon, on envoie juste l'embed simple
-            await interaction.response.send_message(embed=embed)
-                
+        # On ajoute le paramètre 'file' à l'envoi
+        send_kwargs = {"embed": embed}
+        if file:
+            send_kwargs["file"] = file
+        if calls_map:
+            send_kwargs["view"] = SkillCallView(calls_map, baseskills)
+
+        # On utilise l'unpacking (**) pour envoyer seulement ce qui est défini
+        await interaction.response.send_message(**send_kwargs)
     else:
         await interaction.response.send_message(f"❌ Le talent '{name}' est introuvable.", ephemeral=True)
 
@@ -328,9 +371,9 @@ async def soup(ctx):
     try: await ctx.message.delete()
     except: pass
 
+    file = discord.File("img/com/soup.gif", filename="soup.gif")
     embed = discord.Embed(title="🍲 Quelle Soupe souhaites-tu ?", color=discord.Color.blue())
-    gif_url = "https://media.discordapp.net/attachments/1271081376283889735/1463413371230617783/terminalmontage-monster-hunter.gif?ex=6971bd68&is=69706be8&hm=05f69bbd21cb0ffdeadf2746f8513da987dff804f58e02c3c65aa50ea6187cee"
-    embed.set_image(url=gif_url)
+    embed.set_image(url="attachment://soup.gif")
 
     footer_text = (
             "🔴 : Guild Adventure Cat (Grand Voyage Destinations)\n"
@@ -340,7 +383,7 @@ async def soup(ctx):
             )
     embed.set_footer(text=footer_text)
 
-    await ctx.send(embed=embed, view=RecipePanel())
+    await ctx.send(file=file, embed=embed, view=RecipePanel())
 
 if token: bot.run(token)
 else:
