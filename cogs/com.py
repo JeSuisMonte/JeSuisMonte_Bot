@@ -10,7 +10,7 @@ class com(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        await ctx.send("Guides Principaux : `!guide` `!leaps` `!controller` `!ravi` `!diva` `!transcend` `!ass` \n\nUtilitaire : `!help` `/ferias` `/skill` `/monster-info` `!roadshop` `!poogie` `!hp` `!elements` `!mymissions` `!caravan` `!towersim` `!ravigem` `!ms` `!invite`\n\nFun : `!jsmt` `!bann` `!korinyi` `!hb2025`")
+        await ctx.send("Guides Principaux : `!guide` `!leaps` `!controller` `!ravi` `!diva` `!transcend` `!ass` \n\nUtilitaire : `!help` `/ferias` `/skill` `/monster-info` `!roadshop` `!poogie` `!hp` `!elements` `!mymissions` `!caravanskills` `!towersim` `!ravigem` `!ms` `!invite`\n\nFun : `!jsmt` `!bann` `!hb2025`")
 
     @commands.command()
     async def guide(self, ctx):
@@ -49,63 +49,65 @@ class com(commands.Cog):
 
     @commands.command()
     async def ravigem(self, ctx):
-        await ctx.send('https://media.discordapp.net/attachments/1271081376283889735/1271592997066117130/Untitled-2_copy.png?ex=69b88143&is=69b72fc3&hm=ea58d3e94837b06763563079127e6180c37330fcbd68c11db46aabbd87a78f23&=&format=webp&quality=lossless')
-
+        with open("/home/opc/bot/img/com/ravigem.webp", "rb") as f:
+            picture = discord.File(f)
+            await ctx.send(file=picture)
+            
     @commands.command()
     async def transcend(self, ctx):
         await ctx.send("Guide sur la Transcendance : https://docs.google.com/document/d/1X50OzRDhaS4Xvuvbwlkph_ruxhV_AvLBYUM3R2XHc6E/edit?usp=sharing")
 
     @commands.command()
     async def roadshop(self, ctx):
-        with open ("img/com/dpg.webp", "rb") as f:
+        with open ("/home/opc/bot/img/com/dpg.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send("## Prérequis du Roadshop\nVoici les prérequis afin de débloquer la majorité des objets du Roadshop.\n(*À noter que certains objets ont leurs propres prérequis.*)\n> Étage de Road = 20   |   Fatalis = 10 (Festi Gem, Festi Tkt)\n> Étage de Road = 45   |   Fatalis = 5 (Wht Fatalis Decos)\n> Étage de Road = 45   |   Fatalis = 5 (Tech/Hiden Cuffs and Decos)\n> Étage de Road = 45   |   Fatalis = 20 (Entrusted Secret Text)\n> Étage de Road = 50   |   Fatalis = 30 (Matériaux Musou)\n> Étage de Road = 50   |   Fatalis = 30 (10th Armor Voucher)\n> Étage de Road = 60   |   Fatalis = 10 (Superior Tkt)\n> Étage de Road = 62   |   Fatalis = 5 (PZ Cuffs)\n> Étage de Road  = 80  |   Fatalis = 30 (Premium ZP Armor tkt)\n> Étage de Road = 80   |   Fatalis = 30 (Ravi Deco)\n*Les matériaux Musou ne sont pas tous disponible en même temps, ils sont répartit sur deux listes alternant chaque semaine.\nLa rotation actuelle est indiquée ici : https://discord.com/channels/937230168223789066/1036849967895150602/1397759724681695334", file=picture)
 
     @commands.command()
     async def bann(self, ctx):
-        with open("img/com/bann.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/bann.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
 
     @commands.command()
     async def hb2025(self, ctx):
-        with open("img/com/hb2025.png", "rb") as f:
+        with open("/home/opc/bot/img/com/hb2025.png", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
             
     @commands.command()
     async def ms(self, ctx):
-        with open("img/com/ms.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/ms.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
 
     @commands.command()
     async def jsmt(self, ctx):
-        with open("img/com/jsmt.gif", "rb") as f:
+        with open("/home/opc/bot/img/com/jsmt.gif", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
 
     @commands.command()
     async def poogie(self, ctx):
-        with open ("img/com/poogie.webp", "rb") as f:
+        with open ("/home/opc/bot/img/com/poogie.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send("## Poogies de Guilde\n\nLes différents poogies présent dans le clan hall donnent différent buffs en fonction de leurs costumes.\nPour cela, il vous faudra les nourrir de poogie cracker, achetables dans le clan shop.\nCes buff durent jusqu'à ce que vous vous déconnectez (*idem si votre jeu crash*).\nVoici les costumes les plus importants ainsi que leurs effets.\n\nVous pouvez consulter les autres costumes ainsi que les matériaux requis sur le [Site de la Wycademy.](<https://wycademy.vercel.app/hunter-notes/locations/guild-hall?embed=guild-poogie-skills#guild-poogie-skills>)", file=picture)
 
     @commands.command()
     async def hp(self, ctx):
-        with open("img/com/hp.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/hp.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send("https://docs.google.com/spreadsheets/d/1U0A5oTth1aNYIu_5tlawzLBAC4447KGthpl5uMmyQm0/edit#gid=0", file=picture)
 
     @commands.command()
     async def korinyi(self, ctx):
-        with open("img/com/korinyi.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/korinyi.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
 
     @commands.command()
     async def gem(self, ctx):
-        with open("img/caravan/gem.png", "rb") as f:
+        with open("/home/opc/bot/img/caravan/gem.png", "rb") as f:
             picture = discord.File(f)
             await ctx.send(file=picture)
 
@@ -115,13 +117,13 @@ class com(commands.Cog):
 
     @commands.command()
     async def elements(self, ctx):
-        with open("img/com/elements.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/elements.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send("[Plus d'informations sur les éléments hybride](<https://wycademy.vercel.app/hunter-notes/getting-started/elements>)", file=picture)
 
     @commands.command()
     async def mymissions(self, ctx):
-        with open("img/com/mymissions.webp", "rb") as f:
+        with open("/home/opc/bot/img/com/mymissions.webp", "rb") as f:
             picture = discord.File(f)
             await ctx.send("## MY MISSIONS\nAfin d'augmenter rapidement le niveau de vos My Missions, vous pouvez utiliser des `My Mission Tkt`,"
             "achetable dans la road ou en effectuant la Bounty https://discord.com/channels/937230168223789066/1470332587741282358.\n"

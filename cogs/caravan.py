@@ -6,7 +6,7 @@ import os
 import json
 import re
 
-class caravan(commands.Cog):
+class caravanskills(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -25,7 +25,7 @@ class caravan(commands.Cog):
 
         def get_file_and_embed(self):
             """Génère l'objet File et l'Embed mis à jour pour la page actuelle."""
-            file_path = f"img/caravan/caravan{self.current_page}.png"
+            file_path = f"/home/opc/bot/img/caravan/caravan{self.current_page}.png"
             filename = f"caravan{self.current_page}.png"
             
             file = discord.File(file_path, filename=filename)
@@ -89,7 +89,7 @@ class caravan(commands.Cog):
                 pass
 
     @commands.command()
-    async def caravan(self, ctx):
+    async def caravanskills(self, ctx):
         # Suppression du message de commande de l'utilisateur
         try: 
             await ctx.message.delete()
@@ -102,4 +102,4 @@ class caravan(commands.Cog):
         view.message = await ctx.send(file=file, embed=embed, view=view)
 
 async def setup(bot):
-    await bot.add_cog(caravan(bot))
+    await bot.add_cog(caravanskills(bot))
