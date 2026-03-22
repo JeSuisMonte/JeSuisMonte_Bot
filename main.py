@@ -1,109 +1,79 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 from dotenv import load_dotenv
 import os
 import json
+import re
+import time
 
+class JSMT_bot(commands.Bot):
+    def __init__(self):
+        # Correction : command_prefix (sans 's')
+        intents = discord.Intents.default()
+        intents.message_content = True  # Pour lire les commandes comme !soup
+        intents.members = True
+        super().__init__(command_prefix="!", intents=discord.Intents.all())
+
+    # CETTE FONCTION DOIT ÊTRE INDENTÉE ICI (DANS LA CLASSE)
+    async def setup_hook(self):
+        # Vérifie que le dossier existe
+        if not os.path.exists('./cogs'):
+            os.makedirs('./cogs')
+
+        for filename in os.listdir('./cogs'):
+            if filename.endswith('.py'):
+                extension = f'cogs.{filename[:-3]}'
+                try:
+                    await self.load_extension(extension)
+                    print(f'✅ {extension} loaded.')
+                except Exception as e:
+                    print(f'❌ Erreur sur {extension}: {e}')
+
+bot = JSMT_bot()
+bot.remove_command('help')
+
+#SOUP
 # 1. Configuration et Chargement
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
-ID_CHANNEL = 1461789288201982168
 
-intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix="!", intents=intents)
+def load_ferias_items(file_path):
+    items_dict = {}
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        # Extraction de l'ID et du Nom
+        matches = re.findall(r'"([a-zA-Z0-9]+)":\["([^"]+)"', content)
+        for item_id, item_name in matches:
+            items_dict[item_name] = item_id
+    except FileNotFoundError:
+        print(f"Attention : {file_path} non trouvé.")
+    return items_dict
+
+FERIAS_DATA = load_ferias_items('itemlist.js')
+
+def load_skills_data():
+    try:
+        with open('skills.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print("Attention : skills.json non trouvé.")
+        return {"baseskills": {}}
+
+SKILLS_DATA = load_skills_data()
+
 
 def load_all_data():
     with open('recipes.json', 'r', encoding='utf-8') as f1:
         recipes = json.load(f1)
-    with open('ingre.json', 'r', encoding='utf-8') as f2:
+    with open('ingredient_list.json', 'r', encoding='utf-8') as f2:
         ingredients = json.load(f2)
     return recipes, ingredients
 
 recipes_data, ingre_data = load_all_data()
 
 # 2. Classes pour l'interface
-
-class TalentView(discord.ui.View):
-    def __init__(self, talents):
-        super().__init__(timeout=180)
-        self.talents = talents
-        self.current_page = 0
-        self.per_page = 5 
-        self.total_pages = (len(self.talents) - 1) // self.per_page + 1
-
-    def create_embed(self):
-        start = self.current_page * self.per_page
-        end = start + self.per_page
-        chunk = self.talents[start:end]
-
-        embed = discord.Embed(
-            title=f"📖 Guide des Talents ({self.current_page + 1}/{self.total_pages})",
-            color=discord.Color.gold()
-        )
-        for name, value in chunk:
-            embed.add_field(name=name, value=value, inline=False)
-        return embed
-
-    @discord.ui.button(label="⬅️ Précédent", style=discord.ButtonStyle.grey)
-    async def previous_page(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Si on recule alors qu'on est à la page 0 (index 0), on va à la dernière page
-        if self.current_page == 0:
-            self.current_page = self.total_pages - 1
-        else:
-            self.current_page -= 1
-        await interaction.response.edit_message(embed=self.create_embed(), view=self)
-
-    @discord.ui.button(label="Suivant ➡️", style=discord.ButtonStyle.grey)
-    async def next_page(self, interaction: discord.Interaction, button: discord.ui.Button):
-        # Si on avance alors qu'on est sur la dernière page, on revient à 0
-        if self.current_page >= self.total_pages - 1:
-            self.current_page = 0
-        else:
-            self.current_page += 1
-        await interaction.response.edit_message(embed=self.create_embed(), view=self)
-
-class TalentInfoButton(discord.ui.Button):
-    def __init__(self):
-        super().__init__(label="ℹ️ Info Talents", style=discord.ButtonStyle.secondary, row=4)
-
-    async def callback(self, interaction: discord.Interaction):
-        # Fusion des deux listes pour le système de pages
-        all_talents = [
-            ("Buchigiri", "Donne True Guts et Adrenaline+2."),
-            ("Unaffected+3", "Donne les effets de High-Grade Earplugs, Dragon Wind Breaker et Quake Res+1."),
-            ("Dragon Wind Breaker", "Garantie une protection contre le Vent Draconique (Dragon Wind)."),
-            ("Super HG Earplugs", "Garantie une protection contre les cris de Tier 3."),
-            ("Stun Negated", "Immunisé contre les stuns."),
-            ("Great Luck", "Augmente les récompenses standardes de quête de 29/32."),
-            ("Caring+3", "Les attaques des joueurs et PNJ ne vous affectent pas. \nVos attaques ne les affectent pas non plus."),
-            ("Adrenaline+2", "Multiplie votre attaque de 1.5 (1.3 Bowgun) quand vos HP sont inférieur à 40.\nL'augmentation de votre défense est fixée à 90."),
-            ("Peerless", "La consommation de stamina est divisée par deux (15 > 8 unités).\nLa consommation de stamina durant une esquive ou une garde est réduite de 50%."),
-            ("Goddess' Embrace", "Garanti une chance sur quatre de ne recevoir aucun dégât d'une attaque."),
-            ("Hunger Negated", "La longueur de votre jauge de stamina ne diminue plus."),
-            ("Wide-Area+3", "En plus des items concernés par Wide-Area+2, les items suivant affectent vos alliés présent dans la même zone que vous : Mega Potions, Blight Cure Fruits, Zenith Espinas Antitoxin, Crimson Raviente Blood."),
-            ("Wide-Area+2", "Les items suivant affectent vos alliés présent dans la même zone que vous :\n*Herbs, Potions, Antidotes, Cool Drinks, Hot Drinks, Armor Seed, Power Seed.*"),
-            ("Hasard Res (Large)", "Réduit la diminution de vie infligée par la lave, ainsi qu'1/3 de la vitesse de la réduction de vie causée par la chaleur."),
-            ("Divine Whim", "Immunisé contre les stuns."),
-            ("Paralysis Negated", "Immunisé face à la paralysie."),
-            ("Sleep Negated", "Immunisé face au sommeil."),
-            ("Poison Negated", "Immunisé face au poison."),
-            ("All Res+20", "+20 de chaque résistance élémentaire."),
-            ("Fire Res+30", "+30 de résistance au Feu."),
-            ("Water Res+30", "+30 de résistance à l'Eau."),
-            ("Ice Res+30", "+30 de résistance à la Glace. "),
-            ("Thunder Res+30", "+30 de résistance à la Foudre."),
-            ("Dragon Res+30", "+30 de résistance à l'élément Dragon."),
-            ("Medical Sage", "Les objets de soin soignent instantanément les points de vie rouge.\nEffet Supplémentaire en fonction du nombre de joueur possédant ce talent :\n - 2 : Les objets de soin affectent tous le monde.\n- 3 : +20 points de vie supplémentaire.\n- 4 : +50 points de vie supplémentaire.\nLe talent Recovery s'additionne à Medical Sage (**concerne uniquement les objets de soin**, *ex : Max Potion = Oui, Ancient Potion = Non*) "),
-            ("Encourage+2", "Donne l'effet de Horn Maestro, ainsi qu'Evasion+2 et Stun Halved pour toute l'équipe.\n(Horn Maestro : -50% de chance que les cornes se brisent. La durée des effets des cornes est multipliée par 1,5, concerne aussi les HH)."),
-            ("Assistance", "Le bras du joueur brille en rouge, +20 d'attaque et +50 de défense en plus de donner les effets de Damage Recovery Speed+2, Status Immunity et Peerless aux joueurs proches.\nLa zone effective est de 3 roulades (ou 2 avec Evade Distance Up).\nLes bras des joueurs affectés brilleront en jaune.\nLe joueur possédant le talent gagne +20 d'attaque et +50 de défense mais ne bénéficie pas de Peerless, Status Immunity ou Damage Recovery Speed.\nLes talents d'Assistance écraseront leurs versions inférieures si d'autres joueurs affectées les possèdent.\n(Status Halved -> Remplacé par Status Immunity. Immunity Myriad -> Conservé car supérieur à Status Immunity)."),
-            ("Red Soul", "+15 d'attaque.\nAttaquer un autre joueur lui donne +30 d'attaque.\nAttaquer un joueur possédant Blue Soul lui donne +100 de défense ainsi que l'effet du talent Goddess' Embrace pendant 2 minutes. +30 d'attaque si attaqué par un joueur possédant Blue Soul,\nvous pourrez aussi stun un monstre avec n'importe quelle arme en frappant la tête, **dure 2 minutes**.\nL'attaque supplémentaire est une stat additionnelle **ignorant** les multiplicateurs des autres talents des joueurs concernés."),
-            ("Blue Soul", "+50 de défense.\nAttaquer un autre joueur donne +100 de défense.\nAttaquer un joueur possdéant Blue Soul alors qu'il est touché par une affliction ou un effet de status les annuleront.\nÊtre attaqué par un joueur possédant Red Soul donne +100 de défense et active l'effet du talent Goddess' Embrace, **dure 2 minutes**."),
-            ("Incitement", "Attaquer un monstre forcera son attention sur vous en plus de donner +40 d'attaque, les dégâts reçu par ce monstre seront réduit durant cette période.\nL'icone de yeux jaunes indique que vous êtes reprérés, les yeux rouge signifient que l'effet du talent est actif.\nSe tenir trop longtemps éloigné de la portée du monstre annule prématurément l'effet du talent.\nIncitement se recharge au bout de **30 secondes**.")
-        ]
-        
-        view = TalentView(all_talents)
-        await interaction.response.send_message(embed=view.create_embed(), view=view, ephemeral=True)
 
 class RecipeButton(discord.ui.Button):
     def __init__(self, recipe_key, label, style):
@@ -137,9 +107,12 @@ class RecipeButton(discord.ui.Button):
         embed.add_field(name="Ingrédients 3", value=format_line(recipe['ingre3']), inline=False)
         embed.add_field(name="Ingrédients 4", value=format_line(recipe['ingre4']), inline=False)
         
-        results = (f"Great Success : {recipe['great_success']}\nSucces : {recipe['success']}\n"
+        results = (f"Great Success : {recipe['great_success']}\nSuccess : {recipe['success']}\n"
                    f"Failure : {recipe['failure']}\nGreat Failure : {recipe['great_failure']}")
         embed.add_field(name="Résultats", value=results, inline=False)
+
+        legende = (f"🔴 : Guild Adventure Cat (Grand Voyage Destinations)\n🔵 : Guild Adventure Cat\n🟢 : Guild Shop ou Guild Adventure Cat\n🟣 : Gutsy Meat : Road Shop | Taiko Olive : Weekly Market")
+        embed.add_field(name="Légende",value=legende,inline=False)
 
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
@@ -203,7 +176,6 @@ class RecipePanel(discord.ui.View):
         self.add_item(switch_btn)
 
         # Ajout du bouton Info Talents tout à droite
-        self.add_item(TalentInfoButton())
 
     async def prev_page(self, interaction: discord.Interaction):
         self.current_page -= 1
@@ -220,20 +192,201 @@ class RecipePanel(discord.ui.View):
         self.update_buttons()
         await interaction.response.edit_message(view=self)
 
+
+# FERIAS
+
+# Fonction qui gère les suggestions pendant que l'utilisateur écrit
+async def item_autocomplete(
+    interaction: discord.Interaction,
+    current: str,
+) -> list[app_commands.Choice[str]]:
+    choices = []
+    current_lower = current.lower()
+
+    # On parcourt FERIAS_DATA
+    # name = "Book of Combos 1" (la clé)
+    # data = ["Nom", ..., "0001", "Description"] (la liste)
+    for name, data in FERIAS_DATA.items():
+        item_id = str(data) # L'ID est à l'index 5 selon ton exemple "0001"
+        
+        # On vérifie si ce que l'utilisateur tape est dans le NOM ou dans l'ID
+        if current_lower in name.lower() or current_lower in item_id.lower():
+            choices.append(
+                app_commands.Choice(
+                    name=f"{item_id} - {name}", # Ce qu'il voit : "0001 - Book..."
+                    value=name                  # Ce que la commande reçoit : "Book..."
+                )
+            )
+        
+        if len(choices) >= 25:
+            break
+            
+    return choices
+
+@bot.tree.command(name="ferias", description="Chercher un objet sur Ferias")
+@app_commands.autocomplete(item=item_autocomplete)
+@app_commands.describe(item="Le nom de l'objet")
+async def ferias(interaction: discord.Interaction, item: str):
+    item_id = FERIAS_DATA.get(item)
+    
+    if item_id:
+        # Construction de l'URL
+        url = f"https://xl3lackout.github.io/MHFZ-Ferias-English-Project/sozai/sozai.htm?{item_id}"
+        
+        # On utilise la classe FeriasLinkView que tu as déjà définie
+        # On passe 'item' pour que le label du bouton soit le nom de l'objet
+        view = FeriasLinkView(url=url, label=item)
+        
+        await interaction.response.send_message(view=view)
+    else:
+        await interaction.response.send_message(f"❌ L'objet '{item}' n'existe pas sur Ferias.", ephemeral=True)
+    
+class FeriasLinkView(discord.ui.View):
+    def __init__(self, url: str, label: str):
+        super().__init__()
+        # On ajoute un bouton de type "Lien" (style gris par défaut sur Discord)
+        self.add_item(discord.ui.Button(label=label, url=url, style=discord.ButtonStyle.link))
+        
+# SKILLS
+class SkillCallView(discord.ui.View):
+    def __init__(self, call_data_map, baseskills):
+        super().__init__(timeout=None)
+        # call_data_map est un dictionnaire { "call1": "NomDuTalent", "zcall1": "NomDuTalent" }
+        for key, skill_name in call_data_map.items():
+            # Si la clé commence par 'z', on met en rouge (danger), sinon gris (secondary/grey)
+            color = discord.ButtonStyle.danger if key.startswith("z") else discord.ButtonStyle.grey
+            self.add_item(SkillCallButton(skill_name, baseskills, color))
+
+import discord
+import re  # Indispensable pour le tri des clés skill1, skill2...
+
+class SkillCallView(discord.ui.View):
+    def __init__(self, call_data_map, baseskills):
+        super().__init__(timeout=None)
+        for key, skill_name in call_data_map.items():
+            color = discord.ButtonStyle.danger if key.startswith("z") else discord.ButtonStyle.grey
+            self.add_item(SkillCallButton(skill_name, baseskills, color))
+
+class SkillCallButton(discord.ui.Button):
+    def __init__(self, skill_name, baseskills, style):
+        super().__init__(label=skill_name, style=style)
+        self.skill_name = skill_name
+        self.baseskills = baseskills
+
+    # CETTE FONCTION DOIT ÊTRE INDENTÉE ICI (DANS LA CLASSE)
+    async def callback(self, interaction: discord.Interaction):
+            skill_info = self.baseskills.get(self.skill_name)
+            if not skill_info:
+                await interaction.response.send_message(f"❌ Données pour {self.skill_name} introuvables.", ephemeral=True)
+                return
+
+            embed = discord.Embed(title=f":link: **{self.skill_name}**", color=discord.Color.green())
+            
+            # Gestion de l'image locale
+            img_path = skill_info.get("img")
+            file = None
+            if img_path and os.path.exists(img_path):
+                file = discord.File(img_path, filename="sub_skill.png")
+                embed.set_image(url="attachment://sub_skill.png")
+
+            lines = []
+            # On récupère les clés contenant "skill"
+            skill_keys = [k for k in skill_info.keys() if "skill" in k]
+            
+            # Tri numérique pour éviter que skill10 passe avant skill2
+            for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
+                lines.append(f"・{skill_info[key]}")
+
+            embed.description = "\n\n".join(lines)
+            
+            # Envoi de la réponse
+            if file:
+                await interaction.response.send_message(embed=embed, file=file, ephemeral=True)
+            else:
+                await interaction.response.send_message(embed=embed, ephemeral=True)
+
+async def skill_autocomplete(
+    interaction: discord.Interaction,
+    current: str,
+) -> list[app_commands.Choice[str]]:
+    choices = []
+    baseskills = SKILLS_DATA.get("baseskills", {})
+    search_text = current.lower()
+    
+    for skill_name, data in baseskills.items():
+        show_val = data.get("show", "").replace("*", "") # On nettoie les étoiles
+        
+        # On vérifie si la recherche match le NOM du talent OU le champ SHOW
+        if search_text in skill_name.lower() or search_text in show_val.lower():
+            
+            # Label affiché dans la liste : "Herbal Science (Medical Sage)"
+            display_name = f"{skill_name} ({show_val})" if show_val else skill_name
+            
+            # La VALUE reste toujours skill_name pour que la commande /skill le trouve dans le JSON
+            choices.append(app_commands.Choice(name=display_name[:100], value=skill_name))
+            
+    return choices[:25]
+
+@bot.tree.command(name="skill", description="Afficher les paliers d'un talent")
+@app_commands.autocomplete(name=skill_autocomplete)
+@app_commands.describe(name="Nom du talent")
+async def skill(interaction: discord.Interaction, name: str):
+    baseskills = SKILLS_DATA.get("baseskills", {})
+    
+    if name in baseskills:
+        skill_info = baseskills[name]
+        embed = discord.Embed(title=f":book: **{name}**", color=discord.Color.blue())
+        
+        # --- Gestion de l'image locale ---
+        img_path = skill_info.get("img")
+        file = None
+        if img_path:
+            # On prépare le fichier. "filename" doit correspondre à l'attachment de l'url
+            file = discord.File(img_path, filename="skill_icon.png")
+            embed.set_image(url="attachment://skill_icon.png")
+        
+        description_lines = []
+        skill_keys = [k for k in skill_info.keys() if "skill" in k]
+        for key in sorted(skill_keys, key=lambda x: int(re.search(r'\d+', x).group())):
+            description_lines.append(f"・{skill_info[key]}")
+        
+        embed.description = "\n\n".join(description_lines)
+
+        calls_map = {
+            k: skill_info[k] 
+            for k in skill_info.keys() 
+            if (k.startswith("call") or k.startswith("zcall")) and skill_info[k] in baseskills
+        }
+
+        # On ajoute le paramètre 'file' à l'envoi
+        send_kwargs = {"embed": embed}
+        if file:
+            send_kwargs["file"] = file
+        if calls_map:
+            send_kwargs["view"] = SkillCallView(calls_map, baseskills)
+
+        # On utilise l'unpacking (**) pour envoyer seulement ce qui est défini
+        await interaction.response.send_message(**send_kwargs)
+    else:
+        await interaction.response.send_message(f"❌ Le talent '{name}' est introuvable.", ephemeral=True)
+
 # 3. Commandes
 @bot.event
 async def on_ready():
+    # On synchronise les commandes slash
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        print(e)
     print(f"{bot.user} is live !")
 
 @bot.command()
+@commands.has_role(1467271522497331414)
 async def soup(ctx):
-    if ctx.channel.id != ID_CHANNEL: return 
-    try: await ctx.message.delete()
-    except: pass
-
+    file = discord.File("img/com/soup.gif", filename="soup.gif")
     embed = discord.Embed(title="🍲 Quelle Soupe souhaites-tu ?", color=discord.Color.blue())
-    gif_url = "https://media.discordapp.net/attachments/1271081376283889735/1461807631604912283/ezgif-63a0d38c5b45b78c.gif"
-    embed.set_image(url=gif_url)
+    embed.set_image(url="attachment://soup.gif")
 
     footer_text = (
             "🔴 : Guild Adventure Cat (Grand Voyage Destinations)\n"
@@ -243,7 +396,14 @@ async def soup(ctx):
             )
     embed.set_footer(text=footer_text)
 
-    await ctx.send(embed=embed, view=RecipePanel())
+    await ctx.send(file=file, embed=embed, view=RecipePanel())
+
+@soup.error
+async def soup_error(ctx, error):
+    if isinstance(error, commands.MissingRole):
+        await ctx.send("You don't have the permission required for this command.", delete_after=15)
+    else:
+        print(f"Error with !soup : {error}")
 
 if token: bot.run(token)
 else:

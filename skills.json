@@ -1,0 +1,1371 @@
+{
+  "baseskills": {
+    "Health":{
+      "show":"*Health+50*",
+      "skill1":"**Health +50**\n +50 Points de Vie.",
+      "skill2":"**Health +40**\n +40 Points de Vie.",
+      "skill3":"**Health +30**\n +30 Points de Vie.",
+      "skill4":"**Health +20**\n +20 Points de Vie.",
+      "skill5":"**Health +10**\n +10 Points de Vie.",
+      "skill6":"**Health -10**\n -10 Points de Vie.",
+      "skill7":"**Health -20**\n -20 Points de Vie.",
+      "skill8":"**Health -30**\n -30 Points de Vie."
+    },
+    "Recovery Speed":{
+      "show":"",
+      "skill1":"**Recovery Speed+2**\n Vitesse de régénération des Points de Vie multipliée par 4.",
+      "skill2":"**Recovery Speed +1**\n Vitesse de régénération des Points de Vie multipliée par 3.",
+      "skill3":"**Recovery Speed -1**\n Vitesse de régénération des Points de Vie divisée par 3.",
+      "skill4":"**Recovery Speed -2**\n Vitesse de régénération des Points de Vie divisée par 4."
+    },
+    "Hunger":{
+      "show":"*Hunger Negated, Halved, Up*",
+      "skill1":"**Hunger Negated**\n La longueur de la barre d'endurance ne baisse plus",
+      "skill2":"**Hunger Halved**\n Vitesse de réduction de la barre d'endurance est divisée par 0,5.",
+      "skill3":"**Hunger Up (Sm)**\n Vitesse de réduction de la barre d'endurance est multipliée par 1,5.",
+      "skill4":"**Hunger Up (Lg)**\n Vitesse de réduction de la barre d'endurance est multipliée par 2."
+    },
+    "Recovery":{
+      "show":"*Recovery Items Up, Down*",
+      "skill1":"**Recovery Items Up**\n L'effet des objets de soin est multiplié par 1,25.",
+      "skill2":"**Recovery Items Down**\n L'effet des objets de soin est divisé par 0,75."
+    },
+    "Vampirism":{
+      "show":"",
+      "skill1":"**Vampirism +2**\n80% de chance de récupérer des Points de Vie et d'augmenter l'attaque lorsque vous attaquez un monstre.\n\nLes Points de Vie restaurés sont 70% supérieurs à ceux de Vampirism+1 (ex : 6PV -> 10PV).\n\n*En dehors du soin, applique les mêmes effets que Vampirism+1.*",
+      "skill2":"**Vampirism +1**\n60% de chance de récupérer des Points de Vie et d'augmenter l'attaque lorsque vous attaquez un monstre.\n\nAugmente l'attaque à chaque activation jusqu'à une limite de 80 d'attaque (nombre de coups requis varient en fonction de l'arme).\n\nLe bonus d'attaque se réinitialise dès qu'un coup d'un grand monstre vous touche.\n\nToutes les attaques comme la Gunlance Heat Blade ou les effets similaires à Fencing+2 activent Vampirism.\n\nLe soin se base sur les dégâts infligés, environ 2-4% pour un minimum de 1 Point de Vie rendu.\nCette valeur diminue proportionnellement en fonction des Motion Values, bien qu'elle augmente avec les dégâts infligés.",
+      "img":"img/skills/vampirism.png",
+      "zcall1":"Vampirism Up"
+    },
+    "Herbal Science":{
+      "show":"*Medical Sage*",
+      "skill1":"Les objets de soin régénèrent instantanément les Points de Vie rouge.\n\nEffet Supplémentaire en fonction du nombre de joueurs possédant cet effet :\n - 2 : Les objets de soin affectent tout le monde.\n- 3 : +20 Points de Vie supplémentaires.\n- 4 : +50 Points de Vie supplémentaires.\n\n※ Le talent Recovery s'additionne à Medical Sage.\nConcerne uniquement les objets de soin.\n(*ex : Max Potion = Oui, Ancient Potion = Non*)"
+    },
+    "Stamina Recovery":{
+      "show":"*Stamina Recovery Up (Large), Rec (Small), Rec Down*",
+      "skill1":"**Stamina Recovery Up (Large)**\n Double la vitesse de récupération d'endurance.",
+      "skill2":"**Stamina Rec (Small)**\n Divise la vitesse de récupération d'endurance par 1,5.",
+      "skill3":"**Stamina Rec Down**\n Divise la vitesse de récupération d'endurance par 2."
+    },
+    "Stamina":{
+      "show":"*Peerless, Marathon Runner, Short Sprinter*",
+      "skill1":"**Peerless**\n La cadence de la consommation d'endurance est divisée par 2.\n(*8 unités au lieu de 15*)\nAjouté à cela, elle est réduite à 50% lors d'une esquive ou une garde.",
+      "skill2":"**Marathon Runner**\n La cadence de la consommation d'endurance est divisée par 2.\n(*8 unités au lieu de 15*)\nAjouté à cela, elle est réduite à 75% lors d'une esquive ou une garde.",
+      "skill3":"**Short Sprinter**\n La cadence de la consommation d'endurance est multipliée par 1,2.\n(*18 unités au lieu de 15*)"
+    },
+    "Eating":{
+      "show":"*Speed Eating, Slow Eating*",
+      "skill1":"**Speed Eating**\n Augmente la vitesse de consommation des objets consommables, comme de la viande ou des potions.",
+      "skill2":"**Slow Eating**\n Réduit la vitesse de consommation des objets consommables."
+    },
+    "Gluttony":{
+      "show":"*Scavenger, Groumand*",
+      "skill1":"**Scavenger**\n Utiliser un objet consommable restaure 25 d'endurance max.",
+      "skill2":"**Gourmand**\n Consommer de la viande restaure 25 d'endurance en plus (*75 unités au lieu de 50*)."
+    },
+    "Strong Attack":{
+      "show":"",
+      "skill1":"**Strong Attack +6**\nAttaque +200",
+      "skill2":"**Strong Attack +5**\nAttaque +150",
+      "skill3":"**Strong Attack +4**\nAttaque +80",
+      "skill4":"**Strong Attack +3**\nAttaque +50",
+      "skill5":"**Strong Attack +2**\nAttaque +35",
+      "skill6":"**Strong Attack +1**\nAttaque +20",
+      "skill7":"*Note : Ne se cumule pas aux autres effets augmentant l'attaque.*"
+    },
+    "Attack":{
+      "show":"*Attack Up*",
+      "skill1":"**Attack Up (Absolute)**\nAttaque +50",
+      "skill2":"**Attack Up (Very Large)**\nAttaque +30",
+      "skill3":"**Attack Up (Large)**\nAttaque +20",
+      "skill4":"**Attack Up (Medium)**\nAttaque +10",
+      "skill5":"**Attack Up (Small)**\nAttaque +5"
+    },
+    "Lone Wolf":{
+      "show":"",
+      "skill1":"Attaque +100 lorsqu'il n'y a aucun joueur ou PNJ (*Partner, Partnya, Rastas..*) dans la même zone.\nHalks autorisés."
+    },
+    "Adrenaline":{
+      "show":"*Adrenaline, Worry*",
+      "skill1":"**Adrenaline +2**\n En dessous de 40 points de vie, +50% d'Attaque (*+30% pour Artilleur*) ainsi que +90 de Défense.",
+      "skill2":"**Adrenaline +1**\n En dessous de 40 points de vie, +90 de Défense.\nNote : À 40 points de vie, l'Attaque ne change normalement pas, mais la défense augmente de 60.",
+      "skill3":"**Worry**\n En dessous de 40 points de vie, -30% d'Attaque et -45 de Défense."
+    },
+    "Issen":{
+      "show":"",
+      "skill1":"**Issen +3**\n Affinité +20% et augmente le taux de dégâts crittique à 1,50 (1,25 de base). S'additionne aux autres multiplicateurs.",
+      "skill2":"**Issen +2**\n Affinité +10% et augmente le taux de dégâts crittique à 1,40. S'additionne aux autres multiplicateurs.",
+      "skill3":"**Issen +1**\n Affinité +5% et augmente le taux de dégâts crittique à 1,35. S'additionne aux autres multiplicateurs."
+    },
+    "Expert":{
+      "show":"Critical Eye",
+      "skill1":"**Critical Eye +5**\n Affinité +50%.",
+      "skill2":"**Critical Eye +4**\n Affinité +40%.",
+      "skill3":"**Critical Eye +3**\n Affinité +30%.",
+      "skill4":"**Critical Eye +2**\n Affinité +20%.",
+      "skill5":"**Critical Eye +1**\n Affinité +10%."
+    },
+    "Skilled":{
+      "show":"",
+      "skill1":"Donne les effets Speed Eating, Movement Speed Up+2, True Guts et Weapon Handling.",
+      "call1":"Eating",
+      "call2":"Movement Speed",
+      "call3":"Guts",
+      "call4":"Weapon Handling"
+    },
+    "Trained":{
+      "show":"",
+      "skill1":"**Trained +2**\n Donne les effets de Focus +2 et Kickboxing King. Empêche vos attaques d'atteindre les autres joueurs.",
+      "skill2":"**Trained +1**\n Donne les effets de Focus +1 et Martial Arts. Empêche vos attaques d'atteindre les autres joueurs.",
+      "call1":"Focus",
+      "call2":"Martial Arts"
+    },
+    "Abnormality":{
+      "show":"",
+      "skill1":"Donne les effets Status Attack Up, Status Pursuit et Drug Knowledge",
+      "call1":"Status Attack",
+      "call2":"Status Assault",
+      "call3":"Drug Knowledge"
+    },
+    "Critical Conversion":{
+      "show":"",
+      "skill1":"Affinité +30%.\nQuand l'Affinité dépasse 100%, l'Attaque augmente en fonction du résultat arrondi vers l'inférieur de la formule √(Affinité excédentaire) x 7.",
+      "zcall1":"Critical Conversion Up"
+    },
+    "Exploit Weakness":{
+      "show":"Exploit Weakness, Reduce Weakness",
+      "skill1":"**Exploit Weakness**\n +5 de Hitzone Value lorsqu'une attaque atteint une partie dont la Hitzone Value est supérieure ou égale à 30. Les dégâts élémentaires ne changent pas.",
+      "skill2":"**Reduce Weakness**\n -5 de Hitzone Value lorsqu'une attaque atteint une partie dont la Hitzone Value est supérieure ou égale à 35. Les dégâts élémentaires ne changent pas."
+    },
+    "Stylish Assault":{
+      "show":"",
+      "skill1":"Esquiver à travers une attaque donne +100 de True Attack pendant une période de temps dépendant du type d'arme et de la classe.",
+      "img":"img/skills/stylish_assault.png",
+      "zcall1":"Stylish Assault Up"
+    },
+    "Dissolver":{
+      "show":"Elemental Exploit, Elemental Diffusion",
+      "skill1":"**Elemental Exploit**\n Augmente l'efficacité élémentaire sur les hitzones des monstres, cette valeur dépend du type d'arme et de la classe.",
+      "skill2":"**Elemental Diffusion**\n Réduit de -5 l'efficacité élémentaire sur les hitzones des monstres quand celle-ci est égale ou supérieure à 20.",
+      "zcall1":"Dissolver Up",
+      "img":"img/skills/dissolver.png"
+    },
+    "Status Assault":{
+      "show":"Status Pursuit",
+      "skill1":"Dégâts flat additionnels si l'on inflige des dégâts d'affliction à un monstre souffrant de cette même affliction. Le sommeil obtient +10 de hitzone value à la place des dégâts.\n\nLes dégâts flat dépendent du type d'arme et de la valeur de leurs afflictions.\n\nCouplé à Drug Knowledge garantis ces dégâts flat pour chaque coup (dégâts d'affliction garantis à chaque coup).\n\n※ Fencing+2 ne s'ajoute pas aux dégâts supplémentaire (seulement 20% de sa valeur).\n\n※ Status Assault n'a aucun effet sur le Raviente même s'il est atteint par la bonne affliction.",
+      "img":"img/skills/status_pursuit.png"
+    },
+    "Drug Knowledge":{
+      "show":"",
+      "skill1":"Dégâts des armes à afflictions +25% de la valeur de leur affliction.\nDésormais toutes les attaques infligent des dégâts d'affliction.\n※ Par défaut, la valeur des afflictions d'arme est de x0.38, additionné à 25% de leur vrai statut de base.",
+      "zcall1":"Drug Knowledge Up"
+    },
+    "Status Attack":{
+      "show":"Status Attack Up",
+      "skill1":"**Status Attack Up**\nPoison, Paralysie et Sommeil multipliés par 1,125."
+    },
+    "Bomb Boost":{
+      "show":"Bomber",
+      "skill1":"**Bomber**\nPuissance des bombes +50%.\nAugmente les dégâts de l'affliction explosion des bombes.\n100% de taux de réussite des combinaisons pour n'importe quel type de bombe."
+    },
+    "Gunnery":{
+      "show":"Artillery God, Expert, Novice",
+      "skill1":"**Artillery God**\nDégâts des munitions de baliste +30%.\nDégâts Raw des cartouches de Gunlance +30%/\nDégâts Raw du feu de wyverne +40%.\n+50% des dégâts Raw des munitions Crag (Antiblindage) et Cluster S (Fragmentation).\n+30% des dégâts du laser du HBG.\n+60% des dégâts du Dragon Spirit Detonation au Tonfa.",
+      "skill2":"**Artillery Expert**\nDégâts des munitions de baliste +20%.\nDégâts Raw des cartouches de Gunlance +20%.\nDégâts Raw du feu de wyverne +30%.\n+50% des dégâts Raw des munitions Crag (Antiblindage) et Cluster S (Fragmentation).\n+20% des dégâts du laser du HBG.\n+40% des dégâts du Dragon Spirit Detonation au Tonfa.",
+      "skill3":"**Artillery Novice**\nDégâts des munitions de baliste +10%.\nDégâts Raw des cartouches de Gunlance +10%.\nDégâts Raw du feu de wyverne +20%.\n+50% des dégâts Raw des munitions Crag (Antiblindage) et Cluster S (Fragmentation).\n+10% des dégâts du laser du HBG.\n+25% des dégâts du Dragon Spirit Detonation au Tonfa."
+    },
+    "Fire Attack":{
+      "show":"",
+      "skill1":"**Fire Attack (Large)**\nDégâts de Feu +20%.",
+      "skill2":"**Fire Attack (Small)**\nDégâts de Feu +10%."
+    },
+    "Water Attack":{
+      "show":"",
+      "skill1":"**Water Attack (Large)**\nDégâts d'Eau +20%.",
+      "skill2":"**Water Attack (Small)**\nDégâts d'Eau +10%."
+    },
+    "Thunder Attack":{
+      "show":"",
+      "skill1":"**Thunder Attack (Large)**\nDégâts de Foudre +20%.",
+      "skill2":"**Thunder Attack (Small)**\nDégâts de Foudre +10%."
+    },
+    "Ice Attack":{
+      "show":"",
+      "skill1":"**Ice Attack (Large)**\nDégâts de Glace +20%.",
+      "skill2":"**Ice Attack (Small)**\nDégâts de Glace +10%."
+    },
+    "Dragon Attack":{
+      "show":"",
+      "skill1":"**Dragon Attack (Large)**\nDégâts Dragon +20%.",
+      "skill2":"**Dragon Attack (Small)**\nDégâts Dragon +10%."
+    },
+    "Martial Arts":{
+      "show":"Kickboxing King, Martial Arts",
+      "skill1":"**Kickboxing King**\n Les coups de pied infligent 15 de dégâts et deviennent des coups de pied retourné lorsque le joueur est debout, ou des coups de pied sauté quand le joueur se déplace.\nLes coups de pieds aux Tonfa infligent des dégâts supplémentaires en plus d'augmenter le temps passé en l'air pour toutes les attaques aériennes.",
+      "skill2":"**Martial Arts**\n Les coups de pied infligent 15 de dégâts.\nLes dégâts des coups de pied aux Tonfa augmentent légèremment."
+    },
+    "Survivor":{
+      "show":"Tenacity, Fortify",
+      "skill1":"**Tenacity**\nPour chaque cart :\n1er Cart : Attaque +15, Défense +100.\n2nd Cart : Attaque +20, Défense +150.\n※ Ne fonctionne pas contre le Raviente ou en quête Caravane.",
+      "skill2":"**Fortify**\nPour chaque cart :\n1er Cart : Attaque +5, Défense +50.\n2nd Cart : Attaque +10, Défense +100.\n※ Ne fonctionne pas contre le Raviente ou en quête Caravane."
+    },
+    "Rage":{
+      "show":"Buchigiri, Wrath Awoken",
+      "skill1":"**Buchigiri**\nDonne True Guts et Adrenaline+2.",
+      "skill2":"**Wrath Awoken**\nDonne True Guts et Adrenaline+1.",
+      "call1":"Guts",
+      "call2":"Adrenaline"
+    },
+    "Fasting":{
+      "show":"Starving Wolf",
+      "skill1":"**Starving Wolf +2**\nAffinitée +50%.\nDonne Evasion +2.\nTaux de dégâts Critiques +0.10 (1.25 -> 1.35).\nS'active quand la barre d'endurance est réduite au minimum.",
+      "skill2":"**Starving Wolf +1**\nAffinitée +50%.\nDonne Evasion +1.\nS'active quand la barre d'endurance est réduite au minimum. La priorité est donnée aux effets de plus haut niveau.",
+      "call1":"Evasion"
+    },
+    "Focus":{
+      "show":"",
+      "skill1":"**Focus +2**\n Charge d'attaque -20% pour : GS, Hammer, LS, HBG, Lance, Tonfa, Swaxe F.\nAugmente de 20% le remplissage des jauges de : LS, Swaxe F en mode épée, Tonfa.\nLa jauge du laser du HBG gagne 2 unités supplémentaire par tir (*n'affecte pas les arcs*).",
+      "skill2":"**Focus +1**\n Charge d'attaque -10% pour : GS, Hammer, LS, HBG, Lance, Tonfa, Swaxe F.\nAugmente de 10% le remplissage des jauges de : LS, Swaxe F en mode épée, Tonfa.\nLa jauge du laser du HBG gagne 2 unités supplémentaire par tir (*n'affecte pas les arcs*).",
+      "skill3":"**Distraction**\nAugmente de 20% la durée de charge d'attaque pour : GS, Hammer, LS, HBG, Lance, Swaxe F.\nRéduit de 20% le remplissage des jauges de : LS, Swaxe F en mode épée, Tonfa.\nLa jauge du laser du HBG perd 1 unité par tir (*n'affecte pas les arcs*)."
+    },
+    "Charge Attack Up":{
+      "show":"",
+      "skill1":"**Charge Attack Up +2**\nAugmente grandement les Motion Values en fonction des mouvements d'arme indiqués sur le tableau ci-dessous.\n※ Cet effet n'augmente pas les Motion Values par pourcentage ou multiplicateur fixe, celles-ci varient en fonction des dégâts de chaque attaque.\n(*Ex : Shining Sword (GS) passe de 27MV à 47MV, ayant une augmentation de 74%*)",
+      "skill2":"**Charge Attack Up +1**\nAugmente les Motion Values en fonction des mouvements d'arme indiqués sur le tableau ci-dessous.\n※ Cet effet n'augmente pas les Motion Values par pourcentage ou multiplicateur fixe, celles-ci varient en fonction des dégâts de chaque attaque.\n(*Ex : Shining Sword (GS) passe de 27MV à 47MV, ayant une augmentation de 74%*).",
+      "img":"img/skills/charge_attack_up.png"
+    },
+    "Weapon Handling":{
+      "show":"",
+      "skill1":"Augmente de 20% la Vitesse de dégainage et de rengainage.\nNe se cumule pas à Master Seal ou G Finesse Weapon."
+    },
+    "Shiriagari":{
+      "show":"",
+      "skill1":"Augmente l'Attaque en fonction du temps passé en quête.\n1min : +20 | 3min : +50 | 5min : +80 | 10min : +130 | 15min : +180 | 20min : +200."
+    },
+    "Adaptation":{
+      "show":"",
+      "skill1":"**Adaptation +2**\nLorsque vos Points de Vie sont supérieurs à 100, chaque attaque analyse les dégâts potentiels selon tous les types d'arme (*tranchant, contondant, artilleur*) en leur appliquant un multiplicateur statique : x0,81 pour les armes de mêlée, x0.72 pour les armes à distance.\n\nSi l'une de ces valeurs calculées dépasse les dégâts de l'arme équipée, l'attaque adopte automatiquement la valeur et le type de dégât les plus élevés.\n\nExemple : Avec une arme tranchante, si le calcul des dégâts contondants (multiplié par 0,81) est supérieur à la valeur en tranchant, l'attaque infligera des dégâts contondants à la place.\n\nLorsque cet effet est activé, un effet violet similaire aux effets des coups critiques sera affiché.\nIl est aussi possible de couper des queues avec une arme contondante si les critères requis sont respectés.",
+      "skill2":"**Adaptation +1**\nLorsque vos Points de Vie sont supérieurs à 100, chaque attaque analyse les dégâts potentiels selon tous les types d'arme (*tranchant, contondant, artilleur*) en leur appliquant un multiplicateur statique : x0,72 pour les armes de mêlée, x0.64 pour les armes à distance.\n\nSi l'une de ces valeurs calculées dépasse les dégâts de l'arme équipée, l'attaque adopte automatiquement la valeur et le type de dégât les plus élevés.\n\nExemple : Avec une arme tranchante, si le calcul des dégâts contondants (multiplié par 0,81) est supérieur à la valeur en tranchant, l'attaque infligera des dégâts contondants à la place.\n\nLorsque cet effet est activé, un effet violet similaire aux effets des coups critiques sera affiché.\nIl est aussi possible de couper des queues avec une arme contondante si les critères requis sont respectés.",
+      "zcall1":"Adaptation Up"
+    },
+    "Combat Supremacy":{
+      "show":"",
+      "skill1":"Attaque +20% quand l'arme est dégainée.\nL'endurance diminue graduellement lorsque l'arme est dégainée.\n※ Même si l'endurance s'épuise, l'effet continue tant que l'arme reste dégainée.\n※ L'effet ne s'active pas si les Rastas sont activés."
+    },
+    "Vigorous":{
+      "show":"",
+      "skill1":"Attaque +15% lorsque les Points de Vie sont supérieurs ou égal à 100.",
+      "zcall1":"Vigorous Up"
+    },
+    "Lavish Attack":{
+      "show":"Consumption Slayer",
+      "skill1":"Épéiste (Blademaster) : +100 d'Attaque en échange de plus de consommation de tranchant par attaque.\nArc : +20% d'effet des fioles, utilise deux fioles pour le prix d'une par tir.\nAucun effet sur les fusarbalètes."
+    },
+    "Obscurity":{
+      "show":"",
+      "skill1":"Effectuer une garde augmente l'Attaque d'une valeur fixe, peut s'additionner 10 fois.\nLes valeurs varient en fonction de l'arme.",
+      "img":"img/skills/obscurity.png",
+      "zcall1":"Obscurity Up"
+    },
+    "Rush":{
+      "show":"",
+      "skill1":"Effectuer une Attaque et/ou une Garde augmente graduellement une jauge invisible de deux niveaux.\nNiveau 1 : +50 d'Attaque, un effet violet apparait sur le joueur.\nNiveau 2 : +130 d'Attaque, courir avec l'arme dégainée ne coûte plus d'endurance.\nRengainer l'arme ou utiliser un objet réinitialise l'effet.",
+      "zcall1":"Rush Up"
+    },
+    "Ceaseless":{
+      "show":"",
+      "skill1":"Attaquer augmente l'Affinité et le multiplicateur de dégâts Critiques.\nL'effet disparaît si vous arrêtez d'attaquer pendant quelques secondes.\nReflect et Stylish Up comptent dans les coups requis pour activer Ceaseless.\n\nNiveau 1 : +35% d'Affinité, +10% de coups Critiques.\nNiveau 2 : +50% Affinité, +15% de coups Critiques.\n\nChaque arme demande un nombre différent d'attaque pour activer le niveau 1 et 2 de Ceaseless.",
+      "img":"img/skills/ceaseless.png",
+      "zcall1":"Ceaseless Up"
+    },
+    "Point Breakthrough":{
+      "show":"",
+      "skill1":"Attaquer 5 fois la même partie d'un monstre augmente la valeur de sa hitzone physique.\nL'effet ne s'applique qu'à une seule partie à la fois et s'estompe après un certain temps.\nSi une partie du monstre a déjà été affectée par l'effet du talent, elle y sera moins résistante et il sera donc plus facile d'à nouveau y appliquer l'effet.\n\n※ L'accumulation des 5 coups fonctionne comme une affliction, ce qui veut dire que l'effet des coups s'estompe et que l'effet du talent devient plus compliqué à appliquer si vos attaques ne sont pas constantes.\n\n※ Chaque partie accumule l'effet séparément, attaquer des parties différentes ne réinitialise pas l'accumulation de l'effet sur d'autres.\n\n※ Attaquer une partie sur laquelle l'effet est déjà actif ne prolongera pas sa durée.\n\n※ Les attaques multi-hit demanderont plus de coups pour activer l'effet du talent (comme les munitions Perçante (Pierce) du LBG ou l'attaque Piercing Stab de la LS).\n\n※ Fencing+2 et l'attaque Heatblade de la GS ne réduit pas le nombre de coups requis.\n※ Reflect compte dans les coups requis.\n※ Stylish Up ne compte pas dans les coups requis."
+    },
+    "Furious":{
+      "show":"",
+      "skill1":"Effectuer une attaque, une esquive ou une garde augmente l'Attaque, l'Affinité, l'Élément et les Afflictions sur 3 niveaux.\n\nNiveau 1 : +70 d'Attaque, +5% d'Élément et Affliction, +10% d'Affinité.\n\nNiveau 2 : +100 d'Attaque, +10% d'Élément et Affliction, +25% d'Affinité.\n\nNiveau 3 : +180 d'Attaque, +20% d'Élément et Affliction, +40% d'Affinité.\n\nSubir une grosse attaque fait chuter Furious d'un niveau. Il est nécessaire d'effectuer des attaques et esquives/gardes pour monter augmenter le niveau de Furious.\n\n※ Vous pouvez augmenter Furious plus rapidement via des gardes parfaites.",
+      "img":"img/skills/furious.png"
+    },
+    "Thunder Clad":{
+      "show":"",
+      "skill1":"Une jauge apparait en dessous du nom du joueur, elle se charge en fonction des esquives, des attaques et des déplacements.\nQuand cette jauge est pleine : +5 de dégâts physique sur toutes les hitzones, Movement Speed+2, Evade Distance Up, Weapon Handling et Status Immunity.\n\n※ S'additionne avec Determination, Exploit Weakness et Critical Shot.\n\n※ La vitesse de mouvement donnée par Thunder Clad fonctionne même quand l'arme est dégainée.\n\n※ Esquiver des cris avec Earplug remplit autant la jauge qu'une esquive complète.\n\n※ Subir une attaque vous projetant en arrière videra immédiatement la jauge. Cela inclut les coups venant des autres joueurs comme le Ryuuki des Tonfa.\n\n※ Toutes les actions rempliront la jauge, même arme rengainée.",
+      "zcall1":"Thunder Clad Up"
+    },
+    "Determination":{
+      "show":"Solid Determination",
+      "skill1":"**Solid Determination**\nAttaque +100, Affinité +100%, Multiplicateur de coups Critiques +0.25.\n\nDonne l'effet de Adrenaline +2, Sharpness +1, Exploit Weakness et Elemental Exploiter **(sans la condition des Hitzone Values)**.\nLes artilleurs obtiennent +5 de Hitzone Value s'ils sont à une portée de critique.\n\nNe s'additionne pas à Attack, Strong Attack, Issen, Exploit Weakness, Elemental Exploiter, Precision, Critical Shot et Expert.\n\nSi des effets du même type sont activés, l'effet du plus haut niveau aura la priorité.\n\nAbsolute Défense, True Guts, Great Guts et Guts sont désactivés, idem pour les Guts Tickets, Mega Guts Tickets et Soul Revival.",
+      "call1":"Attack",
+      "call2":"Strong Attack",
+      "call3":"Sharpness",
+      "call4":"Exploit Weakness",
+      "call5":"Elemental Exploiter"
+    },
+    "Vitality":{
+      "show":"",
+      "skill1":"**Vitality +3**\nDéfense +90\nDonne Damage Recovery Speed +2 et Recovery Items Up.\nOctroie 100% de chance de combinaison pour les Potions, Méga Potions et Max Potions.",
+      "skill2":"**Vitality +2**\nDéfense +45\nDonne Damage Recovery Speed +1 et Recovery Items Up.\nOctroie 100% de chance de combinaison pour les Potions, Méga Potions et Max Potions.",
+      "skill3":"**Vitality +1**\nDéfense +15\nDonne Damage Recovery Speed +1 et Recovery Items Up.\nOctroie 100% de chance de combinaison pour les Potions, Méga Potions et Max Potions.",
+      "skill4":"**Vitality -1**\nBarre de Vie -10\nDonne Damage Recovery Speed -1 et Recovery Items Weakened.",
+      "call1":"Recovery"
+    },
+    "Reflect":{
+      "show":"",
+      "skill1":"**Reflect +3**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 48 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
+      "skill2":"**Reflect +2**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 36 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
+      "skill3":"**Reflect +1**\nParer une attaque déclenche un coup spécial à partir de la garde ayant 24 de Motion Value.\nCe coup a les mêmes statistiques que votre attaque et utilisera votre tranchant.",
+      "zcall1":"Reflect Up"
+    },
+    "Defense":{
+      "show":"",
+      "skill1":"**Défense +120**",
+      "skill2":"**Défense +90**",
+      "skill3":"**Défense +60**",
+      "skill4":"**Défense +30**",
+      "skill5":"**Défense +20**",
+      "skill6":"**Défense -20**",
+      "skill7":"**Défense -30**",
+      "skill8":"**Défense -40**"
+    },
+    "Guard":{
+      "show":"",
+      "skill1":"**Guard +2**\nRéduction des dégâts maximal.\nLa garde consomme encore moins d'Endurance, le recul est grandement réduit.\nPermet de parer des attaques imparables.\nAugmente la limite de l'aura du bouclier de la Lance à 6.",
+      "skill2":"**Guard +1**\nAugmente la réduction des dégâts.\nLa garde consomme moins d'Endurance, le recul est réduit.\nAugmente la limite de l'aura du bouclier de la Lance à 4.",
+      "skill3":"**Guard -1**\nAugmente les dégâts subits lors d'une garde, le recul ainsi que la consommation d'Endurance.",
+      "skill4":"**Guard -2**\nAugmente grandement les dégâts subits lors d'une garde, le recul et la consommation d'Endurance.",
+      "zcall1":"Guard Up",
+      "img":"img/skills/guard.png"
+    },
+    "Auto-Guard":{
+      "show":"",
+      "skill1":"Bloque automatiquement les attaques parable quand l'arme est dégainée.\n※ N'active pas Reflect, Obscurity et Rush.\n※ Ne remplit pas la jauge de garde de la Lance."
+    },
+    "Fortification":{
+      "show":"",
+      "skill1":"**Fortification +2**\nDonne Guard +2, Peerless et Weapon Handling.",
+      "skill2":"**Fortification +1**\nDonne Guard +1, Marathon Runner et Weapon Handling",
+      "call1":"Guard",
+      "call2":"Stamina",
+      "call3":"Weapon Handling"
+    },
+    "Sharpening":{
+      "show":"Sharpening Artisan, Speed Sharpening, Slothful Sharpening",
+      "skill1":"**Sharpening Artisan**\nQuadruple la vitesse d'aiguisage. Aiguiser donne Sharpness +1 en plus de 30 secondes de tranchant infini",
+      "skill2":"**Speed Sharpening**\nAiguiser ne prend qu'un seul coup d'aiguisoir.",
+      "skill3":"**Slothful Sharpening**\nLa vitesse d'aiguisage est divisée par deux.",
+      "call1":"Artisan"
+    },
+    "Sharpness":{
+      "show":"Razor Sharp, Blunt Edge",
+      "skill1":"**Razor Sharp +2**\nSi possible, la perte de tranchant est divisée par deux.\n50% de chance d'annuler la perte de tranchant à chaque coup.",
+      "skill2":"**Razor Sharp +1**\nSi possible, la perte de tranchant est divisée par deux.",
+      "skill3":"**Blunt Edge**\nDouble la perte de tranchant à chaque coup."
+    },
+    "Stylish":{
+      "show":"",
+      "skill1":"Récupère du tranchant lors d'une esquive à travers une attaque.\nLa quantité de tranchant varie en fonction de l'arme.",
+      "zcall1":"Stylish Up",
+      "img":"img/skills/stylish.png"
+    },
+    "Edgemaster":{
+      "show":"Honed Blade",
+      "skill1":"**Honed Blade +3**\nDonne Attack Up(Absolute) et Sharpness +1.\nAvoir un Attack Up ou Strong Attack Up plus puissant d'actif remplace Attack Up(Absolute) donné par cet effet.",
+      "skill2":"**Honed Blade +2**\nDonne Attack Up(Very Large) et Sharpness +1.\nAvoir un Attack Up ou Strong Attack Up plus puissant d'actif remplace Attack Up(Very Large) donné par cet effet.",
+      "skill3":"**Honed Blade +1**\nDonne Attack Up(Large) et Sharpness +1.\nAvoir un Attack Up ou Strong Attack Up plus puissant d'actif remplace Attack Up(Large) donné par cet effet.",
+      "call1":"Artisan"
+    },
+    "Artisan":{
+      "show":"Sharpness +1",
+      "skill1":"**Sharpness +1**\nSi possible, le tranchant maximum de l'arme est augmenté d'un niveau."
+    },
+    "Bomb Sword":{
+      "show":"",
+      "skill1":"**Bomb Sword +3**\nCharger un Bomb Sword Crystal active l'effet Bomb Sword [Strong].\n※ Consomme trois fois plus de tranchant.",
+      "skill2":"**Bomb Sword +2**\nCharger un Bomb Sword Crystal active l'effet Bomb Sword [Medium].\n※ Consomme trois fois plus de tranchant.",
+      "skill3":"**Bomb Sword +1**\nCharger un Bomb Sword Crystal active l'effet Bomb Sword [Weak].\n※ Consomme trois fois plus de tranchant."
+    },
+    "Poison Sword":{
+      "show":"",
+      "skill1":"**Poison Sword +3**\nCharger un Poison Sword Crystal active l'effet Poison Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Poison Sword +2**\nCharger un Poison Sword Crystal active l'effet Poison Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Poison Sword +1**\nCharger un Poison Sword Crystal active l'effet Poison Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Para Sword":{
+      "show":"Paralysis Sword",
+      "skill1":"**Para Sword +3**\nCharger un Paralysis Sword Crystal active l'effet Paralysis Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Para Sword +2**\nCharger un Paralysis Sword Crystal active l'effet Paralysis Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Para Sword +1**\nCharger un Paralysis Sword Crystal active l'effet Paralysis Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Sleep Sword":{
+      "show":"",
+      "skill1":"**Sleep Sword +3**\nCharger un Sleep Sword Crystal active l'effet Sleep Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Sleep Sword +2**\nCharger un Sleep Sword Crystal active l'effet Sleep Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Sleep Sword +1**\nCharger un Sleep Sword Crystal active l'effet Sleep Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Fire Sword":{
+      "show":"Flame Sword",
+      "skill1":"**Flame Sword +3**\nCharger un Flame Sword Crystal active l'effet Flame Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Flame Sword +2**\nCharger un Flame Sword Crystal active l'effet Flame Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Flame Sword +1**\nCharger un Flame Sword Crystal active l'effet Flame Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Water Sword":{
+      "show":"",
+      "skill1":"**Water Sword +3**\nCharger un Water Sword Crystal active l'effet Water Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Water Sword +2**\nCharger un Water Sword Crystal active l'effet Water Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Water Sword +1**\nCharger un Water Sword Crystal active l'effet Water Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Thunder Sword":{
+      "show":"",
+      "skill1":"**Thunder Sword +3**\nCharger un Thunder Sword Crystal active l'effet Thunder Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Thunder Sword +2**\nCharger un Thunder Sword Crystal active l'effet Thunder Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Thunder Sword +1**\nCharger un Thunder Sword Crystal active l'effet Thunder Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Ice Sword":{
+      "show":"",
+      "skill1":"**Ice Sword +3**\nCharger un Ice Sword Crystal active l'effet Ice Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Ice Sword +2**\nCharger un Ice Sword Crystal active l'effet Ice Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Ice Sword +1**\nCharger un Ice Sword Crystal active l'effet Ice Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Dragon Sword":{
+      "show":"",
+      "skill1":"**Dragon Sword +3**\nCharger un Dragon Sword Crystal active l'effet Dragon Sword [Strong].\n※ Consomme deux fois plus de tranchant.",
+      "skill2":"**Dragon Sword +2**\nCharger un Dragon Sword Crystal active l'effet Dragon Sword [Medium].\n※ Consomme deux fois plus de tranchant.",
+      "skill3":"**Dragon Sword +1**\nCharger un Dragon Sword Crystal active l'effet Dragon Sword [Weak].\n※ Consomme deux fois plus de tranchant."
+    },
+    "Sns Tech":{
+      "show":"SnS Tech, Sword Saint",
+      "skill1":"**SnS Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à SnS Tech [Sword saint].",
+      "skill2":"**Sword Saint**\nDonne Super High-Grade Earplugs\n+30% d'Attaque en utilisant une Épée Bouclier.\nDonne l'effet +3 des talents liés à toutes les Elemental Sword Stone, +2 pour toutes les Status Sword Stone.\nDonne Bomb Sword +2.\nAccélère les mouvements une fois dégainée.\nDonne Fencing.\n\n※ Utiliser un Dragon Sword Crystal agira comme si vous aviez l'effet Dragon Sword +3 même si vous n'avez pas le talent Dragon Sword.",
+      "skill3":"**SnS Tech (Kaiden)**\n+10% d'Attaque en utilisant une Épée Bouclier\nDonne Fencing.",
+      "skill4":"**SnS Tech (Expert)**\nUtiliser une Épée Bouclier donne Fencing.",
+      "skill6":"**SnS Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Épée Bouclier.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+      
+    },
+    "DS Tech":{
+      "show":"DS Tech, Dual Dragon",
+      "skill1":"**DS Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à DS Tech [Dual Dragon].",
+      "skill2":"**Dual Dragon**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Doubles Lames.\nPermet de récupérer 3 unités d'Endurance par coup en mode démon.\nAugmente la vitesse d'activation du mode démon.\nDonne Fencing.",
+      "skill3":"**DS Tech (Kaiden)**\n+10% d'Attaque en utilisant une Doubles Lames\nDonne Fencing.",
+      "skill4":"**DS Tech (Expert)**\nUtiliser une Doubles Lames donne Fencing.",
+      "skill6":"**DS Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Doubles Lames.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "GS Tech":{
+      "show":"GS Tech, Sword King",
+      "skill1":"**GS Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à GS Tech [Sword King].",
+      "skill2":"**Sword King**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Grande Épée.\nL'attaque Guard Slash permet de récupérer la moitié du tranchant utilisé par ce coup.\nPermet de charger plus rapidement les attaques (s'additionne à Focus), la charge de niveau 4 reste plus longtemps avant de retomber au niveau 2 (Storm Style).\nFaire une Garde Parfaite annule le recul et permet d'esquiver.\nLa Garde Parfaite ne consomme pas de stamina et vous rend la moitié du Tranchant utilisé par celle-ci.\nDonne Fencing.",
+      "skill3":"**GS Tech (Kaiden)**\n+10% d'Attaque en utilisant une Grande Épée\nDonne Fencing.",
+      "skill4":"**GS Tech (Expert)**\nUtiliser une Grande Épée donne Fencing.",
+      "skill6":"**GS Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Grande Épée.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "LS Tech":{
+      "show":"LS Tech, Katana Dragon",
+      "skill1":"**LS Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à LS Tech [Katana Dragon].",
+      "skill2":"**Katana Dragon**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Épée Longue.\nRéduit de moitié la consommation de la jauge d'Esprit.\nDonne Razor Sharp +2 quand la jauge d'Esprit est pleine.\nAugmente l'Attaque de 25% (au lieu de 15%) lorsque la jauge d'Esprit brille (après être complètement remplie).\nDonne Fencing.",
+      "skill3":"**LS Tech (Kaiden)**\n+10% d'Attaque en utilisant une Épée Longue\nDonne Fencing.",
+      "skill4":"**LS Tech (Expert)**\nUtiliser une Épée Longue donne Fencing.",
+      "skill6":"**LS Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Épée Longue.",
+      "call1":"Fencing",
+      "call2":"Sharpness",
+      "call3":"Hearing Res"
+    },
+    "Hammer Tech":{
+      "show":"Hammer Tech, Blunt Beast",
+      "skill1":"**Hammer Tech (Master B.Beast)**\nAjoute un niveau de Tranchant supplémentaire à Hammer Tech [Blunt Beast].",
+      "skill2":"**Blunt Beast**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant un Marteau.\nDéclencher une attaque chargée parfaite (au bon timing) donne +30% d'Attaque pour le combo entier.\nDonne Fencing.",
+      "skill3":"**Hammer Tech (Kaiden)**\n+10% d'Attaque en utilisant un Marteau\nDonne Fencing.",
+      "skill4":"**Hammer Tech (Expert)**\nUtiliser un Marteau donne Fencing.",
+      "skill6":"**Hammer Tech (Novice)**\nRéduit de 20% l'attaque en utilisant un Marteau.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "HH Tech":{
+      "show":"HH Tech, Flamboyant Emperor",
+      "skill1":"**HH Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à HH Tech [Flamboyant Emporer].",
+      "skill2":"**Flamboyant Emperor**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Corne de Chasse.\nVitesse de choix des notes en mode Performance Note +34%.\nDonne Fencing.",
+      "skill3":"**HH Tech (Kaiden)**\n+10% d'Attaque en utilisant une Corne de Chasse\nDonne Fencing.",
+      "skill4":"**HH Tech (Expert)**\nUtiliser une Corne de Chasse donne Fencing.",
+      "skill6":"**HH Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Corne de Chasse.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "Lance Tech":{
+      "show":"Lance Tech, Heavenly Spear",
+      "skill1":"**Lance Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à Lance Tech [Flamboyant Emporer].",
+      "skill2":"**Heavenly Spear**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Lance.\nBloquer une attaque n'inflige aucun dégât, de même pour la capacité effectuant 4 sauts au lieu de 3.\nAugmente de 10 les Motion Value du dernier coup (3ème ou 4ème) Normal, Diagonal et Sky-Stabs.\nDonne Fencing.",
+      "skill3":"**Lance Tech (Kaiden)**\n+10% d'Attaque en utilisant une Lance\nDonne Fencing.",
+      "skill4":"**Lance Tech (Expert)**\nUtiliser une Lance donne Fencing.",
+      "skill6":"**Lance Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Lance.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "GL Tech":{
+      "show":"GL Tech, Cannon Emperor",
+      "skill1":"**GL Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à GL Tech [Cannon Emperor].",
+      "skill2":"**Cannon Emperor**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant un Lancecanon.\nLes temps de récupération du Feu de Wyverne et de la Heat Blade sont divisés par deux.\nLe temps d'activation de la Heat Blade est réduit de trois secondes.\nAugmente de 2 la quantité de Normal Shell.\nAugemente de 1 la quantité de Long Shells.\nAugmente de 1 la quantité de Wide Shells.\nLa quantité de munition supplémentaire s'additionne à Load Up.\nDonne Fencing.",
+      "skill3":"**GL Tech (Kaiden)**\n+10% d'Attaque en utilisant un Lancecanon\nDonne Fencing.",
+      "skill4":"**GL Tech (Expert)**\nUtiliser un Lancecanon donne Fencing.",
+      "skill6":"**GL Tech (Novice)**\nRéduit de 20% l'attaque en utilisant un Lancecanon.",
+      "call1":"Fencing",
+      "call2":"Load Up",
+      "call3":"Hearing Res"
+    },
+    "Tonfa Tech":{
+      "show":"Tonfa Tech, Piercing Phoenix",
+      "skill1":"**Tonfa Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à Tonfa Tech [Piercing Phoenix].",
+      "skill2":"**Piercing Phoenix**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant des Tonfa.\nAjoute une barre suplémentaire aux jauges de Combo (rouge) et EX (bleue).\nDonne Fencing.",
+      "skill3":"**Tonfa Tech (Kaiden)**\n+10% d'Attaque en utilisant un Tonfa\nDonne Fencing.",
+      "skill4":"**Tonfa Tech (Expert)**\nUtiliser des Tonfa donne Fencing.",
+      "skill6":"**Tonfa Tech (Novice)**\nRéduit de 20% l'attaque en utilisant des Tonfa.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "Switch Axe Tech":{
+      "show":"Switch Axe Tech, Edge Marshal",
+      "skill1":"**Switch Axe Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à Switch Axe Tech [Edge Marshal].",
+      "skill2":"**Edge Marshal**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une Swaxe.\nExécuter certaines actions augmente temporairement l'Attaque de 5% *(Morphing en Style Earth, attaques en mode Épée en Style Heaven, garde en Style Storm)*.\nRéduit de 50% la consommation d'Endurance durant le combo infini.\nAttaquer en mode hache augmente la jauge de phial.\nLes attaques utilisant des phials consomment moins de jauge.\nDonne Fencing.",
+      "skill3":"**Switch Axe Tech (Kaiden)**\n+10% d'Attaque en utilisant un Swaxe\nDonne Fencing.",
+      "skill4":"**Switch Axe Tech (Expert)**\nUtiliser une Swaxe donne Fencing.",
+      "skill6":"**Switch Axe Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une Swaxe.",
+      "call1":"Fencing",
+      "call2":"Hearing Res"
+    },
+    "Magnet Spike Tech":{
+      "show":"Magnet Spike Tech, Edge Marshal",
+      "skill1":"**Magnet Spike Tech (Master)**\nAjoute un niveau de Tranchant supplémentaire à Magnet Spike Tech [Magnetic Star].",
+      "skill2":"**Magnetic Star**\nDonne Super High-Grade Earplugs.\n+20% d'Attaque en utilisant une MS.\nRéussir un mouvement d'esquive augmente l'Attaque (+3%) et la récupération de jauge (+50%) pendant 30 secondes.\nDonne Movement Speed Up (+20%).\nLe magnet ne disparait plus.\nDonne Fencing.",
+      "skill3":"**Magnet Spike Tech (Kaiden)**\n+10% d'Attaque en utilisant un MS\nDonne Fencing.",
+      "skill4":"**Magnet Spike Tech (Expert)**\nUtiliser une MS donne Fencing.",
+      "skill6":"**Magnet Spike Tech (Novice)**\nRéduit de 20% l'attaque en utilisant une MS.",
+      "call1":"Fencing",
+      "call2":"Hearing Res",
+      "call3":"Movement Speed"
+    },
+    "Fencing":{
+      "show":"",
+      "skill1":"**Fencing +2**\nDonne Mind's Eye (l'arme ne rebondit plus), ainsi qu'un second coup pour chaque attaque. Celui-ci aura 20% de la valeur du premier coup.\nCela vaut pour l'Attaque, l'Élément, les Afflictions ainsi que les Sword Crystals.\nLe second coup ignore la consommation de tranchant et de Sword Crystal",
+      "skill2":"**Fencing +1**\nDonne Mind's Eye (l'arme ne rebondit plus)."
+    },
+    "Sword God":{
+      "show":"",
+      "skill1":"**Sword God +3**\nDonne Sharpness +1, Razor Sharp +2, Fencing +2 et Sharpening Artisan.",
+      "skill2":"**Sword God +2**\nDonne Sharpness +1, Razor Sharp +2, Fencing +2.",
+      "skill3":"**Sword God +1**\nDonne Sharpness +1, Razor Sharp +1, Fencing +1.",
+      "call1":"Sharpness",
+      "call2":"Artisan",
+      "call3":"Sharpening",
+      "call4":"Fencing"
+    },
+    "Steady Hand":{
+      "show":"",
+      "skill1":"**Steady Hand +2**\nDonne Normal/Rapid Up, Pierce//Pierce Up, Pellet/Spread Up.\n+5 de valeur de hitzone physique en distance critique.\nNe s'additionne pas à ces talents individuel : Solid Determination, Precision, Sniper, Critical Shot.",
+      "skill2":"**Steady Hand +1**\nDonne Normal/Rapid Up, Pierce//Pierce Up, Pellet/Spread Up.\nNe s'additionne pas à leurs versions individuelle.",
+      "call1":"Normal Shot Up",
+      "call2":"Pierce Shot Up",
+      "call3":"Pellet Shot Up"
+    },
+    "Gentle Shot":{
+      "show":"",
+      "skill1":"**Gentle Shot +3**\nDonne l'effet de Load Up et Recoil Reduction +3",
+      "skill2":"**Gentle Shot +2**\nDonne l'effet de Load Up et Recoil Reduction +2",
+      "skill3":"**Gentle Shot +1**\nDonne l'effet de Load Up et Recoil Reduction +1",
+      "call1":"Loading",
+      "call2":"Recoil"
+    },
+    "Normal Shot Up":{
+      "show":"Normal/Rapid Up",
+      "skill1":"**Normal/Rapid Up**\n+10% de dégâts des munitions Normal S et des Rapid Arrows de l'arc."
+    },
+    "Pierce Shot Up":{
+      "show":"Pierce/Pierce Up",
+      "skill1":"**Pierce/Pierce Up**\n+10% de dégâts des munitions Pierces et des Pierce Arrows de l'arc."
+    },
+    "Pellet Shot Up":{
+      "show":"Pellet/Spread Up",
+      "skill1":"Pellet/Spread Up**\n+10% de dégâts des munitions Pellet et des Scatter Arrows de l'arc."
+    },
+    "Normal Shot Add":{
+      "show":"Normal S All, Normal S Lv1",
+      "skill1":"**Normal S All**\nPermet d'utiliser les munitions Normal S.",
+      "skill2":"**Normal S Lv1**\nPermet d'utiliser les munitions Normal Lv1."
+    },
+    "Pierce Shot Add":{
+      "show":"Pierce S All, Pierce S Lvl1&2 Add, Pierce S Lv1 Add",
+      "skill1":"**Pierce S All**\nPermet d'utiliser toutes les munitions Pierce S.",
+      "skill2":"**Pierce S Lv1&2 Add**\nPermet d'utiliser les munitions Pierce S Lv1 et Lv2.",
+      "skill3":"**Pierce S Lv1 Add**\nPermet d'utiliser les munitions Pierce S Lv1."
+    },
+    "Pellet Shot Add":{
+      "show":"Pellet S All, Pellet S Lvl1&2 Add, Pellet S Lv1 Add",
+      "skill1":"**Pellet S All**\nPermet d'utiliser toutes les munitions Pellet S.",
+      "skill2":"**Pellet S Lv1&2 Add**\nPermet d'utiliser les munitions Pellet S Lv1 et Lv2.",
+      "skill3":"**Pellet S Lv1 Add**\nPermet d'utiliser les munitions Pellet S Lv1."
+    },
+    "Cluster Shot Add":{
+      "show":"Cluster S All, Cluster S Lvl1&2 Add, Cluster S Lv1 Add",
+      "skill1":"**Cluster S All**\nPermet d'utiliser toutes les munitions Cluster S.",
+      "skill2":"**Cluster S Lv1&2 Add**\nPermet d'utiliser les munitions Cluster S Lv1 et Lv2.",
+      "skill3":"**Cluster S Lv1 Add**\nPermet d'utiliser les munitions Cluster S Lv1."
+    },
+    "Loading":{
+      "show":"Load Up",
+      "skill1":"**Load Up**\nDonne une munition supplémentaire pour les Fusarbalètes et les Lancecanons.\nRajoute un niveau de charge supplémentaire aux Arcs."
+    },
+    "Reload":{
+      "show":"Reload Speed",
+      "skill1":"**Reload Speed +3**\nFusarbalète : Augemente la vitesse de rechargement de 3 niveaux.\nArc : Les enduits sont automatiquement appliqués lorsqu'ils sont séléctionnés.",
+      "skill2":"**Reload Speed +2**\nFusarbalète : Augmente la vitesse de rechargement de 2 niveaux.\nArc : Réduit de 25% le temps d'application d'un enduit.",
+      "skill3":"**Reload Speed +1**\nFusarbalète : Augmente la vitesse de rechargement d'1 niveau.\nArc : Réduit de 15% le temps d'application d'un enduit.",
+      "skill4":"**Reload Speed -1**\nFusarbalète : Réduit la vitesse de rechargement d'1 niveau.\nArc : Augmente de 10% le temps d'application d'un enduit."
+    },
+    "Recoil":{
+      "show":"Recoil Reduction",
+      "skill1":"**Recoil Reduction +3**\nFusarbalète : Réduit le recul de 6 niveaux.\nLancecanon : Permet d'esquiver juste après un tir, réduit le recul du Feu de Wyverne pendant 30 frames.",
+      "skill2":"**Recoil Reduction +2**\nFusarbalète : Réduit le recul de 4 niveaux.\nLancecanon : Permet d'esquiver juste après un tir, réduit le recul du Feu de Wyverne pendant 30 frames.",
+      "skill3":"**Recoil Reduction +1**\nFusarbalète : Réduilt le recul de 2 niveaux.\nLancecanon : Permet d'esquiver juste après un tir."
+    },
+    "Critical Shot":{
+      "show":"",
+      "skill1":"**Critical Shot +3**\nDonne Attack Up (Absolute) et Sniper.\nNe s'additione pas aux autres talents d'Attaque ou a Sniper (ex : Attack Up serait écrasé par Strong Attack +4).\nS'additionne à Thunderclad, Acid Shots, au debuf de HHSonicBomb et à Point Breakthrough dont la valeur finale sera utilisée par Exploit Weakness.",
+      "skill2":"**Critical Shot +2**\nDonne Attack Up (Very Large) et Sniper.\nNe s'additione pas aux autres talents d'Attaque ou a Sniper (ex : Attack Up serait écrasé par Strong Attack +4).\nS'additionne à Thunderclad, Acid Shots, au debuf de HHSonicBomb et à Point Breakthrough dont la valeur finale sera utilisée par Exploit Weakness.",
+      "skill3":"**Critical Shot +1**\nDonne Attack Up (Large) et Sniper.\nNe s'additione pas aux autres talents d'Attaque ou a Sniper (ex : Attack Up serait écrasé par Strong Attack +4).\nS'additionne à Thunderclad, Acid Shots, au debuf de HHSonicBomb et à Point Breakthrough dont la valeur finale sera utilisée par Exploit Weakness.",
+      "call1":"Attack",
+      "call2":"Sniper"
+    },
+    "Rapid Fire":{
+      "show":"",
+      "skill1":"Les salves de tir rapide tire une balle supplémentaire.\nRecharger une munition pouvant être utilisée en tir rapide remplie d'un seul coup le chargeur complet (ne s'applique pas à Ultra Rapid Fire)."
+    },
+    "Auto-Reload":{
+      "show":"",
+      "skill1":"Fusarbalète : Permet de tirer sans avoir à recharger en échange d'un plus gros recul pour chaque tir.\nArc : Réduit de 25% le temps de recharge."
+    },
+    "Ammo Combiner":{
+      "show":"Maximum Bullet",
+      "skill1":"**Maximum Bullet**\nFabriquer une munition vous donnera automatiquement un stack complet (le nombre maximal de munition)."
+    },
+    "Bullet Saver":{
+      "show":"Saving Expert, Saving Master",
+      "skill1":"**Saving Expert**\nUn tir a 11 chances sur 32 (34,3%) de ne pas consommer une munition / enduit.\nLe tir de compression utilise toutes les munitions de manière individuelle (pour le HBG, n'importe quel nombre de munition dans le chargeur peut être économisé). Cependant, cela ne fonctionne pas avec l'Ultra Rapid Fire du LBG et le Heat Beam du HBG.",
+      "skill2":"**Saving Master**\nUn tir a 7 chances sur 32 (21,8%) de ne pas consommer une munition / enduit.\nLe tir de compression utilise toutes les munitions de manière individuelle (pour le HBG, n'importe quel nombre de munition dans le chargeur peut être économisé). Cependant, cela ne fonctionne pas avec l'Ultra Rapid Fire du LBG et le Heat Beam du HBG.",
+      "zcall1":"Bullet Saver Up"
+    },
+    "Precision":{
+      "show":"Precision, Deviation Down / Up",
+      "skill1":"**Precision +2**\nRéduit la déviation des balles ainsi que la valeur des hitzones physiques par 5 (ex : 35->40) pour les munitions Normal, Pierce, Crag ainsi que pour les attaques à l'Arc à **distance critique**.",
+      "skill2":"**Deviation Down**\nRéduit la déviation des balles.",
+      "skill3":"**Deviation Up**\nAugmente la déviation des balles."
+    },
+    "Poison Coating Add":{
+      "show":"",
+      "skill1":"Permet d'utiliser des enduits de Poison."
+    },
+    "Para Coating Add":{
+      "show":"",
+      "skill1":"Permet d'utiliser des enduits de Paralysie."
+    },
+    "Sleep Coating Add":{
+      "show":"",
+      "skill1":"Permet d'utiliser des enduits de Sommeil."
+    },
+    "Mounting":{
+      "show":"",
+      "skill1":"**Mounting +3**\nDonne Load Up et Reload Speed +3",
+      "skill2":"**Mounting +2**\nDonne Load Up et Reload Speed +2",
+      "skill3":"**Mounting +1**\nDonne Load Up et Reload Speed +1",
+      "call1":"Loading",
+      "call2":"Reload"
+    },
+    "Spacing":{
+      "show":"",
+      "skill1":"Réduit la distance critique pour les munitions Normal, Pierce, Pellet et Blunt en échange de dégâts supplémentaire à distance critique.\nAttaquer de manière constante à distance critique donne l'effet Movement Speed +2 et Evade Distance Up.\nAugmente la fenêtre du perfect shot (3 segments) ainsi que du tir de compression (2 segments) aux LBG et HBG.\nRéduit la durée de charge à l'arc.\nS'additionne à Auto-Reload.\n\nLe buff d'Attaque ne s'applique pas en dehors de la distance critique.\nLe buff d'Attaque ne s'applique **qu'à la première moitié de la distance critique du HBG**.\n\nLe buff d'Attaque possède une jauge propre à lui même, celle-ci fonctionne comme la jauge du talent Thunder Clad.\nLe nombre de coup nécéssaire varie entre fonction de l'Attaque, l'Affinité, le type de munition, etc..\nLe remplissage de cette jauge n'est pas réinitialisé en étant projeté.\n\nLBG : +10%, 35sec\nHBG : +15%, 40sec\nArc : +10%, 30sec",
+      "call1":"Auto-Reload"
+    },
+    "HBG Tech":{
+      "show":"HBG Tech, Gun Sage",
+      "skill1":"**HBG Tech (Master)**\nAugmente de 10% l'Attaque de HBG Tech [Gun Sage] *(1,3x -> 1,4x)*.",
+      "skill2":"**Gun Sage**\nDonne Super High-Grade Earplugs.\n+30% d'Attaque en utilisant un HBG.\nDonne Evade Distance Up.\n+20% de dégâts de munitions élémentaires / d'affliction.\nAjoute +15 de dégâts de Stun aux attaques de mélée et aux munitions Crag/Cluster.\nHeat Beam obtient +20% de dégâts.\nAugmente les dégâts d'une salve de tir de compression parfaitement exécutée (timing).",
+      "skill3":"**HBG Tech (Kaiden)**\n+10% d'Attaque en utilisant un HBG.\nDonne Evade Distance Up.",
+      "skill4":"**HBG Tech (Expert)**\nUtiliser un HBG donne Evade Distance Up.",
+      "skill5":"**HBG Tech (Novice)**\nRéduit de 20% l'Attaque en utilisant un HBG.",
+      "call1":"Evade Distance",
+      "call2":"Hearing Res"
+    },
+    "LBG Tech":{
+      "show":"LBG Tech, Gun Prodigy",
+      "skill1":"**LBG Tech (Master)**\nAugmente de 10% l'Attaque de LBG Tech [Gun Prodigy] *(1,3x -> 1,4x)*.",
+      "skill2":"**Gun Prodigy**\nDonne Super High-Grade Earplugs.\n+30% d'Attaque en utilisant un LBG.\nRéduit la probabilité de rebond des balles sur le monstre.\nPermet d'utiliser des objets en ayant l'arme dégainée.\nRajoute des Perfect Shot (jauge bleu) à la barre de Just Shot (jauge blanche), ceux-ci infligent des dégâts supplémentaire.",
+      "skill3":"**LBG Tech (Kaiden)**\n+10% d'Attaque en utilisant un LBG.\nUtiliser un LBG réduit la probabilité de rebond des balles sur le monstre.",
+      "skill4":"**LBG Tech (Expert)**\nUtiliser un LBG réduit la probabilité de rebond des balles sur le monstre.",
+      "skill5":"**LBG Tech (Novice)**\nRéduit de 20% l'Attaque en utilisant un LBG.",
+      "call1":"Hearing Res"
+    },
+    "Bow Tech":{
+      "show":"Bow Tech, Bow Demon",
+      "skill1":"**Bow Tech (Master)**\nAugmente de 10% l'Attaque de Bow Tech [Bow Demon] *(1,3x -> 1,4x)*.",
+      "skill2":"**Bow Demon**\nDonne Super High-Grade Earplugs.\n+30% d'Attaque en utilisant un Arc.\nLes flèches ne peuvent plus être déviées.\nAugmente le modificateur de dégâts des Power Coating à 1,60x pour les Arcs normaux, 1,70x pour les Arc Gou (et leurs améliorations).\nDébloque un second niveau de charge de tir pour les armes Evolution (Raviente) et Rang G.",
+      "skill3":"**Bow Tech (Kaiden)**\n+10% d'Attaque en utilisant un Arc.\nLes flèches ne peuvent plus être déviées.",
+      "skill4":"**Bow Tech (Expert)**\nLes flèches ne peuvent plus être déviées.",
+      "skill5":"**Bow Tech (Novice)**\nRéduit de 20% l'Attaque en utilisant un Arc.",
+      "call1":"Hearing Res"
+    },
+    "All Res Up":{
+      "show":"",
+      "skill1":"**All Res +20**\nAugmente toutes les résistances élémentaires de 20.",
+      "skill2":"**All Res +15**\nAugmente toutes les résistances élémentaires de 10.",
+      "skill3":"**All Res +10**\nAugmente toutes les résistances élémentaires de 5.",
+      "skill4":"**All Res -10**\nRéduit toutes les résistances élémentaires de 5.",
+      "skill5":"**All Res -15**\nRéduit toutes les résistances élémentaires de 10.",
+      "skill6":"**All Res -20**\nRéduit toutes les résistances élémentaires de 20."
+    },
+    "Fire Res":{
+      "show":"",
+      "skill1":"**Fire Res +30**\nAugmente la résistance au feu de 30.",
+      "skill2":"**Fire Res +20**\nAugmente la résistance au feu de 20.",
+      "skill3":"**Fire Res +10**\nAugmente la résistance au feu de 10.",
+      "skill4":"**Fire Res -10**\nRéduit la résistance au feu de 10.",
+      "skill5":"**Fire Res -20**\nRéduit la résistance au feu de 20.",
+      "skill6":"**Fire Res -30**\nRéduit la résistance au feu de 30."
+    },
+    "Water Res":{
+      "show":"",
+      "skill1":"**Water Res +30**\nAugmente la résistance à l'eau de 30.",
+      "skill2":"**Water Res +20**\nAugmente la résistance à l'eau de 20.",
+      "skill3":"**Water Res +10**\nAugmente la résistance à l'eau de 10.",
+      "skill4":"**Water Res -10**\nRéduit la résistance à l'eau de 10.",
+      "skill5":"**Water Res -20**\nRéduit la résistance à l'eau de 20.",
+      "skill6":"**Water Res -30**\nRéduit la résistance à l'eau de 30."
+    },
+    "Ice Res":{
+      "show":"",
+      "skill1":"**Ice Res +30**\nAugmente la résistance à la glace de 30.",
+      "skill2":"**Ice Res +20**\nAugmente la résistance à la glace de 20.",
+      "skill3":"**Ice Res +10**\nAugmente la résistance à la glace de 10.",
+      "skill4":"**Ice Res -10**\nRéduit la résistance à la glace de 10.",
+      "skill5":"**Ice Res -20**\nRéduit la résistance à la glace de 20.",
+      "skill6":"**Ice Res -30**\nRéduit la résistance à la glace de 30."
+    },
+    "Thunder Res":{
+      "show":"",
+      "skill1":"**Thunder Res +30**\nAugmente la résistance à la foudre de 30.",
+      "skill2":"**Thunder Res +20**\nAugmente la résistance à la foudre de 20.",
+      "skill3":"**Thunder Res +10**\nAugmente la résistance à la foudre de 10.",
+      "skill4":"**Thunder Res -10**\nRéduit la résistance à la foudre de 10.",
+      "skill5":"**Thunder Res -20**\nRéduit la résistance à la foudre de 20.",
+      "skill6":"**Thunder Res -30**\nRéduit la résistance à la foudre de 30."
+    },
+    "Dragon Res":{
+      "show":"",
+      "skill1":"**Dragon Res +30**\nAugmente la résistance au dragon de 30.",
+      "skill2":"**Dragon Res +20**\nAugmente la résistance au dragon de 20.",
+      "skill3":"**Dragon Res +10**\nAugmente la résistance au dragon de 10.",
+      "skill4":"**Dragon Res -10**\nRéduit la résistance au dragon de 10.",
+      "skill5":"**Dragon Res -20**\nRéduit la résistance au dragon de 20.",
+      "skill6":"**Dragon Res -30**\nRéduit la résistance au dragon de 30."
+    },
+    "Poison":{
+      "show":"Poison Res",
+      "skill1":"**Negate Poison**\nImmunise contre le poison.",
+      "skill2":"**Poison Halved**\nLa durée du poison est divisée par deux.",
+      "skill3":"**Double Poison・10**\nLa durée du poison est doublée.",
+      "zcall1":"Poison Res Up"
+    },
+    "Para":{
+      "show":"Paralysis Res",
+      "skill1":"**Negate Para**\nImmunise contre la paralysie.",
+      "skill2":"**Para Halved**\nLa durée de la paralysie est divisée par deux.",
+      "skill3":"**Para Doubled・10**\nLa durée de la paralysie est doublée.",
+      "zcall1":"Paralysis Res Up"
+    },
+    "Sleep":{
+      "show":"Sleep Res",
+      "skill1":"**Negate Sleep**\nImmunise contre le sommeil.",
+      "skill2":"**Sleep Halved**\nLa durée du sommeil est divisée par deux.",
+      "skill3":"**Sleep Doubled・10**\nLa durée du sommeil est doublée.",
+      "zcall1":"Sleep Res Up"
+    },
+    "Status Res":{
+      "show":"",
+      "skill1":"**S. Immunity (Myriad)**\nImmunise contre le poison, la paralysie, le sommeil, la puanteur, le bonhomme de neige, le silence, la baisse de défense, l'ivresse, le magnétisme, la cristallisation et les explosions.",
+      "skill2":"**Status Immunity**\nImmunise contre le poison, la paralysie et le sommeil.",
+      "skill3":"**Status Halved**\nDivise par deux la durée du poison, de la paralysie et du sommeil.",
+      "skill4":"**Status Doubled・10**\nDouble la durée du poison, de la paralysie et du sommeil."
+    },
+    "Stun":{
+      "show":"",
+      "skill1":"**Negate Stun**\nImmunise contre les stun.",
+      "skill2":"**Stun Halved**\nLa durée d'un stun est divisée par deux.",
+      "skill3":"**Stun Doubled・10**\nLa durée d'un stun est doublée."
+    },
+    "Deoderant":{
+      "show":"",
+      "skill1":"**Deoderant**\nImmunise contre la puanteur."
+    },
+    "Snowball Res":{
+      "show":"",
+      "skill1":"**Snowball Res**\nImmunisé au statut bonhomme de neige."
+    },
+    "Vocal Chords": {
+      "show":"",
+      "skill1":"**Vocal Chord Immunity**\nImmunise contre le silence et la fatigue. Exclusif au Chameleos.",
+      "skill2":"**Vocal Chord Halved**\nDivise par deux la durée du silence et de la fatigue."
+    },
+    "Def Lock": {
+      "show":"",
+      "skill1":"**Def Lock**\nImmunise contre la baisse de défense."
+    },
+    "Sobriety": {
+      "show":"",
+      "skill1":"**Heavy Drinker**\nImmunise contre l'ivresse.",
+      "skill2":"**Drunkard・10**\nDouble la durée de l'ivresse."
+    },
+    "Blast Resistance":{
+      "show":"",
+      "skill1":"**Blast Resistance**\nImmunise contre le fléau explosion."
+    },
+    "Magnetic Res":{
+      "show":"",
+      "skill1":"**Magnetic Res**\nImmunise contre le magnétisme.",
+      "skill2":"**Magnet Vulnerability・10**\nDouble la durée du magnétisme."
+    },
+    "Crystal Res":{
+      "show":"",
+      "skill1":"**Crystal Res**\nImmunise contre la cristallisation.",
+      "skill2":"**Crystal Vulnerability・10**\nLe temps de récupération du statut cristalisé est plus long. De plus, les cristaux sont plus susceptibles d'exploser."
+    },
+    "Freeze Res":{
+      "show":"",
+      "skill1":"**Freeze Resistance**\nImmunise contre le gel. Exclusif au Toa Tesukatora."
+    },
+    "Three Worlds":{
+      "show":"Unaffected",
+      "skill1":"**Unaffected +3**\nDonne Super High-Grade Earplugs, Violent Wind Breaker et Quake Res+2",
+      "skill2":"**Unaffected +2**\nDonne High-Grade Earplugs, Dragon Wind Breaker et Quake Res+1",
+      "skill3":"**Unaffected +1**\nDonne Earplugs, Wind Resistance (Large) et Quake Res+1",
+      "call1":"Hearing Res",
+      "call2":"Wind Pressure",
+      "call3":"Quake Res"
+    },
+    "Hearing Res":{
+      "show":"Earplugs",
+      "skill1":"**Super High-Grade Earplugs**\nImmunise contre tous les cris de tier 3.",
+      "skill2":"**High-Grade Earplugs**\nImmunise contre tous les cris de tier 2.",
+      "skill3":"**Earplugs**\nImmunise contre tous les cris de tier 1.\nRéduit la durée d'immobilisation due aux cris de tier 2.",
+      "zcall1":"Hearing Protection Up"
+
+    },
+    "Wind Pressure":{
+      "show":"Violent/Dragon Winder Breaker, Wind Res",
+      "skill1":"**Violent Wind Breaker**\nProtège du vent violet.",
+      "skill2":"**Dragon Wind Breaker**\nProtège du vent draconique.",
+      "skill3":"**Wind Res (Large)**\nProtège du vent large.",
+      "skill4":"**Wind Res (Small)**\nProtège du vent normal.",
+      "zcall1":"Wind Res Up"
+    },
+    "Quake Res":{
+      "show":"",
+      "skill1":"**Quake Res +2**\nProtège des grosses secousses.",
+      "skill2":"**Quake Res +1**\nProtège des petites secousses.",
+      "zcall1":"Quake Res Up"
+    },
+    "Evasion":{
+      "show":"",
+      "skill1":"**Evasion +2**\nAugmente la fenêtre d'invulnérabilité à 12/30ème d'une seconde.",
+      "skill2":"**Evasion +1**\nAugmente la fenêtre d'invulnérabilité à 10/30ème d'une seconde.",
+      "skill3":"**※ Note**\nLa fenêtre d'invulnérabilité par défaut dure 6/30ème d'une seconde."
+    },
+    "Evade Distance":{
+      "show":"",
+      "skill1":"**Evade Distance Up**\nAugmente la distance des pas et des esquives."
+    },
+    "Evasion Boost":{
+      "show":"",
+      "skill1":"Donne Evasion +2 et Evade Distance Up.",
+      "call1":"Evasion",
+      "call2":"Evade Distance"
+    },
+    "Heat Res":{
+      "show":"Summer Person, Heat",
+      "skill1":"**Summer Person**\nDonne l'effet de Heat Cancel et Damage Recovery Speed +1 dans les zones chaudes.",
+      "skill2":"**Heat Cancel**\nImmunise contre la chaleur.",
+      "skill3":"**Heat Halved**\nDivise par 2 la vitesse de la perte de Points de Vie dans les zones chaudes.",
+      "skill4":"**Heat Surge (Small)**\nAugmente la vitesse de la perte de Points de Vie de 1 unité par 1,3 seconde dans le Volcan, 2 secondes dans le Désert.",
+      "skill5":"**Heat Surge (Large)**\nAugmente la vitesse de la perte de Points de Vie de 1 unité par 1 seconde dans le Volcan, 1,5 secondes dans le Désert.",
+      "skill6":"**※ Note**\nPar défaut, le joueur perd des Points de Vie toutes les 2 secondes dans le Volcan, toutes les 3 secondes dans le Désert."
+    },
+    "Cold Res":{
+      "show":"Winter General, Cold",
+      "skill1":"**Winter General**\nDonne Cold Cancel, Frost Bite Immunity et Marathon Runner dans les zones glaciales.",
+      "skill2":"**Cold Cancel**\nImmunise contre le froid.",
+      "skill3":"**Cold Halved**\nDivise par 2 la vitesse de la perte d'Endurance dans les zones glaciales.",
+      "skill4":"**Cold Surge (Small)**\n+50% de perte d'Endurance dans les zones glaciales.",
+      "skill5":"**Cold Surge (Large)**\nDouble la vitesse de perte d'Endurance dans les zones glaciales.",
+      "skill6":"**※ Note**\nPar défaut, la réduction de la barre d'Endurance à lieu toutes les 6 minutes.",
+      "call1":"Stamina"
+    },
+    "Light Tread":{
+      "show":"",
+      "skill1":"Immunise contre les fossés créer par les monstres (piège)."
+    },
+    "Anti-Theft":{
+      "show":"",
+      "skill1":"Empêche de se faire voler des objets."
+    },
+    "Terrain":{
+      "show":"Hasard Res/Prone",
+      "skill1":"**Hazard Res (Large)**\nRéduit de 30% la vitesse de perte de Points de Vie due au terrain (lave) et aux zones chaudes.",
+      "skill2":"**Hazard Res (Small)**\nRéduit de 70% la vitesse de perte de Points de Vie due au terrain (lave) et aux zones chaudes.",
+      "skill3":"**Hazard Prone (Large)**\nAugmente de 50% la vitesse de perte de Points de Vie due au terrain (lave) et aux zones chaudes.",
+      "skill4":"**Hazard Prone (Small)**\nDouble la vitesse de perte de Points de Vie due au terrain (lave) et aux zones chaudes.",
+      "skill5":"**※ Note**\nPar défaut, le joueur perd des Points de Vie toutes les 8/30ème de secondes"
+    },
+    "Protection":{
+      "show":"Goddess' Embrace, Death God's Embrace, Divine/Demonic Protection,",
+      "skill1":"**Goddess' Embrace**\nDonne 1 chance sur 4 qu'une attaque n'inflige aucun dégâts.",
+      "skill2":"**Divine Protection**\nDonne 1 chance sur 8 qu'une attaque n'inflige aucun dégâts.",
+      "skill3":"**Demonic Protection**\nDonne 1 chance sur 16 de mourir instantanément de n'importe quelle attaque.",
+      "skill4":"**Death God's Embrace**\nDonne 1 chance sur 8 de mourir instantanément de n'importe quelle attaque"
+    },
+    "Passive":{
+      "show":"",
+      "skill1":"Triple la durée du temps d'invicibilité après avoir encaissé une attaque (le moment durant lequel le joueur se relève)."
+    },
+    "Breakout":{
+      "show":"",
+      "skill1":"Augmente da vitesse de la course lorsque le joueur à moins de 20% de Points de Vie."
+    },
+    "Guts":{
+      "show":"",
+      "skill1":"**True Guts**\nAu dessus de 50 Points de Vie et d'Endurance, une attaque létale (One Shot) vous laissera à 1 Point de Vie.",
+      "skill2":"**Great Guts**\nAu dessus de 70 Points de Vie et 50 d'Endurance, une attaque létale (One Shot) vous laissera à 1 Point de Vie.",
+      "skill3":"**Guts**\nAu dessus de 90 Points de Vie et 50 d'Endurance, une attaque létale (One Shot) vous laissera à 1 Point de Vie."
+    },
+    "Absolute Defense":{
+      "show":"",
+      "skill1":"Donne une aura protectrice qui annule n'importe quel attaque, incluant les dégâts causés par des Afflictions.\nL'aura disparait après avoir encaissé un coup pendant un temps défini.\nLe temps de recharge augmente après chaque coups encaissés.\nRéduit de 20% les dégâts physique infligés lorsque l'aura est désactivée."
+    },
+    "Combo Expert":{
+      "show":"",
+      "skill1":"**Combo Expert +3**\nAugmente de 30% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets et améliore les objets de soins.",
+      "skill2":"**Combo Expert +2**\nAugmente de 20% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets.",
+      "skill3":"**Combo Expert +1**\nAugmente de 30% le taux de réussite des combinaisons.\nDonne l'effet de Maximum Bullets.",
+      "skill4":"**Combo Expert -1**\nRéduit de 5% le taux de réussite des combinaisons.",
+      "call1":"Ammo Combiner"
+    },
+    "Wide-Area":{
+      "show":"",
+      "skill1":"**Wide-Area +3**\nLes Méga Potions, Blitgh Cure Fruits, Zenith Espinas Antitoxin et Crimson Raviente Blood, ainsi que les objets concernés par Wild-Area +2, affectent les autres joueurs présents dans la même zone.",
+      "skill2":"**Wide-Area +2**\nLes Herbs, Potions, Antidotes, Cool Drinks, Hot Drinks, Armor Seed et Power Seed affectent les autres joueurs présent la même zone.",
+      "skill3":"**Wide-Area +1**\nLes Herbs, Potions, Antidotes, Cool Drinks, Hot Drinks, Armor Seed et Power Seed affectent à moitié (50% de leurs effets) les autres joueurs présent la même zone.",
+      "skill4":"**Wide-Area -1**\nLe joueur ne peut être soigné par la zone de récupération de Wide-Area.",
+      "skill5":"**※ Note**\nFonctionne avec les Herbs, Potions de soins, Antidotes, Power Seeds, Armor Seed et Flinch-Free Fruit."
+    },
+    "Everlasting":{
+      "show":"Item Duration Up",
+      "skill1":"**Item Duration Up**\nAugmente de 50% la durée des effets d'objets.",
+      "skill2":"**Item Duration Down**\nRéduit de 33% la durée des effets d'objets."
+    },
+    "Whim":{
+      "show":"",
+      "skill1":"**Divine Whim**\nRéduit de 50% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
+      "skill2":"**Spirit's Whim**\nRéduit de 25% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
+      "skill3":"**Spectre's Whim**\nAugmente de 50% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
+      "skill4":"**Devil's Whim**\nAugmente de 25% les chances de briser les Pioches, Filet, Cornes et Boomerangs.",
+      "img":"img/skills/whim.png"
+    },
+    "Hunter":{
+      "show":"Hunter Valhalla, Hunter Life",
+      "skill1":"**Hunter Valhalla**\nLa carte ainsi que la position exacte des monstres sont constamment affichés.\nFacilite la pêche et l'utilisation de la broche BBQ.",
+      "skill2":"**Hunter Life**\nLa carte est constamment affichée.\nFacilite la pêche et l'utilisation de la broche BBQ."
+    },
+    "Strong Arm":{
+      "show":"",
+      "skill1":"**Strong Arm +2**\nAugmente de 30% les dégâts des objets jetables.",
+      "skill2":"**Strong Arm +1**\nAugmente de 10% les dégâts des objets jetables."
+    },
+    "Throwing":{
+      "show":"",
+      "skill1":"**Throwing Distance up**\nAugmente la distance de lancé d'objets jetables.\nLa probabilité de perdre des Boomerangs passe à 1/8."
+    },
+    "Cooking":{
+      "show":"BBQ Master,Expert",
+      "skill1":"**BBQ Master**\nLa viande et le poisson restent marron (à point) plus longtemps.",
+      "skill2":"**BBQ Expert**\nLa viande et le poisson restent marron (à point) légèrement plus longtemps.",
+      "skill3":"**False BBQ Expert**\nLa viande et le poisson restent marron (à point) pendant moins de la moitié du temps habituel."
+    },
+    "Fishing":{
+      "show":"",
+      "skill1":"**Fishing Expert**\nLes poissons mordent toujours à la première tentative."
+    },
+    "Combining":{
+      "show":"",
+      "skill1":"**Combining +30%**\nAugmente de 30% le taux de réussite des combo.",
+      "skill2":"**Combining +15%**\nAugmente de 15% le taux de réussite des combo.",
+      "skill3":"**Combining +10%**\nAugmente de 10% le taux de réussite des combo.",
+      "skill4":"**Combining -5%**\nRéduit de 5% le taux de réussite de combo."
+    },
+    "Alchemy":{
+      "show":"",
+      "skill1":"Permet de faire des combinaisons d'alchimie (alternative aux combinaisons d'objets)."
+    },
+    "Encourage":{
+      "show":"",
+      "skill1":"**Encourage +2**\nDonne les effets de Horn Maesto, Stun Negate ainsi que Evasion +2 pour tous les joueurs présent dans la quête.",
+      "skill2":"**Encourage +1**\nDonne les effets de Horn Maesto, Stun Halved ainsi que Evasion +1 pour tous les joueurs présent dans la quête.",
+      "call1":"Evasion",
+      "call2":"Stun",
+      "zcall1":"Encourage Up"
+    },
+    "Flute Expert":{
+      "show":"",
+      "skill1":"Les chances de briser des cornes sont divisés par 2.\nAugmente de 50% la durée des cornes (fonctionne sur les musiques des Cornes de Chasse)."
+    },
+    "Speed Setup":{
+      "show":"Trap Master/Expert",
+      "skill1":"**Trap Master**\nRéduit de 33% le temps d'installation d'un piège.\nDonne 100% de taux de réussite de combinaison pour les pièges, Mocha Pots et autre objets en lien avec les pièges.",
+      "skill2":"**Trap Expert**\nRéduit de 20% le temps d'installation d'un piège.\nDonne 100% de taux de réussite de combinaison pour les pièges, Mocha Pots et autre objets en lien avec les pièges."
+    },
+    "Iron Arm":{
+      "show":"",
+      "skill1":"**Iron Arm +2**\nDonne les effets de Throwing Distance Up, Strong Arm +2 et Throwing Knives +2.\nAugmente le temps de garde de : Guard Slash de la GS (Styles Storm et Heaven), Lance Shield Rush (Styles Storm et Extreme), Tonfa's Standard 1-3-4, Tonfa Aerial 1-3, Tonfa Continuous Thrust 2 et Dash Tonfa Rotation.",
+      "skill2":"**Iron Arm +1**\nDonne les effets de Throwing Distance Up, Strong Arm +1 et Throwing Knives +1.\nAugmente le temps de garde de : Guard Slash de la GS (Styles Storm et Heaven), Lance Shield Rush (Styles Storm et Extreme), Tonfa's Standard 1-3-4, Tonfa Aerial 1-3, Tonfa Continuous Thrust 2 et Dash Tonfa Rotation.",
+      "call1":"Throwing",
+      "call2":"Strong Arm",
+      "call3":"Knife Throwing"
+    },
+    "Knife Throwing":{
+      "show":"",
+      "skill1":"**Throwing Knives +2**\nJette 5 couteaux en même temps. N'en consomme qu'un seul.",
+      "skill2":"**Throwing Knives +1**\nJette 3 couteaux en même temps. N'en consomme qu'un seul."
+    },
+    "Map":{
+      "show":"",
+      "skill1":"La carte est constamment affichée."
+    },
+    "Psychic":{
+      "show":"Autotracker, Detect",
+      "skill1":"**Autotracker**\nLa position des monstres ainsi que leurs icones sont constamment affichés sur la carte.",
+      "skill2":"**Detect**\nAffiche les icones des monstres marqués sur la carte."
+    },
+    "Stealth":{
+      "show":"Sneak, taunt",
+      "skill1":"**Sneak**\nLes monstres vous cibleront moins.",
+      "skill2":"**Taunt**\nLes monstres vous cibleront plus."
+    },
+    "Incitement":{
+      "show":"",
+      "skill1":"Attaquer un monstre forcera son attention sur vous.\nLes dégâts reçus par ce monstre seront réduit sur la durée.\nL'icône d'œil jaune (indiquant que vous êtes repéré) devient rouge lorsque l'effet d'Incitement est actif.\n\nRester trop longtemps éloigné du monstre annulera prématurément l'effet d'Incitement.\nCe talent à un temps de récupération de 30 secondes.\n\nAttaque +40 lorsque vous êtes pris pour cible."
+    },
+    "Backpacking":{
+      "show":"Pro Transporter",
+      "skill1":"**Pro Transporter**\nAugmente la vitesse de déplacement lors du transport d'objets lourds (ex : Oeufs, Powderstone, Soothstone etc).\nPermet de chuter d'une petite hauteur sans relâcher l'objet transporté."
+    },
+    "Gathering Speed":{
+      "show":"High Speed Gathering",
+      "skill1":"**High Speed Gathering**\nAugmente la vitesse de récolte."
+    },
+    "Gathering":{
+      "show":"",
+      "skill1":"**Gathering +2**\nAugmente la probabilité de récolter une seconde fois à 31/32 *(96,8%)*.",
+      "skill2":"**Gathering +1**\nAugmente la probabilité de récolter une seconde fois à 29/32 *(90,6%)*.",
+      "skill3":"**Gathering -1**\nRéduit la probabilité de récolter une seconde fois à 23/32 *(71,8%)*.",
+      "skill4":"**Gathering -1**\nRéduit la probabilité de récolter une seconde fois à 19/32 *(59,3%)*.",
+      "skill5":"**※ Note**\nPar défaut, la probabilté de récolter une seconde fois est de 27/32 (87,3%)."
+    },
+    "Carving":{
+      "show":"Carving Export",
+      "skill1":"**Carving Expert**\nAccorde un dépeçage supplémentaire."
+    },
+    "Mindfulness":{
+      "show":"Imperturbable, Fully Prepared, Negligence",
+      "skill1":"**Imperturbable**\nLe joueur ne peux être interrompu par une attaque lorsqu'il utilise un objet ou dépèce / récolte un objet.",
+      "skill2":"**Fully Prepared**\nLe joueur ne peux être interrompu par un autre joueur ou par une attaque d'un petit monstre lorsqu'il utilise un objet ou dépèce / récolte un objet.",
+      "skill3":"**Negligence**\nAugmente les dégâts subit par une attaque lorsque le joueur utilise un objet ou dépèce / récolte un objet."
+    },
+    "Fate":{
+      "show":"Luck",
+      "skill1":"**Great Luck**\nAugmente la probabilité d'augmenter le nombre d'emplacement de récompense de quête à 29/32 *(90,6%)*.",
+      "skill2":"**Good Luck**\nAugmente la probabilité d'augmenter le nombre d'emplacement de récompense de quête à 26/32 *(81,25%)*.",
+      "skill3":"**Bad Luck**\nRéduit la probabilité d'augmenter le nombre d'emplacement de récompense de quête à 16/32 *(50%)*.",
+      "skill4":"**Horrible Luck**\nRéduit la probabilité d'augmenter le nombre d'emplacement de récompense de quête à 8/32 *(25%)*.",
+      "skill5":"**※ Note**\nPar défaut, la probabilité d'augmenter le nombre d'emplacement de récompense de quête est de 22/32 *(68,7%)*."
+    },
+    "Monster":{
+      "show":"Come on Big Guy!",
+      "skill1":"**Come on Big Guy!**\nAugmente la probabilité que d'autres grands monstres apparaissent."
+    },
+    "Pressure":{
+      "show":"",
+      "skill1":"**Pressure (Large)**\nAugmente aléatoirement la prime de zenny des monstres de : 30%, 50%, 75%, 100%, 150%",
+      "skill2":"**Pressure (Small)**\nAugmente de 30% la prime de zenny des monstres."
+    },
+    "Breeder":{
+      "show":"",
+      "skill1":"Augmente les chances pour qu'un poogie drop un objet à My Tore.\nAugmente les chances pour que votre Halk drop un objet."
+    },
+    "Inspiration":{
+      "show":"",
+      "skill1":"**Certains effets s'activent aléatoirement au début d'une quête.**\n",
+      "img":"img/skills/inspiration.png"
+    },
+    "Relief":{
+      "show":"",
+      "skill1":"Réduit de 50% le délai de récupération des Rastas, Fostas, Partners et Halks après leur disparition en quête.\n※ Les Legendary Rastas ne partent pas, **ils ne sont donc pas affectés par ce talent.**"
+    },
+    "Capture Proficiency":{
+      "show":"Capture Guru, Capture Proficiency",
+      "skill1":"**Capture Guru**\nL'icône des monstres clignoteront sur la carte lorsqu'ils sont capturable.",
+      "skill2":"**Capture Proficiency**\nAugmente de 30% les chances qu'un monstre capturé devienne un compagnon **(PvP)**."
+    },
+    "Caring":{
+      "show":"",
+      "skill1":"**Caring +3**\nToutes les quêtes : Les joueurs ne peuvent être interrompus par vos attaques, ils ne peuvent pas non plus vous interrompre.\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place.",
+      "skill2":"**Caring +2**\nQuêtes non-Rang G : Les joueurs ne peuvent être interrompus par vos attaques, ils ne peuvent pas non plus vous interrompre.\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place.",
+      "skill3":"**Caring +1**\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place."
+    },
+    "Movement Speed":{
+      "show":"",
+      "skill1":"**Movement Speed Up +2**\nAugmente grandement la vitesse des mouvements lorsque l'arme est rengainée.",
+      "skill2":"**Movement Speed Up +1**\nAugmente légèrement la vitesse des mouvements lorsque l'arme est rengainée."
+    },
+    "Reinforcement":{
+      "show":"Red Soul, Blue Soul",
+      "skill1":"**Red Soul**\n+15 d'Attaque.\nAttaquer un autre joueur lui donnera +30 d'Attaque.\n※ Le joueur attaqué doit avoir Blue Soul.\n※Lorsqu'un joueur ayant Blue Soul vous attaque, vous obtenez +30 d'Attaque vous serez alors capable de stun un monstre en attaquant sa tête avec n'importe quelle arme.\n**Ces effets durent 2 minutes**\n\n※ Le bonus d'Attaque agit comme un bonus final, **celui-ci n'est pas affecté par les différents multiplicateurs d'autres talents.**",
+      "skill2":"**Blue Soul**\n+50 de Défense.\nAttaquer un autre joueur lui donnera +100 de Défense.\n※ Attaquer un autre joueur ayant Blue Soul le soignera de toutes afflictions.\n※ Se faire attaquer par un autre joueur possédant Red Soul vous donnera +100 de Défense ainsi que l'effet de Goddess' Embrace.\n**Ces effets durent 2 minutes**.",
+      "call1":"Protection",
+      "zcall1":"Soul Up"
+    },
+    "Assistance":{
+      "show":"",
+      "skill1":"Le bras du joueur s'illumine en rouge, obtient +20 d'Attaque, +50 de Défense, donne l'effet de Damage Recovery Speed +2, Status Immunity et Peerless **aux autres joueurs.**\nLa zone d'effet correspond à la distance de 3 roulades (2 avec Evade Distance Up).\nLes bras des autres joueurs affectés par Assistance auront une lueur jaune.\n\n※Le joueur ayant ce talent équipé recevra +10 d'Attaque et +50 de Défense, les effets de Peerless, Status Immunity et Damage Recovery Speed+2 **sont réservés aux autres joueurs.**\n\n※Ce talent écrase les effets inférieurs à ceux donnés par celui-ci. Par exemple, si un joueur possède Status Halved, celui-ci sera remplacé par Status Immunity lorsqu'il sera dans la portée du joueur possédant Assistance.\n\n※ Le bonus d'Attaque agit comme un bonus final, **celui-ci n'est pas affecté par les différents multiplicateurs d'autres talents.**",
+      "call1":"Status Res",
+      "call2":"Stamina",
+      "zcall1":"Assistance Up"
+    },
+    "Grace":{
+      "show":"",
+      "skill1":"**Grace +3**\nLorsqu'il y a moins de 3 talents actif, donne Attack Up (Absolute), Issen +3, High-Grade Earplugs, Wind Res (Large), Quake Res +1, Evasion +1, Guard +1, Goddess' Embrace et Weapon Handling.",
+      "skill2":"**Grace +2**\nLorsqu'il y a moins de 2 talents actif, donne Attack Up (Absolute), Issen +3, High-Grade Earplugs, Wind Res (Large), Quake Res +1, Evasion +1, Guard +1, Goddess' Embrace et Weapon Handling.",
+      "skill3":"**Grace +1**\nLorsque ce talent est le seul talent actif, donne Attack Up (Absolute), Issen +3, High-Grade Earplugs, Wind Res (Large), Quake Res +1, Evasion +1, Guard +1, Goddess' Embrace et Weapon Handling.",
+      "call1":"Attack",
+      "call2":"Issen",
+      "call3":"Earplugs",
+      "call4":"Wind Pressure",
+      "call5":"Quake Res",
+      "call6":"Evasion",
+      "call7":"Guard",
+      "call8":"Protection"
+    },
+    "Compensation":{
+      "show":"",
+      "skill1":"Donne Death God's Embrace, Sharpness +1, Attack Up (Absolute), Evasion +2 et Critical Eye +4.",
+      "call1":"Protection",
+      "call2":"Artisan",
+      "call3":"Attack",
+      "call4":"Evasion",
+      "call5":"Expert"
+    },
+    "Dark Pulse":{
+      "show":"Dark Finale",
+      "skill1":"**Dark Finale**\nLorsque vos Points de Vie tombent à 0, vous vous releverez en forme éveillée, vous rendant tous vos Points de Vie, votre Endurance ainsi que plusieurs talents supplémentaire en échange **d'une perte continue de vos Points de Vie.**\n\nLa perte de vos Points de Vie ne peut être stoppée, **vous mourrez au bout de 1 minute une fois en forme éveillée.**\nFinir la quête interromp la perte de vos Points de Vie.\n\nDans cette forme éveillée, vous gagnez les effets suivant : Adrenaline +2, Starving Wolf +2, Defense +120, Sharpening Artisan, Super High-Grade Earplugs, Violent Wind Breaker, Quake Res +2, Heat Cancel et Cold Cancel.\nDe plus, vous obtenez un effet de super armure bloquant toutes formes de projection.",
+      "call1":"Adrenaline",
+      "call2":"Fasting",
+      "call3":"Defense",
+      "call4":"Sharpening",
+      "call5":"Earplugs",
+      "call6":"Wind Pressure",
+      "call7":"Quake Res",
+      "call8":"Heat Res",
+      "call9":"Cold Res"
+    },
+    "Blazing Grace":{
+      "show":"Blazing Majesty",
+      "skill1":"**Blazing Majesty +2**\nDonne Adrenaline +2, Red Soul, Bombardier, Fire Res +30, Artillery God, Summer Person, Terrain Damage Decreased (Large), Fire Attack Up (Large), Flame Sword +3 et Bomb Sword +3.",
+      "skill2":"**Blazing Majesty +1**\nDonne Adrenaline +1, Red Soul, Bombardier, Fire Res +20, Artillery God, Heat Cancel, Terrain Damage Decreased (Small), Fire Attack Up (Large), Flame Sword +2 et Bomb Sword +2",
+      "call1":"Adrenaline",
+      "call2":"Reinforcement",
+      "call3":"Fire Res",
+      "call4":"Gunnery",
+      "call5":"Heat Res",
+      "call6":"Terrain",
+      "call7":"Fire Sword",
+      "call8":"Bomb Sword"
+    },
+    "Drawing Arts":{
+      "show":"",
+      "skill1":"**Drawing Arts +2**\nLorsque l'arme est dégainée : donne Peerless, Evasion +2 et Weapon Handling.\nLorsque l'arme est rengainée : donne Damage Recovery Speed +2 et Quick Stamina Recovery (Large).",
+      "skill2":"**Drawing Arts +1**\nLorsque l'arme est dégainée : donne Marathon Runner, Evasion +1 et Weapon Handling.\nLorsque l'arme est rengainée : donne Damage Recovery Speed +1 et Quick Stamina Recovery (Small).",
+      "call1":"Stamina",
+      "call2":"Evasion",
+      "call3":"Weapon Handling"
+    },
+    "Ice Age":{
+      "show":"",
+      "skill1":"Donne une Aura de Glace lorsque vous attaquez un monstre. Celle-ci inflige des dégâts par secondes à tous les monstres dans sa zone.\nL'Aura de Glace fonctionne sur 3 niveaux différent, un certain nombre d'attaque est requis afin de passer au niveau suivant.\n\nL'Aura de Glace donne Stamina Recovery Up et Razor Sharp à tous les joueurs affectés par celle-ci. De plus, le joueur possédant l'Aura de Glace obtient Winter General.",
+      "zcall1":"Ice Age Up",
+      "img":"img/skills/ice_age.png"
+    },
+    "Skill Slots Up":{
+      "show":"",
+      "skill1":"**Skill Slots Up +7**\nAjoute 7 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill2":"**Skill Slots Up +6**\nAjoute 6 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill3":"**Skill Slots Up +5**\nAjoute 5 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill4":"**Skill Slots Up +4**\nAjoute 4 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill5":"**Skill Slots Up +3**\nAjoute 3 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill6":"**Skill Slots Up +2**\nAjoute 2 emplacements de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith.",
+      "skill7":"**Skill Slots Up +1**\nAjoute 1 emplacement de talents additionnel.\nS'additionne aux emplacements bonus des armures Origin, G et Zenith."
+    },
+    "Hearing Protection Up":{
+      "show":"",
+      "skill1":"**Hearing Protection Up +3**\nAjoute 3 niveaux supplémentaires à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith (Extreme roars).",
+      "skill2":"**Hearing Protection Up +2**\nAjoute 2 niveaux supplémentaires à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith.",
+      "skill3":"**Hearing Protection Up +1**\nAjoute 1 niveau supplémentaire à Hearing Protection.\nDépasser Super HG Earplugs vous protégera des cris Zénith.",
+      "call1":"Hearing Res"
+    },
+    "Wind Res Up":{
+      "show":"",
+      "skill1":"**Wind Res Up +4**\nAjoute 4 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith (Extreme Wind Pressure).",
+      "skill2":"**Wind Res Up +3**\nAjoute 3 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "skill3":"**Wind Res Up +2**\nAjoute 2 niveaux supplémentaires à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "skill4":"*Wind Res Up +1***\nAjoute 1 niveau supplémentaire à Wind Pressure.\nDépasser Violent Wind Breaker vous protégera contre le Vent Zénith.",
+      "call1":"Wind Pressure"
+    },
+    "Quake Res Up":{
+      "show":"",
+      "skill1":"**Quake Res Up +2**\nAjoute 2 niveaux supplémentaires à Quake Res.\nDépasser Quake Res +2 vous protégera des secousses Zénith (Extreme Tremor).",
+      "skill2":"**Quake Res Up +1**\nAjoute 1 niveau supplémentaire à Quake Res.\nDépasser Quake Res +2 vous protégera des secousses Zénith.",
+      "call1":"Quake Res"
+    },
+    "Assistance Up":{
+      "show":"",
+      "skill1":"**Assistance Up**\nDonne Status Immunity (Myriad) aux joueurs dans la portée du talent.\n※ Cela n'affecte pas **l'utilisateur du talent.**",
+      "call1":"Status Res"
+    },
+    "Poison Res Up":{
+      "show":"",
+      "skill1":"**Poison Res Up +2**\nAjoute 2 niveaux supplémentaires à Poison Res.\nDépasser Negate Poison divise par deux les dégâts infligés par le poison Zénith.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Poison Res Up +1**\nAjoute 1 niveau supplémentaire à Poison Res.\nDépasser Negate Poison divise par deux les dégâts infligés par le poison Zénith.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Poison"
+    },
+    "Paralysis Res Up":{
+      "show":"",
+      "skill1":"**Paralysis Res Up +2**\nAjoute 2 niveaux supplémentaires à Para Res.\nDépasser Negate Para divise par deux la durée de la paralysie Zénith (Extreme Paralysis).\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Paralysis Res Up +1**\nAjoute 1 niveau supplémentaire à Para Res.\nDépasser Negate Para divise par deux la durée de la paralysie Zénith (Extreme Paralysis).\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Para"
+    },
+    "Sleep Res Up":{
+      "show":"",
+      "skill1":"**Sleep Res Up +2**\nAjoute 2 niveaux supplémentaires à Sleep Res.\nDépasser Negate Sleep transformera le sommeil Zénith (Extreme Sleep) en sommeil normal.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "skill2":"**Sleep Res Up +1**\nAjoute 1 niveau supplémentaire à Sleep Res.\nDépasser Negate Sleep transformera le sommeil Zénith (Extreme Sleep) en sommeil normal.\n※ Fonctionne avec Status Immunity, contrairement à Assistance et Thunder Clad.",
+      "call1":"Sleep"
+    },
+    "Bullet Saver Up":{
+      "show":"",
+      "skill1":"**Bullet Saver Up +2**\nAjoute 2 niveaux supplémentaires à Bullet Saver.\nDépasser Saving Expert donne 46.4% de chance de ne pas consommer de munition / enduit.",
+      "skill2":"**Bullet Saver Up +1**\nAjoute 1 niveau supplémentaire à Bullet Saver.\nDépasser Saving Expert donne 46.4% de chance de ne pas consommer de munition / enduit.",
+      "call1":"Bullet Saver"
+    },
+    "Vampirism Up":{
+      "show":"",
+      "skill1":"Ajoute 1 niveau supplémentaire à Vampirism.\nDépasser Vampirism +2 augmente la cadence de vol de vie à 100%.",
+      "call1":"Vampirism"
+    },
+    "Guard Up":{
+      "show":"",
+      "skill1":"**Guard Up +2**\nAjoute 2 niveaux supplémentaires à Guard.\nDépasser Guard +2 réduit le recul encaissé, la perte d'Endurance et de Points de Vie durant une garde.\nAugmente la fenêtre de garde à partir de Guard +1.\n\n※ Lance & Gunlance : La garde fonctionne à 360°, un coup encaissé par l'arrière vous fera tout de même valser.\nHeavy Guard et Wide Guard peuvent bloquer des coups normalement non parable.\n\n※ La jauge de garde de la Lance se remplit plus rapidement (3 coups par phial -> 2 coups).\n※Réduit le temps de récupération du Feu de Wyverne à la Gunlance (-10sec, -5sec avec Hiden).",
+      "skill2":"**Guard Up +1**\nAjoute 1 niveau supplémentaire à Guard.\nDépasser Guard +2 réduit le recul encaissé, la perte d'Endurance et de Points de Vie durant une garde.\nAugmente la fenêtre de garde à partir de Guard +1.\n\n※ Lance & Gunlance : La garde fonctionne à 360°, un coup encaissé par l'arrière vous fera tout de même valser.\nHeavy Guard et Wide Guard peuvent bloquer des coups normalement non parable.\n\n※ La jauge de garde de la Lance se remplit plus rapidement (3 coups par phial -> 2 coups).\n※Réduit le temps de récupération du Feu de Wyverne à la Gunlance (-10sec, -5sec avec Hiden).",
+      "call1":"Guard"
+    },
+    "Encourage Up":{
+      "show":"",
+      "skill1":"**Encourage Up +2**\nAjoute 2 niveaux supplémentaires à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
+      "skill2":"**Encourage Up +2**\nAjoute 1 niveau supplémentaire à Encourage.\nDépasser Encourage +2 donne Marathon Runner et Stamina Recovery Up (Large) à toute l'équipe.",
+      "call1":"Stamina",
+      "call2":"Stamina Recovery",
+      "call3":"Encourage"
+    },
+    "Critical Conversion Up":{
+      "show":"",
+      "skill1":"**Critical Conversion Up +2**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(10 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion.",
+      "skill2":"**Critical Conversion Up +1**\nAugmente l'Attaque en fonction de l'Affinité de base de votre arme.\n(5 x √Affinité de base, arrondi à l'inférieur avant application).\n\n※ N'affecte que l'Affinité de base de l'arme. Ignore les Sigils, les SR Skills, le Tranchant ainsi que les autres talents.\n※Dépasser les 100% d'Affinité n'est pas nécessaire, cela fonctionne séparément de Critical Conversion.",
+      "call1":"Critical Conversion"
+    },
+    "Stylish Assault Up":{
+      "show":"",
+      "skill1":"**Stylish Assault Up +2**\n+40 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint.",
+      "skill2":"**Stylish Assault Up +1**\n+20 d'Attaque pour chaque esquive réussie.\nPeut atteindre +220 d'Attaque supplémentaire.\nL'aura rouge du talent devient jaune lorsque le bonus de +220 d'Attaque est atteint.",
+      "call1":"Stylish Assault"
+    },
+    "Dissolver Up":{
+      "show":"",
+      "skill1":"Réduit la valeur de Hitzone élémentaire requise pour Elemental Exploit (*20 -> 15*).",
+      "call1":"Dissolver"
+    },
+    "Thunder Clad Up":{
+      "show":"",
+      "skill1":"**Thunder Clad Up +2**\nAugmente la durée de Thunder Clad de 60 secondes (*60sec -> 120sec*).",
+      "skill2":"**Thunder Clad Up +1**\nAugmente la durée de Thunder Clad de 20 secondes (*60sec -> 80sec*).",
+      "call1":"Thunder Clad"
+    },
+    "Ice Age Up":{
+      "show":"",
+      "skill1":"Augmente de 3 secondes la durée du dernier stade de Ice Age (*9sec -> 12sec*).",
+      "call1":"Ice Age"
+    },
+    "Drug Knowledge Up":{
+      "show":"",
+      "skill1":"Augmente la valeur des afflictions de l'arme à 0,42% (*0,38% -> 0,42%*).",
+      "call1":"Drug Knowledge"
+    },
+    "Adaptation Up":{
+      "show":"",
+      "skill1":"**Adaptation Up +2**\nAjoute 2 niveaux supplémentaires à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
+      "skill2":"**Adaptation Up +1**\nAjoute 1 niveau supplémentaire à Adaptation.\nDépasser Adaptation +2 augmente les multiplicateurs d'Adaptation.\n(Blademaster 0,81x -> 0,9x | Gunner 0,72x -> 0,81x).",
+      "zall1":"Adaptation"
+    },
+    "Reflect Up":{
+      "show":"",
+      "skill1":"**Reflect Up +3**\nAjoute 3 niveaux supplémentaires à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "skill2":"**Reflect Up +2**\nAjoute 2 niveaux supplémentaires à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "skill3":"**Reflect Up +1**\nAjoute 1 niveau supplémentaire à Reflect.\nDépasser Reflect +3 augmente la Motion Value de Reflect (*48 -> 68*) et de Perfect Guard (*72 -> 92*).",
+      "call1":"Reflect"
+    },
+    "Stylish Up":{
+      "show":"",
+      "skill1":"Réussir une esquive stop la perte de Tranchant en plus d'infliger des attaques à 30 de Motion Value pour un nombre fixe de coups.\n\n※ Dure jusqu'à ce que la perte de tranchant reprenne (affecté par Consumption Slayer).",
+      "call1":"Stylish",
+      "img":"img/skills/stylish_up.png"
+    },
+    "Vigorous Up":{
+      "show":"",
+      "skill1":"+100 d'Attaque pour les Blademaster.\n+50 d'Attaque pour les Gunner.\nNe s'additionne à Vigorous que lorsque la barre de vie est pleine.",
+      "call1":"Vigorous"
+    },
+    "Obscurity Up":{
+      "show":"",
+      "skill1":"Réduit le nombre de gardes requises pour atteindre le buff maximal (10 -> 6).\nBloquer permet de récupérer du Tranchant lorsque le buff est maxé.\nExécuter une garde parfaite compte pour 3 gardes (ex : 2 garde parfaite = buff max), permet aussi de récupérer plus de Tranchant une fois le buff maxé.\n\n※ Le buff d'Attaque ne change pas.\n※ Exécuter une garde à la Gunlance en mode Heatblade, **avec le buff maxé**, réduit la perte de tranchant **jusqu'à la fin du mode Heatblade.**",
+      "call1":"Obscurity"
+    },
+    "Soul Up":{
+      "show":"",
+      "skill1":"**Red Soul**\n+100 d'Attaque pour l'utilisateur du talent ainsi que les joueurs frappés par celui-ci.\nEmpêche la consommation d'Endurance lorsque vous courez arme dégainée (concerne les joueurs frappés par l'utilisateur du talent).",
+      "skill2":"**Blue Soul**\n+200 de Défense pour l'utilisateur du talent ainsi que les joueurs frappés par celui-ci.\nOffre de la régénération de Points de Vie aux joueurs touchés par l'utilisateur, en plus de soigner des statuts anormaux (**ne concerne pas les statuts Zénith**).\n\n※ Fonctionne avec Blazing Grace.\n※ Les attaques ne feront plus trébucher les autres joueurs.",
+      "call1":"Reinforcement"
+    },
+    "Rush Up":{
+      "show":"",
+      "skill1":"Débloque un 3ème niveau de Rush.\nDonne 70 d'Attaque Raw (200 au total) et empêche la perte d'Endurance durant cet effet.\n※ Le 3ème niveau dure 30 secondes, celui-ci devra être réactivé après expiration.",
+      "call1":"Rush"
+    },
+    "Ceaseless Up":{
+      "show":"",
+      "skill1":"Débloque un 3ème niveau de Ceaseless, réduit le nombre de coups nécessaires à chaque niveau de Ceaseless.\nNiveau 1 : +35% d'Affinité, +10% de coups Critiques.\nNiveau 2 : +50% d'Affinité, +10% de coups Critiques.\nNiveau 3 : +60 d'Affinité, +20% de coups Critiques.\n\n※ Dorénavant, ne plus suffisamment attaquer **vous rétrogradera au niveau inférieur** (*au lieu de faire disparaitre l'effet du talent*).\n※ Reflect et Stylish Up comptent dans les coups requis.\n※ Fencing +2 ne compte pas dans les coups requis.",
+      "call1":"Ceaseless"
+    }
+  }
+}
