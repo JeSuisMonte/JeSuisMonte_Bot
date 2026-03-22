@@ -1122,6 +1122,12 @@
       "skill1":"**Capture Guru**\nL'icône des monstres clignoteront sur la carte lorsqu'ils sont capturable.",
       "skill2":"**Capture Proficiency**\nAugmente de 30% les chances qu'un monstre capturé devienne un compagnon **(PvP)**."
     },
+    "Caring":{
+      "show":"",
+      "skill1":"**Caring +3**\nToutes les quêtes : Les joueurs ne peuvent être interrompus par vos attaques, ils ne peuvent pas non plus vous interrompre.\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place.",
+      "skill2":"**Caring +2**\nQuêtes non-Rang G : Les joueurs ne peuvent être interrompus par vos attaques, ils ne peuvent pas non plus vous interrompre.\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place.",
+      "skill3":"**Caring +1**\nToutes les quêtes : Les PNJ ne peuvent être interrompus par les joueurs, ils effectueront une roulade à la place."
+    },
     "Movement Speed":{
       "show":"",
       "skill1":"**Movement Speed Up +2**\nAugmente grandement la vitesse des mouvements lorsque l'arme est rengainée.",

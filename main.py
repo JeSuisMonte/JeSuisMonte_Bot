@@ -10,6 +10,9 @@ import time
 class JSMT_bot(commands.Bot):
     def __init__(self):
         # Correction : command_prefix (sans 's')
+        intents = discord.Intents.default()
+        intents.message_content = True  # Pour lire les commandes comme !soup
+        intents.members = True
         super().__init__(command_prefix="!", intents=discord.Intents.all())
 
     # CETTE FONCTION DOIT ÊTRE INDENTÉE ICI (DANS LA CLASSE)
@@ -34,7 +37,6 @@ bot.remove_command('help')
 # 1. Configuration et Chargement
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
-ID_CHANNEL = 1461789288201982168
 
 def load_ferias_items(file_path):
     items_dict = {}
@@ -198,14 +200,28 @@ async def item_autocomplete(
     interaction: discord.Interaction,
     current: str,
 ) -> list[app_commands.Choice[str]]:
-    # On cherche les items qui contiennent la chaîne tapée (insensible à la casse)
-    choices = [
-        app_commands.Choice(name=name, value=name)
-        for name in FERIAS_DATA.keys()
-        if current.lower() in name.lower()
-    ]
-    # Discord limite à 25 suggestions maximum
-    return choices[:25]
+    choices = []
+    current_lower = current.lower()
+
+    # On parcourt FERIAS_DATA
+    # name = "Book of Combos 1" (la clé)
+    # data = ["Nom", ..., "0001", "Description"] (la liste)
+    for name, data in FERIAS_DATA.items():
+        item_id = str(data) # L'ID est à l'index 5 selon ton exemple "0001"
+        
+        # On vérifie si ce que l'utilisateur tape est dans le NOM ou dans l'ID
+        if current_lower in name.lower() or current_lower in item_id.lower():
+            choices.append(
+                app_commands.Choice(
+                    name=f"{item_id} - {name}", # Ce qu'il voit : "0001 - Book..."
+                    value=name                  # Ce que la commande reçoit : "Book..."
+                )
+            )
+        
+        if len(choices) >= 25:
+            break
+            
+    return choices
 
 @bot.tree.command(name="ferias", description="Chercher un objet sur Ferias")
 @app_commands.autocomplete(item=item_autocomplete)
@@ -366,11 +382,8 @@ async def on_ready():
     print(f"{bot.user} is live !")
 
 @bot.command()
+@commands.has_role(1467271522497331414)
 async def soup(ctx):
-    if ctx.channel.id != ID_CHANNEL: return 
-    try: await ctx.message.delete()
-    except: pass
-
     file = discord.File("img/com/soup.gif", filename="soup.gif")
     embed = discord.Embed(title="🍲 Quelle Soupe souhaites-tu ?", color=discord.Color.blue())
     embed.set_image(url="attachment://soup.gif")
@@ -384,6 +397,13 @@ async def soup(ctx):
     embed.set_footer(text=footer_text)
 
     await ctx.send(file=file, embed=embed, view=RecipePanel())
+
+@soup.error
+async def soup_error(ctx, error):
+    if isinstance(error, commands.MissingRole):
+        await ctx.send("You don't have the permission required for this command.", delete_after=15)
+    else:
+        print(f"Error with !soup : {error}")
 
 if token: bot.run(token)
 else:

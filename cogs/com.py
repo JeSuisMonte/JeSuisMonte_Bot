@@ -10,7 +10,7 @@ class com(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        await ctx.send("Guides Principaux : `!guide` `!leaps` `!controller` `!ravi` `!diva` `!transcend` `!ass` \n\nUtilitaire : `!help` `/ferias` `/skill` `!roadshop` `!poogie` `!hp` `!elements` `!mymissions` `!caravan` `!towersim` `!ravigem` `!ms` `!invite`\n\nFun : `!jsmt` `!bann` `!korinyi` `!hb2025`")
+        await ctx.send("Guides Principaux : `!guide` `!leaps` `!controller` `!ravi` `!diva` `!transcend` `!ass` \n\nUtilitaire : `!help` `/ferias` `/skill` `/monster-info` `!roadshop` `!poogie` `!hp` `!elements` `!mymissions` `!caravan` `!towersim` `!ravigem` `!ms` `!invite`\n\nFun : `!jsmt` `!bann` `!korinyi` `!hb2025`")
 
     @commands.command()
     async def guide(self, ctx):
@@ -41,7 +41,7 @@ class com(commands.Cog):
 
     @commands.command()
     async def ravi(self, ctx):
-        await ctx.send("Guide complet concernant les Raid Raviente de Rain : https://docs.google.com/document/d/1xncvMF3V4uhl0EO7m2rQsXcXlBNgLpLnZlGgvoMMngA/edit?usp=sharing")
+        await ctx.send("Guide complet concernant les Raids Raviente de Rain : https://docs.google.com/document/d/1xncvMF3V4uhl0EO7m2rQsXcXlBNgLpLnZlGgvoMMngA/edit?usp=sharing")
 
     @commands.command()
     async def ass(self, ctx):
@@ -117,7 +117,7 @@ class com(commands.Cog):
     async def elements(self, ctx):
         with open("img/com/elements.webp", "rb") as f:
             picture = discord.File(f)
-            await ctx.send("[Plus d'information sur les éléments hybride](<https://wycademy.vercel.app/hunter-notes/getting-started/elements>)", file=picture)
+            await ctx.send("[Plus d'informations sur les éléments hybride](<https://wycademy.vercel.app/hunter-notes/getting-started/elements>)", file=picture)
 
     @commands.command()
     async def mymissions(self, ctx):
@@ -127,7 +127,7 @@ class com(commands.Cog):
             "achetable dans la road ou en effectuant la Bounty https://discord.com/channels/937230168223789066/1470332587741282358.\n"
             "Il vous faut un total de 1395 My Mission Tkts pour atteindre le niveau max, il vous faudra donc faire la Free BBQ09 **9 fois**.\n"
             "Si vous décidez tout de même de les augmenter à la main, les quêtes se trouvent dans la catégorie `My Missions Quest`.\n"
-            "[Voir ici pour plus d'information sur les SR Stats.](<https://wycademy.vercel.app/hunter-notes/getting-started/style-rank?embed=style-rank-stats#style-rank-stats)>", file=picture)
+            "[Voir ici pour plus d'informations sur les SR Stats.](<https://wycademy.vercel.app/hunter-notes/getting-started/style-rank?embed=style-rank-stats#style-rank-stats)>", file=picture)
 
     @commands.command()
     async def invite(self, ctx):

@@ -13,7 +13,7 @@ class caravan(commands.Cog):
     class CaravanView(discord.ui.View):
         def __init__(self):
             # Durée avant expiration (en secondes)
-            self.timeout_duration = 900 
+            self.timeout_duration = 1800 
             super().__init__(timeout=self.timeout_duration)
             
             self.current_page = 1
