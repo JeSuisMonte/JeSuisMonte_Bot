@@ -3,6 +3,7 @@
       "Spicy Bakudandon [Buchigire]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Buchigire",
         "name" :"Spicy Bakudandon",
         "great_success":"Buchigiri",
         "success":"Wrath Awoken",
@@ -16,6 +17,7 @@
       "Pioneer Exciting Meal [Unaffected+3]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Unaffected+3",
         "name" : "Pioneer Exciting Meal",
         "great_success": "Unaffected+3",
         "success": "Unaffected+2",
@@ -29,6 +31,7 @@
       "Pioneer Exciting Meal [Dragon Wind Breaker]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Dragon Wind Breaker",
         "name" : "Pioneer Exciting Meal",
         "great_success": "Dragon Wind Breaker",
         "success": "Wind Res (Large)",
@@ -42,6 +45,7 @@
       "Pioneer Exciting Meal [Super HG Earplugs]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Super HG Earplugs",
         "name" : "Pioneer Exciting Meal",
         "great_success": "Super HG Earplugs",
         "success": "HG Earplugs",
@@ -55,6 +59,7 @@
       "Pioneer Exciting Meal [Stun Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Stun Negated",
         "name" : "Pioneer Exciting Meal",
         "great_success": "Stun Negated",
         "success": "Stun Halved",
@@ -68,6 +73,7 @@
       "Lucky Pancakes [Great Luck]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Great Luck",
         "name" :"Lucky Pancakes",
         "great_success":"Great Luck",
         "success":"Good Luck",
@@ -81,6 +87,7 @@
       "Ultimate Sashimi[Super HG Earplugs]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Super HG Earplugs",
         "name" :"Ultimate Sashimi",
         "great_success":"Super HG Earplugs",
         "success":"HG Earplugs",
@@ -94,6 +101,7 @@
       "Brother's Grill[Caring+3]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Caring+3",
         "name" :"Brother's Grill",
         "great_success":"Caring+3",
         "success":"Caring+2",
@@ -107,6 +115,7 @@
       "Fiery Tongs Feast Pot[Adrenaline+2]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Adrenaline+2",
         "name" :"Fiery Tongs Feast Pot",
         "great_success":"Adrenaline+2",
         "success":"Adrenaline+1",
@@ -120,6 +129,7 @@
       "Medicinal Porridge[Dragon Wind Breaker]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Dragon Wind Breaker",
         "name" :"Medicinal Porridge",
         "great_success":"Dragon Wind Breaker",
         "success":"Wind Res (Large)",
@@ -133,6 +143,7 @@
       "Medicinal Porridge[Violent Wind Breaker]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Violet Wind Breaker",
         "name" :"Medicinal Porridge",
         "great_success":"Dragon Wind Breaker",
         "success":"Dragon Wind Breaker",
@@ -146,6 +157,7 @@
       "Heaven and Earth Rice[Peerless]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Peerless",
         "name" :"Heaven and Earth Rice",
         "great_success":"Peerless",
         "success":"Marathon Runner",
@@ -159,6 +171,7 @@
       "Goddess Gem Sweets[Goddess' Embrace]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Goddess' Embrace",
         "name" :"Goddess Gem Sweets",
         "great_success":"Goddess' Embrace",
         "success":"Divine Protection",
@@ -172,6 +185,7 @@
       "Shellfish Iso-Yaki[Hunger Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Hunger Negated",
         "name" :"Shellfish Iso-Yaki",
         "great_success":"Hunger Negated",
         "success":"Hunger Halved",
@@ -185,6 +199,7 @@
       "Holy Seafood Banquet[Wide-Area+3]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Wide-Area+3",
         "name" :"Holy Seafood Banquet",
         "great_success":"Wide-Area+3",
         "success":"Wide-Area+2",
@@ -198,6 +213,7 @@
       "Motivated Noodles[Hazard Res (Large)]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Hazard Res (Large)",
         "name" :"Motivated Noodles",
         "great_success":"Hazard Res (Large)",
         "success":"Hazard Res (Small)",
@@ -211,6 +227,7 @@
       "Hunter's Freaky Pot[Divine Whim]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Divine Whim",
         "name" :"Hunter's Freaky Pot",
         "great_success":"Divine Whim",
         "success":"Spirit's Whim",
@@ -224,6 +241,7 @@
       "Skewer Dumplings[Paralysis Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Paralysis Negated",
         "name" :"Skewer Dumplings",
         "great_success":"Paralysis Negated",
         "success":"Paralysis Halved",
@@ -237,6 +255,7 @@
       "Crimson BBQ Meat[Sleep Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Sleep Negated",
         "name" :"Crimson BBQ Meat",
         "great_success":"Sleep Negated",
         "success":"Sleep Halved",
@@ -250,6 +269,7 @@
       "Sweet Wrappings[Poison Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Poison Negated",
         "name" :"Sweet Wrappings",
         "great_success":"Poison Negated",
         "success":"Poison Halved",
@@ -263,6 +283,7 @@
       "Dawn Sky Toast[Stun Negated]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Stun Negated",
         "name" :"Dawn Sky Toast",
         "great_success":"Stun Negated",
         "success":"Stun Halved",
@@ -276,6 +297,7 @@
       "Five Colored Soup[All Res+20]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"All Res+20",
         "name" :"Five Colored Soup",
         "great_success":"All Res+20",
         "success":"All Res+10",
@@ -289,6 +311,7 @@
       "Five Colored Soup[Fire Res+30]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Fire Res+30",
         "name" :"Five Colored Soup",
         "great_success":"Fire Res+30",
         "success":"Fire Res+20",
@@ -302,6 +325,7 @@
       "Five Colored Soup[Water Res+30]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Water Res+30",
         "name" :"Five Colored Soup",
         "great_success":"Water Res+30",
         "success":"Water Res+20",
@@ -315,6 +339,7 @@
       "Five Colored Soup[Ice Res+30]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Ice Res+30",
         "name" :"Five Colored Soup",
         "great_success":"Ice Res+30",
         "success":"Ice Res+20",
@@ -328,6 +353,7 @@
       "Five Colored Soup[Thunder Res+30]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Thunder Res+30",
         "name" :"Five Colored Soup",
         "great_success":"Thunder Res+30",
         "success":"Thunder Res+20",
@@ -341,6 +367,7 @@
       "Five Colored Soup[Dragon Res+30]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Dragon Res+30",
         "name" :"Five Colored Soup",
         "great_success":"Dragon Res+30",
         "success":"Dragon Res+20",
@@ -354,6 +381,7 @@
       "Bloody Sala-Salad[Medical Sage]": {
         "color": "blue",
         "showtalents":"2",
+        "talentname":"Medical Sage",
         "name" :"Bloody Sala-Salad",
         "great_success":"Medical Sage",
         "success":"Wide-Area+3",
@@ -367,6 +395,7 @@
       "Mori Mori Meat Pie[Encourage+2]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Encourage+2",
         "name" :"Mori Mori Meat Pie",
         "great_success":"Encourage+2",
         "success":"Encourage+1",
@@ -380,6 +409,7 @@
       "Fried Buns[Assistance]": {
         "color": "blue",
         "showtalents":"1",
+        "talentname":"Assistance",
         "name" :"Fried Buns",
         "great_success":"Assistance",
         "success":"Bond",
@@ -390,9 +420,10 @@
         "ingre3":"Bicolour Skimmer",
         "ingre4":"Mimic Vines"
       },
-      "Latchberry Cutlet[Red Soul]": {
+      "Latchberry Cutlet[Incitement]": {
         "color": "blue",
         "showtalents":"3",
+        "talentname":"Incitement",
         "name" :"Latchberry Cutlet",
         "great_success":"Red Soul",
         "success":"Incitement",
