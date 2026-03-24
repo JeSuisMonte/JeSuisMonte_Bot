@@ -144,7 +144,7 @@ class RecipePanel(discord.ui.View):
         for key in current_keys:
             recipe = recipes_data["recipes"][key]
             if self.display_mode == "talent":
-                gs = recipe.get("great_success") or "Inconnu"
+                gs = recipe.get("talentname") or "Inconnu"
                 s = recipe.get("success") or ""
                 show_mode = str(recipe.get("showtalents", "1"))
                 label = f"{gs} | {s}" if (show_mode == "2" and s.strip()) else gs
